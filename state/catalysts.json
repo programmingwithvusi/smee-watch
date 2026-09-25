@@ -1,0 +1,24 @@
+{
+  "seen": {
+    "16f9d3b3589806680f17e0c1b605041cfff78b89": 1790378328290,
+    "c5ecb896d35358884bb60f2dba6ae28d00d36911": 1790378328290,
+    "2e6e722cef9e6b6f1bd4628980c58aa208e39558": 1790378328290,
+    "bc79b5848913358784e451187e451b3b15f5034a": 1790378328290,
+    "6895d632fcd202c10d33e7639d3038865b32c821": 1790378328290,
+    "9280c41e7b4dc8a259ddee74c497427bc415db42": 1790378328290,
+    "0753abd1e2392a5f86f31e1ea1abbe9772f6327c": 1790378328290,
+    "d759099e8f010f8c147abb66a9d8e51f05f65b95": 1790378328290,
+    "47d4dbe2c876fe00ee5d1770c936d8637c21abe6": 1790378328290
+  },
+  "alerted": {},
+  "failures": {},
+  "seeded": {
+    "en: ASML export controls": 1790378328290,
+    "en: ASML Dutch government": 1790378328290,
+    "en: chip export controls China": 1790378328290,
+    "en: SMIC entity list OR sanctions": 1790378328290,
+    "en: SMIC capacity OR breakthrough": 1790378328290,
+    "zh: 中芯国际 制裁 实体清单": 1790378328290,
+    "zh: 阿斯麦 出口管制": 1790378328290
+  }
+}
