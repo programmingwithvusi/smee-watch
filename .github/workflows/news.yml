@@ -1,0 +1,44 @@
+name: news
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: state-news
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Watch news
+        run: npm run watch:news
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          ALERT_ALL: ${{ vars.ALERT_ALL }}
+          LOG_LEVEL: ${{ vars.LOG_LEVEL || 'info' }}
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "smee-watch[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add state
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(state): news"
+            git pull --rebase --autostash
+            git push
+          fi

@@ -1,0 +1,35 @@
+{
+  "asOf": "2026-09-25T18:19:01.577Z",
+  "balances": [
+    {
+      "asset": "XBT",
+      "balance": 0.00039792,
+      "reserved": 0
+    },
+    {
+      "asset": "JUP",
+      "balance": 1.11428911,
+      "reserved": 0
+    },
+    {
+      "asset": "SOL",
+      "balance": 0.03620643,
+      "reserved": 0
+    },
+    {
+      "asset": "SPCXx",
+      "balance": 0.05029552,
+      "reserved": 0
+    },
+    {
+      "asset": "USDC",
+      "balance": 5.216373,
+      "reserved": 0
+    },
+    {
+      "asset": "ZAR",
+      "balance": 0.25,
+      "reserved": 0
+    }
+  ]
+}
