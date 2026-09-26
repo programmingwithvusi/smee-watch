@@ -1,14 +1,7 @@
 {
   "seen": {},
   "alerted": {},
-  "failures": {
-    "zh: 上海微电子 上市": 1,
-    "zh: 上海微电子 借壳": 1,
-    "zh: 上海微电子 IPO 辅导": 1,
-    "zh: 芯上微装": 1,
-    "en: SMEE IPO": 1,
-    "en: SMEE reverse merger": 1
-  },
+  "failures": {},
   "seeded": {
     "zh: 上海微电子 上市": 1790332845496,
     "zh: 上海微电子 借壳": 1790332845496,
