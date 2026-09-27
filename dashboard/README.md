@@ -44,11 +44,11 @@ The page also shows your own Luno and EasyEquities positions, in a section below
 
 Luno has an official, read-only API, so this is a live snapshot of your balances.
 
-1. In Luno: **Settings → API Keys → Create API Key**, and tick **only** `Perm_R_Balance`. Don't grant trade or withdraw permissions — the script never needs them.
-2. `cd dashboard && cp .env.example .env` and fill in `LUNO_API_KEY_ID` / `LUNO_API_KEY_SECRET`.
-3. `set -a && source .env && set +a && npm run luno:snapshot`
+1. In Luno: **Settings → API Keys → Create API Key**, and tick **only** `Perm_R_Balance` and, for gain/loss on what you paid, `Perm_R_Transactions`. Both are read-only. Don't grant trade or withdraw permissions — the script never needs them.
+2. Add two lines to the project's `.env` (or `dashboard/.env`; both are gitignored): `LUNO_API_KEY_ID=...` and `LUNO_API_KEY_SECRET=...`.
+3. `npm run luno:snapshot` — the script loads `.env` itself, in any shell (PowerShell included).
 
-This fetches your balances, values them in ZAR using Luno's public ticker, and writes `public/portfolio/luno-balance.json`. It prints what it found and reminds you to `git add`/`commit`/`push`. **The API key stays on your machine and is never written to any file that gets committed** — only the resulting numbers are. Re-run it whenever you want a fresher snapshot; each run overwrites the file, so the git history is your history of balances over time.
+This fetches your balances, values them in ZAR using Luno's public ticker, and writes `public/portfolio/luno-balance.json`. With `Perm_R_Transactions` it also replays your Luno statement to work out the average rand price you paid per coin, and writes **only that average** — no individual transactions, dates or amounts, since the file is public. Coins that arrived by transfer or a coin-for-coin swap get no average, rather than a wrong one. It prints what it found and reminds you to `git add`/`commit`/`push`. **The API key stays on your machine and is never written to any file that gets committed** — only the resulting numbers are. Re-run it whenever you want a fresher snapshot; each run overwrites the file, so the git history is your history of balances over time.
 
 ### EasyEquities (JSE/US shares)
 

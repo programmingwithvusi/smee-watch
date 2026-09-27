@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-25T18:19:01.577Z",
+  "asOf": "2026-09-27T11:01:10.936Z",
   "balances": [
     {
       "asset": "XBT",
@@ -9,22 +9,26 @@
     {
       "asset": "JUP",
       "balance": 1.11428911,
-      "reserved": 0
+      "reserved": 0,
+      "avgCostZar": 3.38
     },
     {
       "asset": "SOL",
       "balance": 0.03620643,
-      "reserved": 0
+      "reserved": 0,
+      "avgCostZar": 1574.31
     },
     {
       "asset": "SPCXx",
       "balance": 0.05029552,
-      "reserved": 0
+      "reserved": 0,
+      "avgCostZar": 2187.07
     },
     {
       "asset": "USDC",
       "balance": 5.216373,
-      "reserved": 0
+      "reserved": 0,
+      "avgCostZar": 17.25
     },
     {
       "asset": "ZAR",

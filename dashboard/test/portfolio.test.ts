@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { priceInZar } from "../shared/luno";
+import { lunoCostBasis, priceInZar, zarTrend } from "../shared/luno";
 import { computeHoldings, isPortfolioResponse, mergeTrades, type Trade } from "../shared/portfolio";
 import { tradeId } from "../shared/tradeId";
 
@@ -136,5 +136,72 @@ describe("isPortfolioResponse", () => {
     expect(isPortfolioResponse(null)).toBe(false);
     expect(isPortfolioResponse({})).toBe(false);
     expect(isPortfolioResponse({ ...valid, generatedAt: "nope" })).toBe(false);
+  });
+});
+
+describe("zarTrend", () => {
+  const D = 86_400;
+  test("carries Friday's USD→ZAR rate over the weekend and uses the live price for today", () => {
+    // Fri, Sat, Sun closes in USD; FX only has Friday (stamped an hour before UTC midnight)
+    const coin = [{ t: 0, c: 10 }, { t: D, c: 11 }, { t: 2 * D, c: 12 }];
+    const fx = [{ t: -3600, c: 18 }];
+    const trend = zarTrend(coin, fx, 13, 18);
+    expect(trend?.series).toEqual([{ t: 0, c: 180 }, { t: D, c: 198 }, { t: 2 * D, c: 234 }]);
+    expect(trend?.changePct).toBeCloseTo(((234 - 198) / 198) * 100, 6);
+  });
+
+  test("needs two priced days to report a change", () => {
+    expect(zarTrend([{ t: 0, c: 10 }], [{ t: 0, c: 18 }], 10, 18)).toBeNull();
+    expect(zarTrend([{ t: 0, c: 10 }, { t: D, c: 11 }], [], 11, 18)).toBeNull();
+  });
+});
+
+describe("lunoCostBasis", () => {
+  let row = 0;
+  const e = (reference: string, currency: string, delta: number, kind = "EXCHANGE", timestamp = ++row) => ({
+    reference,
+    currency,
+    delta,
+    kind,
+    timestamp,
+    rowIndex: row,
+  });
+
+  test("averages instant buys, counting the ZAR fee as part of the price", () => {
+    const basis = lunoCostBasis([
+      e("a", "ZAR", -1000), e("a", "XBT", 0.001), e("a", "ZAR", -10, "FEE"),
+      e("b", "ZAR", -3000), e("b", "XBT", 0.002),
+    ]);
+    // R4010 for 0.003 BTC
+    expect(basis.get("XBT")).toBeCloseTo(4010 / 0.003, 6);
+  });
+
+  test("a coin fee reduces what you got, raising the price per unit", () => {
+    const basis = lunoCostBasis([e("a", "ZAR", -1000), e("a", "SOL", 1), e("a", "SOL", -0.01, "FEE")]);
+    expect(basis.get("SOL")).toBeCloseTo(1000 / 0.99, 6);
+  });
+
+  test("selling part keeps the average; rewards arrive at zero cost", () => {
+    const basis = lunoCostBasis([
+      e("a", "ZAR", -2000), e("a", "SOL", 2),
+      e("b", "SOL", -1), e("b", "ZAR", 1500),
+      e("c", "SOL", 1, "INTEREST"),
+    ]);
+    // 1 SOL left at R1000 cost, plus 1 free: R1000 for 2
+    expect(basis.get("SOL")).toBeCloseTo(500, 6);
+  });
+
+  test("a coin that arrived by transfer or swap has no cost basis rather than a wrong one", () => {
+    const basis = lunoCostBasis([
+      e("a", "ZAR", -1000), e("a", "XBT", 0.001),
+      e("t", "XBT", 0.5, "TRANSFER"),
+      e("s", "USDC", -10), e("s", "JUP", 25),
+    ]);
+    expect(basis.has("XBT")).toBe(false);
+    expect(basis.has("JUP")).toBe(false);
+  });
+
+  test("ZAR itself never gets a cost basis", () => {
+    expect(lunoCostBasis([e("d", "ZAR", 5000, "TRANSFER")]).size).toBe(0);
   });
 });

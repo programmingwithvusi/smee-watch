@@ -5,6 +5,7 @@
  * browser-safe. The one thing that needs Node (hashing a trade id) lives in `shared/tradeId.ts`
  * instead, imported only by the import script.
  */
+import type { SeriesPoint } from "./types";
 
 export type TradeSource = "luno" | "easyequities";
 export type TradeSide = "buy" | "sell";
@@ -114,6 +115,10 @@ export interface HoldingDto extends Holding {
   liveCurrency: string | null;
   /** livePrice * quantity, in liveCurrency, when livePrice is known */
   liveValue: number | null;
+  /** Change against the previous day's close, in percent, when a daily price history was found */
+  changePct?: number | null;
+  /** Daily closes over the last month, in liveCurrency, for the sparkline */
+  series?: SeriesPoint[];
 }
 
 export interface PortfolioResponse {
@@ -138,7 +143,9 @@ function isHoldingDto(v: unknown): v is HoldingDto {
     isStr(v.costCurrency) &&
     (v.livePrice === null || isNum(v.livePrice)) &&
     (v.liveCurrency === null || isStr(v.liveCurrency)) &&
-    (v.liveValue === null || isNum(v.liveValue))
+    (v.liveValue === null || isNum(v.liveValue)) &&
+    (v.changePct === undefined || v.changePct === null || isNum(v.changePct)) &&
+    (v.series === undefined || (Array.isArray(v.series) && v.series.every((p) => isObj(p) && isNum(p.t) && isNum(p.c))))
   );
 }
 

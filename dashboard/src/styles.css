@@ -12,6 +12,10 @@
   --gold-ink: #86610f;
   --blue: #2a5fa8;
   --blue-ink: #2a5fa8;
+  --violet: #6a4aa6;
+  --violet-ink: #5d3f96;
+  --olive: #5f7d1c;
+  --olive-ink: #4f6a14;
   --up: #0f766e;
   --down: #b4361b;
   --focus: #17212b;
@@ -31,6 +35,10 @@
     --gold-ink: #e2b95c;
     --blue: #6fa0e8;
     --blue-ink: #86b0ee;
+    --violet: #b09ae6;
+    --violet-ink: #c0adee;
+    --olive: #a9c75a;
+    --olive-ink: #b8d46e;
     --up: #3cc3a8;
     --down: #f0805f;
     --focus: #e6ebef;
@@ -503,7 +511,7 @@ h1, h2, h3, p, dl, dd, dt {
   color: var(--muted);
 }
 
-/* ---------- your holdings ---------- */
+/* ---------- your holdings: same tiles as the listings, own accents ---------- */
 
 .portfolio {
   margin-top: 64px;
@@ -512,26 +520,14 @@ h1, h2, h3, p, dl, dd, dt {
 }
 
 .portfolio__title {
-  margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 650;
 }
 
 .portfolio__sub {
-  margin: 4px 0 20px;
+  margin: 4px 0 28px;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.portfolio__group {
-  margin-bottom: 24px;
-}
-
-.portfolio__group-title {
-  margin: 0 0 8px;
-  font-size: 1rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .portfolio__empty {
@@ -540,52 +536,87 @@ h1, h2, h3, p, dl, dd, dt {
   max-width: 56ch;
 }
 
-.portfolio__asof {
-  margin: -12px 0 24px;
-  color: var(--muted);
-  font-size: 0.8rem;
+.stack--holdings {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.portfolio__table {
-  width: 100%;
-  max-width: 640px;
-  border-collapse: collapse;
-  font-size: 0.9rem;
+.col--luno {
+  --accent: var(--violet);
+  --accent-ink: var(--violet-ink);
 }
 
-.portfolio__table th,
-.portfolio__table td {
-  text-align: left;
-  padding: 6px 12px 6px 0;
-  border-bottom: 1px solid var(--scribe);
+.col--easyequities {
+  --accent: var(--olive);
+  --accent-ink: var(--olive-ink);
 }
 
-.portfolio__table th {
-  color: var(--muted);
-  font-weight: 500;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+/* "EasyEquities" is three times as long as "SMIC", so these names run a size down */
+.col--holdings .col__name {
+  font-size: clamp(52px, 7.4vw, 104px);
+  overflow-wrap: anywhere;
 }
 
-.portfolio__symbol {
-  font-weight: 600;
+.col__total {
+  font-weight: 650;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
-.portfolio__name {
-  font-weight: 400;
+.col__note {
+  margin-top: 16px;
+  max-width: 44ch;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-.portfolio__nolive {
+/* A holding with no live price has no figure: keep the grid but let the note sit in the figures cell */
+.listing--nolive .listing__missing {
+  margin-top: 6px;
+}
+
+.listing--holding .listing__price {
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.listing--holding .listing__change + .listing__change {
+  margin-top: 0;
+}
+
+.listing__change-label {
+  font-size: 0.85rem;
+  font-weight: 450;
   color: var(--muted);
-  font-style: italic;
+}
+
+/* Coin picker: sits where a listing's name does, and reads like one */
+.picker {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--ink);
+  background: transparent;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: 4px;
+  padding: 5px 8px;
+  min-height: 36px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.picker:hover {
+  border-color: var(--accent);
+}
+
+.picker option {
+  color: var(--ink);
+  background: var(--panel);
 }
 
 /* ---------- small screens ---------- */
 
 @media (max-width: 880px) {
-  .stack {
+  .stack,
+  .stack--holdings {
     grid-template-columns: minmax(0, 1fr);
     gap: 56px;
   }
@@ -609,7 +640,4 @@ h1, h2, h3, p, dl, dd, dt {
     padding-inline: 16px;
   }
 
-  .portfolio__table {
-    font-size: 0.82rem;
-  }
 }

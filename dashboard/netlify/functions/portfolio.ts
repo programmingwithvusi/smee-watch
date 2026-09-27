@@ -1,9 +1,10 @@
 import type { Config } from "@netlify/functions";
 import { corsHeaders } from "../../shared/cors";
-import { priceInZar, type LunoBalanceSnapshot, type LunoTicker } from "../../shared/luno";
+import { priceInZar, USD_ZAR_SYMBOL, YAHOO_USD_SYMBOL, zarTrend, type LunoBalanceSnapshot, type LunoTicker } from "../../shared/luno";
 import { createLogger } from "../../shared/log";
 import { computeHoldings, type HoldingDto, type PortfolioResponse, type Trade } from "../../shared/portfolio";
 import { isQuotesResponse } from "../../shared/types";
+import { chartUrl, parseChart, type ParsedChart } from "../../shared/yahoo";
 
 const UA = "Mozilla/5.0 (compatible; chip-dashboard/1.0)";
 
@@ -28,6 +29,43 @@ async function fetchLunoTickers(): Promise<LunoTicker[]> {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const body = (await res.json()) as { tickers?: LunoTicker[] };
   return body.tickers ?? [];
+}
+
+async function fetchChart(symbol: string): Promise<ParsedChart> {
+  const res = await fetch(chartUrl(symbol), {
+    headers: { "User-Agent": UA },
+    signal: AbortSignal.timeout(8_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return parseChart(await res.json());
+}
+
+/** Daily ZAR trend per Luno asset, from Yahoo's USD price and USD→ZAR rate. Failures are recorded in
+ *  `errors` and leave that asset without a trend; they never fail the response. */
+async function fetchZarTrends(assets: string[], errors: Record<string, string>): Promise<Map<string, ReturnType<typeof zarTrend>>> {
+  const out = new Map<string, ReturnType<typeof zarTrend>>();
+  const wanted = assets.flatMap((asset) => {
+    const symbol = YAHOO_USD_SYMBOL[asset];
+    return symbol ? [{ asset, symbol }] : [];
+  });
+  if (wanted.length === 0) return out;
+  const [fx, coins] = await Promise.all([
+    fetchChart(USD_ZAR_SYMBOL).then(
+      (v) => v,
+      (e: unknown) => {
+        errors.usdZar = e instanceof Error ? e.message : String(e);
+        return null;
+      },
+    ),
+    Promise.allSettled(wanted.map((w) => fetchChart(w.symbol))),
+  ]);
+  if (!fx) return out;
+  coins.forEach((c, i) => {
+    const { asset } = wanted[i] ?? { asset: "" };
+    if (c.status === "fulfilled") out.set(asset, zarTrend(c.value.series, fx.series, c.value.price, fx.price));
+    else errors[asset] = c.reason instanceof Error ? c.reason.message : String(c.reason);
+  });
+  return out;
 }
 
 export default async (req: Request): Promise<Response> => {
@@ -66,24 +104,37 @@ export default async (req: Request): Promise<Response> => {
 
   const quotes = quotesResult.status === "fulfilled" && isQuotesResponse(quotesResult.value) ? quotesResult.value : null;
 
-  const lunoHoldings: HoldingDto[] = lunoSnap.balances
-    .filter((b) => b.balance + b.reserved > 1e-9)
-    .map((b) => {
-      const qty = b.balance + b.reserved;
-      const valueZar = priceInZar(b.asset, qty, tickers);
-      return {
-        symbol: b.asset,
-        source: "luno" as const,
-        quantity: qty,
-        avgCost: 0,
-        costCurrency: "ZAR",
-        livePrice: valueZar !== null && qty > 0 ? valueZar / qty : null,
-        liveCurrency: valueZar !== null ? "ZAR" : null,
-        liveValue: valueZar,
-      };
-    });
+  // Cost basis for Luno assets: the snapshot's avgCostZar (from your Luno statement), else any Luno
+  // trades in trades.json; without either it stays 0 (unknown).
+  const lunoCost = new Map(
+    computeHoldings(tradesFile.trades.filter((t) => t.source === "luno" && t.currency === "ZAR")).map((h) => [h.symbol, h.avgCost]),
+  );
+  const lunoBalances = lunoSnap.balances.filter((b) => b.balance + b.reserved > 1e-9);
+  const trends = await fetchZarTrends(
+    lunoBalances.map((b) => b.asset),
+    errors,
+  );
 
-  const eeHoldings: HoldingDto[] = computeHoldings(tradesFile.trades).map((h) => {
+  const lunoHoldings: HoldingDto[] = lunoBalances.map((b) => {
+    const qty = b.balance + b.reserved;
+    const trend = trends.get(b.asset) ?? null;
+    // Luno's own price first; failing that (no <ASSET>ZAR pair on Luno), Yahoo's, converted to ZAR
+    const valueZar = priceInZar(b.asset, qty, tickers) ?? (trend ? (trend.series.at(-1)?.c ?? 0) * qty : null);
+    return {
+      symbol: b.asset,
+      source: "luno" as const,
+      quantity: qty,
+      avgCost: b.avgCostZar ?? lunoCost.get(b.asset) ?? 0,
+      costCurrency: "ZAR",
+      livePrice: valueZar !== null && qty > 0 ? valueZar / qty : null,
+      liveCurrency: valueZar !== null ? "ZAR" : null,
+      liveValue: valueZar,
+      changePct: trend?.changePct ?? null,
+      series: trend?.series ?? [],
+    };
+  });
+
+  const eeHoldings: HoldingDto[] = computeHoldings(tradesFile.trades.filter((t) => t.source === "easyequities")).map((h) => {
     const match = quotes?.quotes.find((quote) => quote.symbol === h.symbol || quote.symbol.split(".")[0] === h.symbol);
     const livePrice = match ? match.price : null;
     return {
@@ -91,6 +142,8 @@ export default async (req: Request): Promise<Response> => {
       livePrice,
       liveCurrency: match ? match.currency : null,
       liveValue: livePrice !== null ? livePrice * h.quantity : null,
+      changePct: match ? match.changePct : null,
+      series: match ? match.series : [],
     };
   });
 
