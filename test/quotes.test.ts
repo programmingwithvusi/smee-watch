@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { fmtPct, parseChart, premiumPct } from "../src/quotes";
+import { fmtPct, fmtPrice, parseChart, premiumPct } from "../src/quotes";
 
 const chart = (closes: Array<number | null>, price: number) => ({
   chart: {
@@ -48,5 +48,13 @@ describe("fmtPct", () => {
   test("adds a sign", () => {
     expect(fmtPct(3.456)).toBe("+3.46%");
     expect(fmtPct(-1)).toBe("-1.00%");
+  });
+});
+
+describe("penny-stock formatting", () => {
+  test("prices under 1 keep up to four decimals; float noise isn't a signed zero", () => {
+    expect(fmtPrice(0.025)).toBe("0.025");
+    expect(fmtPrice(1082.284)).toBe("1082.28");
+    expect(fmtPct(-0.0000015)).toBe("0.00%");
   });
 });

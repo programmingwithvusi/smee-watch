@@ -1,6 +1,6 @@
 import type { PortfolioResponse } from "../shared/portfolio";
 import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
-import type { QuotesResponse } from "../shared/types";
+import type { ExchangeId, QuotesResponse } from "../shared/types";
 import { ListingRow } from "./components/ListingRow";
 import { PortfolioPanel } from "./components/PortfolioPanel";
 import { PremiumPanel } from "./components/PremiumPanel";
@@ -21,6 +21,7 @@ interface Props {
 
 const ASML_ITEMS = WATCHLIST.filter((w) => w.company === "ASML");
 const SMIC_ITEMS = WATCHLIST.filter((w) => w.company === "SMIC");
+const US = new Set<ExchangeId>(["NASDAQ", "NYSE"]);
 
 /** Pure view: everything it needs comes in as props, so it can be rendered and tested without a network. */
 export function Dashboard({
@@ -100,7 +101,7 @@ export function Dashboard({
       <section className="col col--watch watch" aria-labelledby="watch-title">
         <h2 id="watch-title" className="col__name">Watchlist</h2>
         <div className="watch__intro">
-          <p className="col__role">Future trades, in your order of interest. US stocks, Nasdaq and NYSE hours.</p>
+          <p className="col__role">Future trades, in your order of interest. Market times below are for Nasdaq and NYSE.</p>
           <div className="watch__market">
             <MarketBadge state={marketState("NASDAQ", now)} />
             <MarketCountdown state={marketState("NASDAQ", now)} />
@@ -108,7 +109,8 @@ export function Dashboard({
         </div>
         <div className="watch__grid">
           {WATCH_IDEAS.map((w) => (
-            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact />
+            // US listings share the header's market status; anything else (ActivEX in Sydney) shows its own
+            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact={US.has(w.exchange)} />
           ))}
         </div>
       </section>

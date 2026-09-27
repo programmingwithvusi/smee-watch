@@ -33,7 +33,7 @@ const idea = (symbol: string, name: string, theme: string, exchange: ExchangeId)
 });
 
 export const WATCH_IDEAS: readonly WatchItem[] = [
-  idea("NVDA", "NVIDIA", "AI", "NASDAQ"),
+  idea("NVDA", "NVIDIA", "Artificial intelligence", "NASDAQ"),
   idea("VST", "Vistra", "Data centre power", "NYSE"),
   idea("ROK", "Rockwell Automation", "Robotics", "NYSE"),
   idea("IONQ", "IonQ", "Quantum computing", "NYSE"),
@@ -46,6 +46,7 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("AVGO", "Broadcom", "AI infrastructure", "NASDAQ"),
   idea("RKLB", "Rocket Lab", "Space technology", "NASDAQ"),
   idea("MU", "Micron", "High-bandwidth memory", "NASDAQ"),
+  idea("AIV.AX", "ActivEX", "Mineral exploration", "ASX"),
 ];
 
 /** HKD per 1 CNY */

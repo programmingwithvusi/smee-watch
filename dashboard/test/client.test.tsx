@@ -206,13 +206,19 @@ describe("failureMessage", () => {
 });
 
 describe("watchlist tiles", () => {
+  test("penny-stock prices keep their decimals, and float noise isn't a signed zero", () => {
+    expect(formatPrice(0.025, "AUD")).toBe("A$0.025");
+    expect(formatPrice(1082.28, "USD")).toBe("$1,082.28");
+    expect(formatPct(-0.0000015)).toBe("0.00%");
+  });
+
   test("show the company, ticker and theme, and leave market status to the section", () => {
     const item = WATCH_IDEAS[0]!;
     const quote = { ...SAMPLE.quotes[0]!, symbol: item.symbol, label: item.label, company: "WATCH" as const };
     const html = renderToStaticMarkup(<ListingRow item={item} quote={quote} now={new Date("2026-09-21T14:00:00Z")} compact />);
     expect(html).toContain("NVIDIA");
     expect(html).toContain("NVDA");
-    expect(html).toContain("AI · Nasdaq");
+    expect(html).toContain("Artificial intelligence · Nasdaq");
     expect(html).not.toContain("countdown");
     expect(html).not.toContain("badge");
   });

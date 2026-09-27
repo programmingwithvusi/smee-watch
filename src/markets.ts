@@ -2,7 +2,7 @@ import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_IDEAS, WATCHLIST } from "./config";
 import { checkVolatility } from "./volatility";
 import { errMsg, log } from "./log";
 import { notify } from "./notify";
-import { fetchQuote, fmtPct, premiumPct, type Quote } from "./quotes";
+import { fetchQuote, fmtPct, fmtPrice, premiumPct, type Quote } from "./quotes";
 import { openState } from "./state";
 
 async function main(): Promise<void> {
@@ -30,7 +30,7 @@ async function main(): Promise<void> {
   if (digest) {
     const line = (w: (typeof all)[number]) => {
       const q = quotes.get(w.symbol);
-      return q ? `${w.label}: ${q.price.toFixed(2)} ${q.currency} (${fmtPct(q.changePct)})` : `${w.label}: unavailable`;
+      return q ? `${w.label}: ${fmtPrice(q.price)} ${q.currency} (${fmtPct(q.changePct)})` : `${w.label}: unavailable`;
     };
     const lines = WATCHLIST.map(line);
     const a = quotes.get(SMIC_A);
@@ -61,7 +61,7 @@ async function main(): Promise<void> {
         if (state.alerted[key] === undefined) {
           const arrow = q.changePct > 0 ? "📈" : "📉";
           try {
-            await notify(`${arrow} ${w.label} ${fmtPct(q.changePct)} vs previous close\nNow ${q.price.toFixed(2)} ${q.currency} (prev ${q.prevClose.toFixed(2)})`);
+            await notify(`${arrow} ${w.label} ${fmtPct(q.changePct)} vs previous close\nNow ${fmtPrice(q.price)} ${q.currency} (prev ${fmtPrice(q.prevClose)})`);
             state.alerted[key] = now;
           } catch (e) {
             deliveryFailed = true;
@@ -78,7 +78,7 @@ async function main(): Promise<void> {
         if (state.alerted[volKey] === undefined) {
           try {
             await notify(
-              `⚡ Unusual move: ${w.label} ${fmtPct(q.changePct)} today, vs its own recent average of ~${vol.avgAbsMovePct.toFixed(2)}%/day.\nNow ${q.price.toFixed(2)} ${q.currency}. Not a fixed threshold — this is relative to the symbol's own recent behaviour.`,
+              `⚡ Unusual move: ${w.label} ${fmtPct(q.changePct)} today, vs its own recent average of ~${vol.avgAbsMovePct.toFixed(2)}%/day.\nNow ${fmtPrice(q.price)} ${q.currency}. Not a fixed threshold — this is relative to the symbol's own recent behaviour.`,
             );
             state.alerted[volKey] = now;
           } catch (e) {

@@ -68,4 +68,12 @@ export function premiumPct(aPriceCny: number, hPriceHkd: number, hkdPerCny: numb
   return ((aPriceCny * hkdPerCny) / hPriceHkd - 1) * 100;
 }
 
-export const fmtPct = (n: number): string => `${n >= 0 ? "+" : ""}${n.toFixed(2)}%`;
+/** Rounds before signing, so float noise like -0.000001 reads "0.00%", not "-0.00%". */
+export const fmtPct = (n: number): string => {
+  const r = Number(n.toFixed(2)) || 0;
+  return `${r > 0 ? "+" : ""}${r.toFixed(2)}%`;
+};
+
+/** Two decimals, or up to four for prices under 1 so a A$0.025 penny stock doesn't read as 0.03. */
+export const fmtPrice = (n: number): string =>
+  Math.abs(n) < 1 && n !== 0 ? String(Number(n.toFixed(4))) : n.toFixed(2);

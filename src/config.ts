@@ -81,7 +81,7 @@ export const WATCHLIST: WatchSymbol[] = [
  * a loud day below the threshold. Keep in step with WATCH_IDEAS in dashboard/shared/watchlist.ts.
  */
 export const WATCH_IDEAS: WatchSymbol[] = [
-  { symbol: "NVDA", label: "NVIDIA (AI)", moveAlertPct: 4 },
+  { symbol: "NVDA", label: "NVIDIA (artificial intelligence)", moveAlertPct: 4 },
   { symbol: "VST", label: "Vistra (data centre power)", moveAlertPct: 5 },
   { symbol: "ROK", label: "Rockwell Automation (robotics)", moveAlertPct: 4 },
   { symbol: "IONQ", label: "IonQ (quantum computing)", moveAlertPct: 7 },
@@ -94,6 +94,8 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "AVGO", label: "Broadcom (AI infrastructure)", moveAlertPct: 4 },
   { symbol: "RKLB", label: "Rocket Lab (space technology)", moveAlertPct: 7 },
   { symbol: "MU", label: "Micron (high-bandwidth memory)", moveAlertPct: 4 },
+  // ASX penny stock (~A$0.025): one A$0.001 tick is already a 4% move, so only big days alert
+  { symbol: "AIV.AX", label: "ActivEX (ASX, mineral exploration)", moveAlertPct: 15 },
 ];
 
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium

@@ -1,22 +1,26 @@
 const MINUS = "\u2212";
 
 export function formatPrice(value: number, currency: string): string {
+  // Up to four decimals under 1, so a A$0.025 penny stock doesn't read as A$0.03
+  const small = Math.abs(value) < 1 && value !== 0;
   try {
     return new Intl.NumberFormat("en", {
       style: "currency",
       currency: currency || "USD",
       minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+      maximumFractionDigits: small ? 4 : 2,
     }).format(value);
   } catch {
-    return value.toFixed(2);
+    return small ? String(Number(value.toFixed(4))) : value.toFixed(2);
   }
 }
 
+/** Rounds before signing, so float noise like -0.000001 reads "0.00%", not "−0.00%". */
 export function formatPct(n: number, digits = 2): string {
-  const body = Math.abs(n).toFixed(digits);
-  if (n > 0) return `+${body}%`;
-  if (n < 0) return `${MINUS}${body}%`;
+  const r = Number(n.toFixed(digits)) || 0;
+  const body = Math.abs(r).toFixed(digits);
+  if (r > 0) return `+${body}%`;
+  if (r < 0) return `${MINUS}${body}%`;
   return `${body}%`;
 }
 

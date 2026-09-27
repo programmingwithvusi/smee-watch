@@ -6,7 +6,7 @@ export interface SeriesPoint {
   c: number;
 }
 
-export type ExchangeId = "NASDAQ" | "NYSE" | "AMS" | "SSE" | "HKEX";
+export type ExchangeId = "NASDAQ" | "NYSE" | "AMS" | "SSE" | "HKEX" | "ASX";
 /** "WATCH" is the future-trades watchlist: many companies, one section. */
 export type CompanyId = "ASML" | "SMIC" | "WATCH";
 
@@ -54,7 +54,7 @@ function isQuote(v: unknown): v is QuoteDto {
     typeof v.symbol === "string" &&
     typeof v.label === "string" &&
     (v.company === "ASML" || v.company === "SMIC" || v.company === "WATCH") &&
-    (v.exchange === "NASDAQ" || v.exchange === "NYSE" || v.exchange === "AMS" || v.exchange === "SSE" || v.exchange === "HKEX") &&
+    (v.exchange === "NASDAQ" || v.exchange === "NYSE" || v.exchange === "AMS" || v.exchange === "SSE" || v.exchange === "HKEX" || v.exchange === "ASX") &&
     typeof v.currency === "string" &&
     isNum(v.price) &&
     isNum(v.prevClose) &&
