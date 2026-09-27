@@ -74,6 +74,28 @@ export const WATCHLIST: WatchSymbol[] = [
   { symbol: "0981.HK", label: "SMIC H-share (HKEX)", moveAlertPct: 4 },
 ];
 
+/**
+ * Future trades you're watching, in your order of interest. Same move alerts as above, plus their
+ * own section in the daily digest. Thresholds follow how much each one normally moves: a 3% day is
+ * news for Microsoft and routine for Oklo. The unusual-move check (src/volatility.ts) still catches
+ * a loud day below the threshold. Keep in step with WATCH_IDEAS in dashboard/shared/watchlist.ts.
+ */
+export const WATCH_IDEAS: WatchSymbol[] = [
+  { symbol: "NVDA", label: "NVIDIA (AI)", moveAlertPct: 4 },
+  { symbol: "VST", label: "Vistra (data centre power)", moveAlertPct: 5 },
+  { symbol: "ROK", label: "Rockwell Automation (robotics)", moveAlertPct: 4 },
+  { symbol: "IONQ", label: "IonQ (quantum computing)", moveAlertPct: 7 },
+  { symbol: "ENPH", label: "Enphase Energy (clean energy tech)", moveAlertPct: 5 },
+  { symbol: "CRWD", label: "CrowdStrike (cybersecurity)", moveAlertPct: 4 },
+  { symbol: "MSFT", label: "Microsoft (next-gen cloud)", moveAlertPct: 3 },
+  { symbol: "TSM", label: "TSMC (advanced chips)", moveAlertPct: 4 },
+  { symbol: "SOFI", label: "SoFi (fintech)", moveAlertPct: 5 },
+  { symbol: "OKLO", label: "Oklo (nuclear energy)", moveAlertPct: 7 },
+  { symbol: "AVGO", label: "Broadcom (AI infrastructure)", moveAlertPct: 4 },
+  { symbol: "RKLB", label: "Rocket Lab (space technology)", moveAlertPct: 7 },
+  { symbol: "MU", label: "Micron (high-bandwidth memory)", moveAlertPct: 4 },
+];
+
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium
 export const SMIC_A = "688981.SS";
 export const SMIC_H = "0981.HK";

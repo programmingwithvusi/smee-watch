@@ -1,6 +1,6 @@
 import { premiumPct, premiumSeries } from "./premium";
 import type { PremiumDto, QuoteDto, QuotesResponse } from "./types";
-import { FX_SYMBOL, SMIC_A, SMIC_H, WATCHLIST } from "./watchlist";
+import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_IDEAS, WATCHLIST } from "./watchlist";
 import { parseChart, type ParsedChart } from "./yahoo";
 
 /** Returns the raw Yahoo JSON for a symbol. Injected so the builder is testable offline. */
@@ -9,7 +9,8 @@ export type ChartFetcher = (symbol: string) => Promise<unknown>;
 const reason = (e: unknown): string => (e instanceof Error ? e.message : String(e));
 
 export async function buildQuotesResponse(fetchChart: ChartFetcher, now = Date.now()): Promise<QuotesResponse> {
-  const symbols = [...WATCHLIST.map((w) => w.symbol), FX_SYMBOL];
+  const items = [...WATCHLIST, ...WATCH_IDEAS];
+  const symbols = [...items.map((w) => w.symbol), FX_SYMBOL];
   const settled = await Promise.allSettled(symbols.map(async (s) => parseChart(await fetchChart(s))));
 
   const parsed = new Map<string, ParsedChart>();
@@ -21,7 +22,7 @@ export async function buildQuotesResponse(fetchChart: ChartFetcher, now = Date.n
   });
 
   const quotes: QuoteDto[] = [];
-  for (const w of WATCHLIST) {
+  for (const w of items) {
     const p = parsed.get(w.symbol);
     if (!p) continue;
     quotes.push({

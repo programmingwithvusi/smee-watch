@@ -4,6 +4,7 @@ import { corsHeaders } from "../shared/cors";
 import { premiumPct, premiumSeries } from "../shared/premium";
 import { isQuotesResponse } from "../shared/types";
 import { parseChart } from "../shared/yahoo";
+import { WATCH_IDEAS } from "../shared/watchlist";
 import { SAMPLE, yahooChart } from "./fixtures";
 
 describe("parseChart", () => {
@@ -58,9 +59,13 @@ describe("buildQuotesResponse", () => {
     "CNYHKD=X": yahooChart([1.08, 1.08, 1.08], 1.08, { currency: "HKD" }),
   };
 
-  test("returns four quotes and a premium when everything answers", async () => {
-    const r = await buildQuotesResponse(async (s) => good[s]);
-    expect(r.quotes.map((q) => q.symbol)).toEqual(["ASML", "ASML.AS", "688981.SS", "0981.HK"]);
+  // Every watchlist stock answers with the same small chart
+  const withIdeas = async (s: string) => good[s] ?? yahooChart([10, 11, 12], 12.5);
+
+  test("returns the chip quotes, then the watchlist, and a premium when everything answers", async () => {
+    const r = await buildQuotesResponse(withIdeas);
+    expect(r.quotes.map((q) => q.symbol)).toEqual(["ASML", "ASML.AS", "688981.SS", "0981.HK", ...WATCH_IDEAS.map((w) => w.symbol)]);
+    expect(r.quotes.find((q) => q.symbol === "NVDA")).toMatchObject({ company: "WATCH", exchange: "NASDAQ", price: 12.5 });
     expect(r.premium?.current).toBeCloseTo(((118 * 1.08) / 66 - 1) * 100, 6);
     expect(r.errors).toEqual({});
     expect(isQuotesResponse(r)).toBe(true);
@@ -69,9 +74,9 @@ describe("buildQuotesResponse", () => {
   test("a failed symbol degrades gracefully: other quotes stay, premium goes null, error is named", async () => {
     const r = await buildQuotesResponse(async (s) => {
       if (s === "0981.HK") throw new Error("HTTP 429");
-      return good[s];
+      return withIdeas(s);
     });
-    expect(r.quotes).toHaveLength(3);
+    expect(r.quotes).toHaveLength(3 + WATCH_IDEAS.length);
     expect(r.premium).toBeNull();
     expect(r.errors["0981.HK"]).toContain("HTTP 429");
   });
@@ -81,7 +86,7 @@ describe("buildQuotesResponse", () => {
       throw new Error("down");
     });
     expect(r.quotes).toEqual([]);
-    expect(Object.keys(r.errors)).toHaveLength(5);
+    expect(Object.keys(r.errors)).toHaveLength(5 + WATCH_IDEAS.length);
   });
 });
 

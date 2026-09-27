@@ -6,7 +6,7 @@ import { PremiumPanel } from "../src/components/PremiumPanel";
 import { direction, formatPct, formatPrice } from "../src/lib/format";
 import { EXCHANGES, formatCountdown, formatDuration, marketState } from "../src/lib/sessions";
 import { sparkGeometry } from "../src/lib/spark";
-import { WATCHLIST } from "../shared/watchlist";
+import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import { failureMessage } from "../src/hooks/useQuotes";
 import { SAMPLE } from "./fixtures";
 
@@ -202,5 +202,18 @@ describe("failureMessage", () => {
 
   test("falls back to the status code", () => {
     expect(failureMessage(500, null)).toContain("HTTP 500");
+  });
+});
+
+describe("watchlist tiles", () => {
+  test("show the company, ticker and theme, and leave market status to the section", () => {
+    const item = WATCH_IDEAS[0]!;
+    const quote = { ...SAMPLE.quotes[0]!, symbol: item.symbol, label: item.label, company: "WATCH" as const };
+    const html = renderToStaticMarkup(<ListingRow item={item} quote={quote} now={new Date("2026-09-21T14:00:00Z")} compact />);
+    expect(html).toContain("NVIDIA");
+    expect(html).toContain("NVDA");
+    expect(html).toContain("AI · Nasdaq");
+    expect(html).not.toContain("countdown");
+    expect(html).not.toContain("badge");
   });
 });

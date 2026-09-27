@@ -1,10 +1,12 @@
 import type { PortfolioResponse } from "../shared/portfolio";
-import { WATCHLIST } from "../shared/watchlist";
+import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import type { QuotesResponse } from "../shared/types";
 import { ListingRow } from "./components/ListingRow";
 import { PortfolioPanel } from "./components/PortfolioPanel";
 import { PremiumPanel } from "./components/PremiumPanel";
+import { MarketBadge, MarketCountdown } from "./components/MarketStatus";
 import { formatClock } from "./lib/format";
+import { marketState } from "./lib/sessions";
 
 interface Props {
   data: QuotesResponse | null;
@@ -94,6 +96,22 @@ export function Dashboard({
           <PremiumPanel premium={data?.premium ?? null} />
         </section>
       </main>
+
+      <section className="col col--watch watch" aria-labelledby="watch-title">
+        <h2 id="watch-title" className="col__name">Watchlist</h2>
+        <div className="watch__intro">
+          <p className="col__role">Future trades, in your order of interest. US stocks, Nasdaq and NYSE hours.</p>
+          <div className="watch__market">
+            <MarketBadge state={marketState("NASDAQ", now)} />
+            <MarketCountdown state={marketState("NASDAQ", now)} />
+          </div>
+        </div>
+        <div className="watch__grid">
+          {WATCH_IDEAS.map((w) => (
+            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact />
+          ))}
+        </div>
+      </section>
 
       <PortfolioPanel data={portfolio} error={portfolioError} loading={portfolioLoading} />
     </div>

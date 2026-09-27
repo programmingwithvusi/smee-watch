@@ -11,6 +11,7 @@ const h = (hh: number, mm = 0): number => hh * 60 + mm;
 
 export const EXCHANGES: Record<ExchangeId, Exchange> = {
   NASDAQ: { name: "Nasdaq", tz: "America/New_York", windows: [[h(9, 30), h(16)]] },
+  NYSE: { name: "NYSE", tz: "America/New_York", windows: [[h(9, 30), h(16)]] },
   AMS: { name: "Euronext Amsterdam", tz: "Europe/Amsterdam", windows: [[h(9), h(17, 30)]] },
   SSE: {
     name: "STAR Market, Shanghai",

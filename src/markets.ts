@@ -1,4 +1,4 @@
-import { FX_SYMBOL, SMIC_A, SMIC_H, WATCHLIST } from "./config";
+import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_IDEAS, WATCHLIST } from "./config";
 import { checkVolatility } from "./volatility";
 import { errMsg, log } from "./log";
 import { notify } from "./notify";
@@ -12,10 +12,11 @@ async function main(): Promise<void> {
   const now = Date.now();
   let deliveryFailed = false;
 
-  const settled = await Promise.allSettled(WATCHLIST.map((w) => fetchQuote(w.symbol)));
+  const all = [...WATCHLIST, ...WATCH_IDEAS];
+  const settled = await Promise.allSettled(all.map((w) => fetchQuote(w.symbol)));
   const quotes = new Map<string, Quote>();
   settled.forEach((r, i) => {
-    const w = WATCHLIST[i];
+    const w = all[i];
     if (!w) return;
     if (r.status === "fulfilled") {
       quotes.set(w.symbol, r.value);
@@ -27,10 +28,11 @@ async function main(): Promise<void> {
   });
 
   if (digest) {
-    const lines = WATCHLIST.flatMap((w) => {
+    const line = (w: (typeof all)[number]) => {
       const q = quotes.get(w.symbol);
-      return q ? [`${w.label}: ${q.price.toFixed(2)} ${q.currency} (${fmtPct(q.changePct)})`] : [`${w.label}: unavailable`];
-    });
+      return q ? `${w.label}: ${q.price.toFixed(2)} ${q.currency} (${fmtPct(q.changePct)})` : `${w.label}: unavailable`;
+    };
+    const lines = WATCHLIST.map(line);
     const a = quotes.get(SMIC_A);
     const h = quotes.get(SMIC_H);
     if (a && h) {
@@ -41,6 +43,7 @@ async function main(): Promise<void> {
         log.warn("fx quote failed; skipping premium", { error: errMsg(e) });
       }
     }
+    if (WATCH_IDEAS.length > 0) lines.push("", "👀 Watchlist", ...WATCH_IDEAS.map(line));
     try {
       await notify(["📊 Chip digest", ...lines].join("\n"));
     } catch (e) {
@@ -48,7 +51,7 @@ async function main(): Promise<void> {
       log.error("digest not delivered", { error: errMsg(e) });
     }
   } else {
-    for (const w of WATCHLIST) {
+    for (const w of all) {
       const q = quotes.get(w.symbol);
       if (!q) continue;
 
@@ -88,7 +91,7 @@ async function main(): Promise<void> {
   }
 
   if (!dryRun) await save();
-  log.info("markets run finished", { digest, quotes: quotes.size, failed: WATCHLIST.length - quotes.size });
+  log.info("markets run finished", { digest, quotes: quotes.size, failed: all.length - quotes.size });
   if (deliveryFailed || quotes.size === 0) process.exitCode = 1;
 }
 
