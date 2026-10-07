@@ -1,0 +1,17 @@
+# Stock trade
+
+1 Artificial Intelligence (NVDA)
+2 Data Center Power (VST)
+3 Robotics (ROK)
+4 Qauntum Computer (IONQ)
+5 Clean Energy Technology (ENPH)
+6 CyberySecurity (CRWD)
+7 Next-Gen Cloud (MSFT)
+8 Advance Chips (TSM)
+9 Finech Innovation (SOFI)
+10 Nuclear Energy (OKLO)
+11 Broadcom (AVGO)
+12 Space Technology (RLKB)
+13 Energy for All (CEC)
+14 High-Bandwidth Memory (MU)
+15 ActivEX Ltd (AIV)
