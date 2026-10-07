@@ -59,6 +59,8 @@ export const YAHOO_USD_SYMBOL: Readonly<Record<string, string>> = {
   USDC: "USDC-USD",
   USDT: "USDT-USD",
   JUP: "JUP29210-USD",
+  // Tokenized SpaceX stock (xStock)
+  SPCXx: "SPCXX-USD",
 };
 
 /** Yahoo's USD→ZAR rate */

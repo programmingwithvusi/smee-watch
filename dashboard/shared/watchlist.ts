@@ -46,7 +46,7 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("AVGO", "Broadcom", "AI infrastructure", "NASDAQ"),
   idea("RKLB", "Rocket Lab", "Space technology", "NASDAQ"),
   idea("MU", "Micron", "High-bandwidth memory", "NASDAQ"),
-  idea("AIV.AX", "ActivEX", "Mineral exploration", "ASX"),
+  idea("SPCX", "SpaceX", "Space exploration", "NASDAQ"),
 ];
 
 /** ZAR per 1 USD */

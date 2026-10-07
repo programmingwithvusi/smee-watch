@@ -111,7 +111,7 @@ export function Dashboard({
         </div>
         <div className="watch__grid">
           {WATCH_IDEAS.map((w) => (
-            // US listings share the header's market status; anything else (ActivEX in Sydney) shows its own
+            // US listings share the header's market status; a listing anywhere else shows its own
             <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact={US.has(w.exchange)} />
           ))}
         </div>

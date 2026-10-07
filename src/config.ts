@@ -94,8 +94,7 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "AVGO", label: "Broadcom (AI infrastructure)", moveAlertPct: 4 },
   { symbol: "RKLB", label: "Rocket Lab (space technology)", moveAlertPct: 7 },
   { symbol: "MU", label: "Micron (high-bandwidth memory)", moveAlertPct: 4 },
-  // ASX penny stock (~A$0.025): one A$0.001 tick is already a 4% move, so only big days alert
-  { symbol: "AIV.AX", label: "ActivEX (ASX, mineral exploration)", moveAlertPct: 15 },
+  { symbol: "SPCX", label: "SpaceX (space exploration)", moveAlertPct: 5 },
 ];
 
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium
