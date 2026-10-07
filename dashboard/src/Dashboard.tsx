@@ -1,5 +1,5 @@
 import type { PortfolioResponse } from "../shared/portfolio";
-import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
+import { WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import type { ExchangeId, QuotesResponse } from "../shared/types";
 import { FxStrip } from "./components/FxStrip";
 import { ListingRow } from "./components/ListingRow";
@@ -113,6 +113,24 @@ export function Dashboard({
           {WATCH_IDEAS.map((w) => (
             // US listings share the header's market status; a listing anywhere else shows its own
             <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact={US.has(w.exchange)} usdZar={data?.usdZar?.price ?? null} />
+          ))}
+        </div>
+      </section>
+
+      <section className="col col--etf watch" aria-labelledby="etf-title">
+        <h2 id="etf-title" className="col__name">Rand ETFs</h2>
+        <div className="watch__intro">
+          <p className="col__role">
+            The same themes, bought in rand on the JSE: no dollar conversion, so no EasyFX cost.
+          </p>
+          <div className="watch__market">
+            <MarketBadge state={marketState("JSE", now)} />
+            <MarketCountdown state={marketState("JSE", now)} />
+          </div>
+        </div>
+        <div className="watch__grid">
+          {WATCH_ETFS.map((w) => (
+            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact />
           ))}
         </div>
       </section>

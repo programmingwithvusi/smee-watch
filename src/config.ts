@@ -97,6 +97,21 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "SPCX", label: "SpaceX (space exploration)", moveAlertPct: 5 },
 ];
 
+/**
+ * JSE-listed ETFs, bought in rand: the same themes as WATCH_IDEAS without converting to dollars.
+ * Funds move less than single stocks, so the thresholds are lower. Keep in step with WATCH_ETFS in
+ * dashboard/shared/watchlist.ts.
+ */
+export const WATCH_ETFS: WatchSymbol[] = [
+  { symbol: "STXNDQ.JO", label: "Satrix Nasdaq 100", moveAlertPct: 3 },
+  { symbol: "ETF5IT.JO", label: "1nvest S&P 500 Info Tech", moveAlertPct: 3 },
+  { symbol: "IVYAI.JO", label: "Ivy EasyETFs AI Innovation", moveAlertPct: 4 },
+  { symbol: "EASYAI.JO", label: "EasyETFs AI World", moveAlertPct: 4 },
+  { symbol: "STX500.JO", label: "Satrix S&P 500", moveAlertPct: 3 },
+  { symbol: "STXWDM.JO", label: "Satrix MSCI World", moveAlertPct: 3 },
+  { symbol: "STX40.JO", label: "Satrix 40", moveAlertPct: 3 },
+];
+
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium
 export const SMIC_A = "688981.SS";
 export const SMIC_H = "0981.HK";

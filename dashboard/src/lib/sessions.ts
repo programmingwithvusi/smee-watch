@@ -21,6 +21,7 @@ export const EXCHANGES: Record<ExchangeId, Exchange> = {
       [h(13), h(15)],
     ],
   },
+  JSE: { name: "JSE", tz: "Africa/Johannesburg", windows: [[h(9), h(17)]] },
   ASX: { name: "ASX, Sydney", tz: "Australia/Sydney", windows: [[h(10), h(16)]] },
   HKEX: {
     name: "Hong Kong Exchange",

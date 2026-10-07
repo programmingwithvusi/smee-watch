@@ -49,6 +49,30 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("SPCX", "SpaceX", "Space exploration", "NASDAQ"),
 ];
 
+/**
+ * JSE-listed ETFs, bought in rand from a ZAR account: the same themes as WATCH_IDEAS with no EasyFX
+ * conversion. The first four overlap the watchlist's AI and tech names; the last three are the most
+ * bought ETFs on EasyEquities. Keep in step with WATCH_ETFS in src/config.ts.
+ */
+const etf = (symbol: string, name: string, theme: string): WatchItem => ({
+  symbol,
+  label: name,
+  company: "ETF",
+  exchange: "JSE",
+  name,
+  theme,
+});
+
+export const WATCH_ETFS: readonly WatchItem[] = [
+  etf("STXNDQ.JO", "Satrix Nasdaq 100", "100 largest Nasdaq companies"),
+  etf("ETF5IT.JO", "1nvest S&P 500 Info Tech", "US technology sector"),
+  etf("IVYAI.JO", "Ivy EasyETFs AI Innovation", "AI, actively managed"),
+  etf("EASYAI.JO", "EasyETFs AI World", "AI, actively managed"),
+  etf("STX500.JO", "Satrix S&P 500", "500 largest US companies"),
+  etf("STXWDM.JO", "Satrix MSCI World", "Developed-market shares"),
+  etf("STX40.JO", "Satrix 40", "40 largest JSE companies"),
+];
+
 /** ZAR per 1 USD */
 export const USD_ZAR = "ZAR=X";
 

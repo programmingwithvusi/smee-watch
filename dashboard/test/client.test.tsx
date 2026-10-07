@@ -8,7 +8,7 @@ import { direction, formatPct, formatPrice } from "../src/lib/format";
 import { EXCHANGES, formatCountdown, formatDuration, marketState } from "../src/lib/sessions";
 import { sparkGeometry } from "../src/lib/spark";
 import { easyFxRate, randCostPerShare } from "../shared/easyequities";
-import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
+import { WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import { failureMessage } from "../src/hooks/useQuotes";
 import { SAMPLE } from "./fixtures";
 
@@ -268,5 +268,23 @@ describe("EasyEquities costs", () => {
     const noRate = renderToStaticMarkup(<ListingRow item={WATCHLIST[0]!} quote={SAMPLE.quotes[0]} now={new Date()} />);
     expect(eur).not.toContain("a share");
     expect(noRate).not.toContain("a share");
+  });
+});
+
+describe("rand ETF tiles", () => {
+  test("show the fund, its JSE code without Yahoo's suffix, and no dollar-conversion estimate", () => {
+    const item = WATCH_ETFS[0]!;
+    const quote = { ...SAMPLE.quotes[0]!, symbol: item.symbol, label: item.label, company: "ETF" as const, exchange: "JSE" as const, currency: "ZAR", price: 296.46 };
+    const html = renderToStaticMarkup(<ListingRow item={item} quote={quote} now={new Date("2026-09-21T10:00:00Z")} compact usdZar={16.65} />);
+    expect(html).toContain("Satrix Nasdaq 100");
+    expect(html).toContain(">STXNDQ<");
+    expect(html).not.toContain(".JO");
+    expect(html).toContain("296.46");
+    expect(html).not.toContain("a share");
+  });
+
+  test("the JSE keeps Johannesburg hours, 09:00 to 17:00", () => {
+    expect(marketState("JSE", new Date("2026-09-21T08:00:00Z"))).toEqual({ open: true, secondsToChange: 7 * 3600 });
+    expect(marketState("JSE", new Date("2026-09-21T15:00:00Z")).open).toBe(false);
   });
 });

@@ -1,4 +1,4 @@
-import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_IDEAS, WATCHLIST } from "./config";
+import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "./config";
 import { checkVolatility } from "./volatility";
 import { errMsg, log } from "./log";
 import { notify } from "./notify";
@@ -12,7 +12,7 @@ async function main(): Promise<void> {
   const now = Date.now();
   let deliveryFailed = false;
 
-  const all = [...WATCHLIST, ...WATCH_IDEAS];
+  const all = [...WATCHLIST, ...WATCH_IDEAS, ...WATCH_ETFS];
   const settled = await Promise.allSettled(all.map((w) => fetchQuote(w.symbol)));
   const quotes = new Map<string, Quote>();
   settled.forEach((r, i) => {
@@ -44,6 +44,7 @@ async function main(): Promise<void> {
       }
     }
     if (WATCH_IDEAS.length > 0) lines.push("", "👀 Watchlist", ...WATCH_IDEAS.map(line));
+    if (WATCH_ETFS.length > 0) lines.push("", "🇿🇦 Rand ETFs", ...WATCH_ETFS.map(line));
     try {
       await notify(["📊 Chip digest", ...lines].join("\n"));
     } catch (e) {

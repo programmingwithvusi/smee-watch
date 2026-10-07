@@ -26,13 +26,15 @@ export function ListingRow({ item, quote, now, compact = false, usdZar = null }:
   const cls = `listing listing--${item.company.toLowerCase()}`;
   const state = marketState(item.exchange, now);
   const title = item.name ?? ex.name;
+  // The JSE code as EasyEquities shows it, without Yahoo's ".JO" suffix
+  const ticker = item.exchange === "JSE" ? item.symbol.replace(/\.JO$/, "") : item.symbol;
   const theme = item.theme && <p className="listing__theme">{item.theme} · {ex.name}</p>;
 
   if (!quote) {
     return (
       <article className={`${cls} listing--missing`} aria-label={item.label}>
         <h3 className="listing__name">
-          {title} {item.name && <span className="listing__ticker">{item.symbol}</span>}
+          {title} {item.name && <span className="listing__ticker">{ticker}</span>}
         </h3>
         {theme}
         <p className="listing__missing">Price unavailable right now. It will retry on the next refresh.</p>
@@ -51,7 +53,7 @@ export function ListingRow({ item, quote, now, compact = false, usdZar = null }:
       <header className="listing__head">
         <div>
           <h3 className="listing__name">
-            {title} <span className="listing__ticker">{quote.symbol}</span>
+            {title} <span className="listing__ticker">{ticker}</span>
           </h3>
           {theme}
         </div>

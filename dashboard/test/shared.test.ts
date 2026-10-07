@@ -4,7 +4,7 @@ import { corsHeaders } from "../shared/cors";
 import { premiumPct, premiumSeries } from "../shared/premium";
 import { isQuotesResponse } from "../shared/types";
 import { parseChart } from "../shared/yahoo";
-import { WATCH_IDEAS } from "../shared/watchlist";
+import { WATCH_ETFS, WATCH_IDEAS } from "../shared/watchlist";
 import { SAMPLE, yahooChart } from "./fixtures";
 
 describe("parseChart", () => {
@@ -65,7 +65,7 @@ describe("buildQuotesResponse", () => {
 
   test("returns the chip quotes, then the watchlist, and a premium when everything answers", async () => {
     const r = await buildQuotesResponse(withIdeas);
-    expect(r.quotes.map((q) => q.symbol)).toEqual(["ASML", "ASML.AS", "688981.SS", "0981.HK", ...WATCH_IDEAS.map((w) => w.symbol)]);
+    expect(r.quotes.map((q) => q.symbol)).toEqual(["ASML", "ASML.AS", "688981.SS", "0981.HK", ...WATCH_IDEAS.map((w) => w.symbol), ...WATCH_ETFS.map((w) => w.symbol)]);
     // Rand per dollar: 17.5 now against yesterday's 17.2 close
     expect(r.usdZar).toMatchObject({ price: 17.5, prevClose: 17.2 });
     expect(r.usdZar?.changePct).toBeCloseTo(((17.5 - 17.2) / 17.2) * 100, 6);
@@ -75,12 +75,24 @@ describe("buildQuotesResponse", () => {
     expect(isQuotesResponse(r)).toBe(true);
   });
 
+  test("a JSE ETF quoted in cents comes back in rand", async () => {
+    const r = await buildQuotesResponse(async (s) =>
+      s === "STXNDQ.JO" ? yahooChart([29000, 29500, 29600], 29646, { currency: "ZAc" }) : withIdeas(s),
+    );
+    const q = r.quotes.find((x) => x.symbol === "STXNDQ.JO");
+    expect(q).toMatchObject({ company: "ETF", exchange: "JSE", currency: "ZAR" });
+    expect(q?.price).toBeCloseTo(296.46, 6);
+    expect(q?.series.at(-1)?.c).toBeCloseTo(296, 6);
+    expect(q?.changePct).toBeCloseTo(((29646 - 29500) / 29500) * 100, 6);
+    expect(isQuotesResponse(r)).toBe(true);
+  });
+
   test("a failed symbol degrades gracefully: other quotes stay, premium goes null, error is named", async () => {
     const r = await buildQuotesResponse(async (s) => {
       if (s === "0981.HK") throw new Error("HTTP 429");
       return withIdeas(s);
     });
-    expect(r.quotes).toHaveLength(3 + WATCH_IDEAS.length);
+    expect(r.quotes).toHaveLength(3 + WATCH_IDEAS.length + WATCH_ETFS.length);
     expect(r.premium).toBeNull();
     expect(r.errors["0981.HK"]).toContain("HTTP 429");
   });
@@ -95,7 +107,7 @@ describe("buildQuotesResponse", () => {
       return withIdeas(s);
     });
     expect(r.errors).toEqual({});
-    expect(r.quotes).toHaveLength(4 + WATCH_IDEAS.length);
+    expect(r.quotes).toHaveLength(4 + WATCH_IDEAS.length + WATCH_ETFS.length);
     expect(r.usdZar?.price).toBe(17.5);
   });
 
@@ -105,7 +117,7 @@ describe("buildQuotesResponse", () => {
     });
     expect(r.quotes).toEqual([]);
     expect(r.usdZar).toBeNull();
-    expect(Object.keys(r.errors)).toHaveLength(6 + WATCH_IDEAS.length);
+    expect(Object.keys(r.errors)).toHaveLength(6 + WATCH_IDEAS.length + WATCH_ETFS.length);
   });
 });
 

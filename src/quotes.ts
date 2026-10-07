@@ -39,14 +39,17 @@ export function parseChart(symbol: string, json: unknown): Quote {
   if (price === undefined || prevClose === undefined || prevClose === 0 || ts === undefined) {
     throw new Error("incomplete quote data");
   }
+  // The JSE quotes in cents ("ZAc"): report rand, so R296.46 doesn't read as 29646
+  const cents = result.meta?.currency === "ZAc";
+  const unit = cents ? 0.01 : 1;
   return {
     symbol,
-    price,
-    prevClose,
+    price: price * unit,
+    prevClose: prevClose * unit,
     changePct: ((price - prevClose) / prevClose) * 100,
-    currency: result.meta?.currency ?? "",
+    currency: cents ? "ZAR" : (result.meta?.currency ?? ""),
     day: new Date(ts * 1000).toISOString().slice(0, 10),
-    closeHistory: closes,
+    closeHistory: closes.map((c) => c * unit),
   };
 }
 

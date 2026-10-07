@@ -58,3 +58,16 @@ describe("penny-stock formatting", () => {
     expect(fmtPct(-0.0000015)).toBe("0.00%");
   });
 });
+
+describe("JSE prices", () => {
+  test("cents are reported as rand, and the percentage change is unaffected", () => {
+    const q = parseChart("STXNDQ.JO", {
+      chart: { result: [{ meta: { regularMarketPrice: 29646, regularMarketTime: 1_790_000_000, currency: "ZAc" }, indicators: { quote: [{ close: [29000, 29500, 29646] }] } }] },
+    });
+    expect(q.currency).toBe("ZAR");
+    expect(q.price).toBeCloseTo(296.46, 6);
+    expect(q.prevClose).toBeCloseTo(295, 6);
+    expect(q.changePct).toBeCloseTo(((29646 - 29500) / 29500) * 100, 6);
+    expect(q.closeHistory[0]).toBeCloseTo(290, 6);
+  });
+});

@@ -45,13 +45,16 @@ export function parseChart(json: unknown): ParsedChart {
   if (!finite(price) || !finite(prevClose) || prevClose === 0 || !finite(lastTradeAt) || series.length < 2) {
     throw new Error("incomplete quote data");
   }
+  // The JSE quotes in cents ("ZAc"): report rand, so R296.46 doesn't read as 29646
+  const cents = result.meta?.currency === "ZAc";
+  const unit = cents ? 0.01 : 1;
   return {
-    price,
-    prevClose,
+    price: price * unit,
+    prevClose: prevClose * unit,
     changePct: ((price - prevClose) / prevClose) * 100,
-    currency: result.meta?.currency ?? "",
+    currency: cents ? "ZAR" : (result.meta?.currency ?? ""),
     lastTradeAt,
-    series,
+    series: cents ? series.map((p) => ({ t: p.t, c: p.c * unit })) : series,
   };
 }
 
