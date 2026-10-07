@@ -11,7 +11,10 @@ const reason = (e: unknown): string => (e instanceof Error ? e.message : String(
 export async function buildQuotesResponse(fetchChart: ChartFetcher, now = Date.now()): Promise<QuotesResponse> {
   const items = [...WATCHLIST, ...WATCH_IDEAS];
   const symbols = [...items.map((w) => w.symbol), FX_SYMBOL, USD_ZAR];
-  const settled = await Promise.allSettled(symbols.map(async (s) => parseChart(await fetchChart(s))));
+  const load = async (s: string) => parseChart(await fetchChart(s));
+  // One retry per symbol: Yahoo drops the odd request under a burst, and a missing exchange rate or
+  // quote otherwise leaves a hole on the page until the next refresh.
+  const settled = await Promise.allSettled(symbols.map((s) => load(s).catch(() => load(s))));
 
   const parsed = new Map<string, ParsedChart>();
   const errors: Record<string, string> = {};

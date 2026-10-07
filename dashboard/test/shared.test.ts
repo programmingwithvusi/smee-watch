@@ -85,6 +85,20 @@ describe("buildQuotesResponse", () => {
     expect(r.errors["0981.HK"]).toContain("HTTP 429");
   });
 
+  test("a symbol that fails once is retried, so a blip leaves no hole", async () => {
+    const seen = new Set<string>();
+    const r = await buildQuotesResponse(async (s) => {
+      if (!seen.has(s)) {
+        seen.add(s);
+        throw new Error("HTTP 429");
+      }
+      return withIdeas(s);
+    });
+    expect(r.errors).toEqual({});
+    expect(r.quotes).toHaveLength(4 + WATCH_IDEAS.length);
+    expect(r.usdZar?.price).toBe(17.5);
+  });
+
   test("everything failing yields no quotes", async () => {
     const r = await buildQuotesResponse(async () => {
       throw new Error("down");
