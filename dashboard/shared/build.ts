@@ -1,6 +1,6 @@
 import { premiumPct, premiumSeries } from "./premium";
 import type { PremiumDto, QuoteDto, QuotesResponse } from "./types";
-import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_IDEAS, WATCHLIST } from "./watchlist";
+import { FX_SYMBOL, SMIC_A, SMIC_H, USD_ZAR, WATCH_IDEAS, WATCHLIST } from "./watchlist";
 import { parseChart, type ParsedChart } from "./yahoo";
 
 /** Returns the raw Yahoo JSON for a symbol. Injected so the builder is testable offline. */
@@ -10,7 +10,7 @@ const reason = (e: unknown): string => (e instanceof Error ? e.message : String(
 
 export async function buildQuotesResponse(fetchChart: ChartFetcher, now = Date.now()): Promise<QuotesResponse> {
   const items = [...WATCHLIST, ...WATCH_IDEAS];
-  const symbols = [...items.map((w) => w.symbol), FX_SYMBOL];
+  const symbols = [...items.map((w) => w.symbol), FX_SYMBOL, USD_ZAR];
   const settled = await Promise.allSettled(symbols.map(async (s) => parseChart(await fetchChart(s))));
 
   const parsed = new Map<string, ParsedChart>();
@@ -51,5 +51,10 @@ export async function buildQuotesResponse(fetchChart: ChartFetcher, now = Date.n
     };
   }
 
-  return { generatedAt: Math.floor(now / 1000), quotes, premium, errors };
+  const zar = parsed.get(USD_ZAR);
+  const usdZar = zar
+    ? { price: zar.price, prevClose: zar.prevClose, changePct: zar.changePct, lastTradeAt: zar.lastTradeAt, series: zar.series }
+    : null;
+
+  return { generatedAt: Math.floor(now / 1000), quotes, premium, usdZar, errors };
 }

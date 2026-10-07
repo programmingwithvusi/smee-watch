@@ -33,10 +33,22 @@ export interface PremiumDto {
   series: SeriesPoint[];
 }
 
+/** A currency pair: how many units of the quote currency one unit of the base buys. */
+export interface FxDto {
+  price: number;
+  prevClose: number;
+  changePct: number;
+  /** epoch seconds of the latest rate Yahoo reports */
+  lastTradeAt: number;
+  series: SeriesPoint[];
+}
+
 export interface QuotesResponse {
   generatedAt: number;
   quotes: QuoteDto[];
   premium: PremiumDto | null;
+  /** Rand per US dollar; null or absent when the rate couldn't be fetched */
+  usdZar?: FxDto | null;
   /** symbol -> reason, for anything that failed */
   errors: Record<string, string>;
 }
@@ -69,6 +81,12 @@ export function isQuotesResponse(v: unknown): v is QuotesResponse {
   if (!isObj(v)) return false;
   if (!isNum(v.generatedAt) || !Array.isArray(v.quotes) || !v.quotes.every(isQuote)) return false;
   if (!isObj(v.errors)) return false;
+  if (v.usdZar !== undefined && v.usdZar !== null) {
+    const f = v.usdZar;
+    if (!isObj(f) || !isNum(f.price) || !isNum(f.prevClose) || !isNum(f.changePct) || !isNum(f.lastTradeAt) || !isSeries(f.series)) {
+      return false;
+    }
+  }
   if (v.premium !== null) {
     if (!isObj(v.premium) || !isNum(v.premium.current) || !isNum(v.premium.asOf) || !isSeries(v.premium.series)) {
       return false;

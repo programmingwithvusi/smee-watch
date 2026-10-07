@@ -49,6 +49,9 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("AIV.AX", "ActivEX", "Mineral exploration", "ASX"),
 ];
 
+/** ZAR per 1 USD */
+export const USD_ZAR = "ZAR=X";
+
 /** HKD per 1 CNY */
 export const FX_SYMBOL = "CNYHKD=X";
 export const SMIC_A = "688981.SS";

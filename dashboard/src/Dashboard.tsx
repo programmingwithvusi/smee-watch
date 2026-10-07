@@ -1,6 +1,7 @@
 import type { PortfolioResponse } from "../shared/portfolio";
 import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import type { ExchangeId, QuotesResponse } from "../shared/types";
+import { FxStrip } from "./components/FxStrip";
 import { ListingRow } from "./components/ListingRow";
 import { PortfolioPanel } from "./components/PortfolioPanel";
 import { PremiumPanel } from "./components/PremiumPanel";
@@ -99,6 +100,7 @@ export function Dashboard({
       </main>
 
       <section className="col col--watch watch" aria-labelledby="watch-title">
+        <FxStrip fx={data?.usdZar ?? null} now={now} />
         <h2 id="watch-title" className="col__name">Watchlist</h2>
         <div className="watch__intro">
           <p className="col__role">Future trades, in your order of interest. Market times below are for Nasdaq and NYSE.</p>

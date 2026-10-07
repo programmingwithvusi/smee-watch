@@ -57,6 +57,7 @@ describe("buildQuotesResponse", () => {
     "688981.SS": yahooChart([100, 105, 110], 118, { currency: "CNY" }),
     "0981.HK": yahooChart([60, 62, 64], 66, { currency: "HKD" }),
     "CNYHKD=X": yahooChart([1.08, 1.08, 1.08], 1.08, { currency: "HKD" }),
+    "ZAR=X": yahooChart([17, 17.2, 17.4], 17.5, { currency: "ZAR" }),
   };
 
   // Every watchlist stock answers with the same small chart
@@ -65,6 +66,9 @@ describe("buildQuotesResponse", () => {
   test("returns the chip quotes, then the watchlist, and a premium when everything answers", async () => {
     const r = await buildQuotesResponse(withIdeas);
     expect(r.quotes.map((q) => q.symbol)).toEqual(["ASML", "ASML.AS", "688981.SS", "0981.HK", ...WATCH_IDEAS.map((w) => w.symbol)]);
+    // Rand per dollar: 17.5 now against yesterday's 17.2 close
+    expect(r.usdZar).toMatchObject({ price: 17.5, prevClose: 17.2 });
+    expect(r.usdZar?.changePct).toBeCloseTo(((17.5 - 17.2) / 17.2) * 100, 6);
     expect(r.quotes.find((q) => q.symbol === "NVDA")).toMatchObject({ company: "WATCH", exchange: "NASDAQ", price: 12.5 });
     expect(r.premium?.current).toBeCloseTo(((118 * 1.08) / 66 - 1) * 100, 6);
     expect(r.errors).toEqual({});
@@ -86,7 +90,8 @@ describe("buildQuotesResponse", () => {
       throw new Error("down");
     });
     expect(r.quotes).toEqual([]);
-    expect(Object.keys(r.errors)).toHaveLength(5 + WATCH_IDEAS.length);
+    expect(r.usdZar).toBeNull();
+    expect(Object.keys(r.errors)).toHaveLength(6 + WATCH_IDEAS.length);
   });
 });
 

@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, test } from "vitest";
+import { FxStrip } from "../src/components/FxStrip";
 import { ListingRow } from "../src/components/ListingRow";
 import { OverlayTarget, overlayShift } from "../src/components/OverlayTarget";
 import { PremiumPanel } from "../src/components/PremiumPanel";
@@ -221,5 +222,21 @@ describe("watchlist tiles", () => {
     expect(html).toContain("Artificial intelligence · Nasdaq");
     expect(html).not.toContain("countdown");
     expect(html).not.toContain("badge");
+  });
+});
+
+describe("exchange rate strip", () => {
+  const fx = { price: 16.6526, prevClose: 16.64, changePct: 0.07, lastTradeAt: 1_758_290_000, series: [{ t: 1, c: 16.5 }, { t: 2, c: 16.6526 }] };
+
+  test("shows the rand price of a dollar, what the move means, and handy conversions", () => {
+    const html = renderToStaticMarkup(<FxStrip fx={fx} now={new Date("2026-09-21T14:00:00Z")} />);
+    expect(html).toContain("R16.65");
+    expect(html).toContain("rand weaker");
+    expect(html).toContain("$100 = R1,665.26");
+    expect(html).toContain("R1,000 = $60.05");
+  });
+
+  test("a missing rate renders a placeholder instead of crashing", () => {
+    expect(renderToStaticMarkup(<FxStrip fx={null} now={new Date()} />)).toContain("exchange rate is unavailable");
   });
 });
