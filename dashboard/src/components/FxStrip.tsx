@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { EASYFX_COST_PCT, easyFxRate } from "../../shared/easyequities";
 import type { FxDto } from "../../shared/types";
 import { direction, formatLastTrade, formatPct } from "../lib/format";
 import { Sparkline } from "./Sparkline";
@@ -35,6 +36,13 @@ export const FxStrip = memo(function FxStrip({ fx, now }: { fx: FxDto | null; no
       <div className="listing__trend">
         <Sparkline values={fx.series.map((p) => p.c)} label="Rand per US dollar, daily, over the last month" />
       </div>
+      <p className="fx__yours">
+        <strong>R{easyFxRate(fx.price).toFixed(2)}</strong> on EasyEquities
+        <span className="listing__change-label">
+          {" "}
+          · about {EASYFX_COST_PCT.toFixed(1)}% above the market rate, after EasyFX&rsquo;s rate margin and fee
+        </span>
+      </p>
       <footer className="listing__foot">
         <p className="listing__meta">
           $1 = R{fx.price.toFixed(4)} · $100 = R{money.format(fx.price * 100)} · R1,000 = ${money.format(1000 / fx.price)}

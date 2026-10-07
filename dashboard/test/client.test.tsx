@@ -7,6 +7,7 @@ import { PremiumPanel } from "../src/components/PremiumPanel";
 import { direction, formatPct, formatPrice } from "../src/lib/format";
 import { EXCHANGES, formatCountdown, formatDuration, marketState } from "../src/lib/sessions";
 import { sparkGeometry } from "../src/lib/spark";
+import { easyFxRate, randCostPerShare } from "../shared/easyequities";
 import { WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import { failureMessage } from "../src/hooks/useQuotes";
 import { SAMPLE } from "./fixtures";
@@ -236,7 +237,36 @@ describe("exchange rate strip", () => {
     expect(html).toContain("R1,000 = $60.05");
   });
 
+  test("also shows the dearer rate you'd get through EasyFX", () => {
+    const html = renderToStaticMarkup(<FxStrip fx={fx} now={new Date("2026-09-21T14:00:00Z")} />);
+    // 16.6526 x 1.007 (rate margin) x 1.00575 (0.5% fee + VAT)
+    expect(html).toContain("R16.87");
+    expect(html).toContain("about 1.3% above the market rate");
+  });
+
   test("a missing rate renders a placeholder instead of crashing", () => {
     expect(renderToStaticMarkup(<FxStrip fx={null} now={new Date()} />)).toContain("exchange rate is unavailable");
+  });
+});
+
+describe("EasyEquities costs", () => {
+  test("EasyFX adds the rate margin, then the fee with VAT", () => {
+    expect(easyFxRate(10)).toBeCloseTo(10 * 1.007 * 1.00575, 9);
+  });
+
+  test("a USD watchlist tile shows one share in rand, conversion and brokerage included", () => {
+    const item = WATCH_IDEAS[0]!;
+    const quote = { ...SAMPLE.quotes[0]!, symbol: item.symbol, label: item.label, company: "WATCH" as const, price: 100 };
+    const html = renderToStaticMarkup(<ListingRow item={item} quote={quote} now={new Date("2026-09-21T14:00:00Z")} compact usdZar={10} />);
+    // $100 x R10 x 1.007 x 1.00575 x 1.0025 brokerage = R1,015.32
+    expect(randCostPerShare(100, 10)).toBeCloseTo(1015.32, 2);
+    expect(html).toContain("≈ R1,015 a share");
+  });
+
+  test("no rand price without a rate, or for a share that isn't priced in dollars", () => {
+    const eur = renderToStaticMarkup(<ListingRow item={WATCHLIST[1]!} quote={SAMPLE.quotes[1]} now={new Date()} usdZar={10} />);
+    const noRate = renderToStaticMarkup(<ListingRow item={WATCHLIST[0]!} quote={SAMPLE.quotes[0]} now={new Date()} />);
+    expect(eur).not.toContain("a share");
+    expect(noRate).not.toContain("a share");
   });
 });

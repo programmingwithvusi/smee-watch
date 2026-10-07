@@ -546,6 +546,24 @@ h1, h2, h3, p, dl, dd, dt {
   font-size: clamp(34px, 4.4vw, 48px);
 }
 
+/* What you'd really pay per dollar: its own full-width row under the market rate */
+.fx__yours {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.fx__yours strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.listing__rand {
+  margin-inline-start: auto;
+  font-variant-numeric: tabular-nums;
+}
+
 .fx .listing__change {
   margin-top: 0;
 }

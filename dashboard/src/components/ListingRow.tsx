@@ -1,3 +1,4 @@
+import { randCostPerShare } from "../../shared/easyequities";
 import type { QuoteDto } from "../../shared/types";
 import type { WatchItem } from "../../shared/watchlist";
 import { direction, formatLastTrade, formatPct, formatPrice } from "../lib/format";
@@ -11,12 +12,16 @@ interface Props {
   now: Date;
   /** Leave out the open/closed badge and countdown, for a section that shows them once for all its rows */
   compact?: boolean;
+  /** Mid-market rand per US dollar. When given, a USD listing also shows what one share costs in rand on EasyEquities */
+  usdZar?: number | null;
 }
 
+/** Whole rand: this is an estimate, so cents would be false precision */
+const rand = new Intl.NumberFormat("en", { maximumFractionDigits: 0 });
 const WORD = { up: "up", down: "down", flat: "unchanged" } as const;
 const GLYPH = { up: "\u25B2", down: "\u25BC", flat: "\u25AC" } as const;
 
-export function ListingRow({ item, quote, now, compact = false }: Props) {
+export function ListingRow({ item, quote, now, compact = false, usdZar = null }: Props) {
   const ex = EXCHANGES[item.exchange];
   const cls = `listing listing--${item.company.toLowerCase()}`;
   const state = marketState(item.exchange, now);
@@ -64,6 +69,11 @@ export function ListingRow({ item, quote, now, compact = false }: Props) {
       </div>
       <footer className="listing__foot">
         <p className="listing__meta">Last trade {formatLastTrade(quote.lastTradeAt, now)}</p>
+        {usdZar !== null && quote.currency === "USD" && (
+          <p className="listing__meta listing__rand" title="One share in rand on EasyEquities: EasyFX conversion plus brokerage">
+            ≈ R{rand.format(randCostPerShare(quote.price, usdZar))} a share
+          </p>
+        )}
         {!compact && <MarketCountdown state={state} />}
       </footer>
     </article>

@@ -112,7 +112,7 @@ export function Dashboard({
         <div className="watch__grid">
           {WATCH_IDEAS.map((w) => (
             // US listings share the header's market status; a listing anywhere else shows its own
-            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact={US.has(w.exchange)} />
+            <ListingRow key={w.symbol} item={w} quote={quoteFor(w.symbol)} now={now} compact={US.has(w.exchange)} usdZar={data?.usdZar?.price ?? null} />
           ))}
         </div>
       </section>
