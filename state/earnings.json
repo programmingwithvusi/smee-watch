@@ -1,6 +1,8 @@
 {
   "seen": {},
-  "alerted": {},
+  "alerted": {
+    "asml-q3-2026:7": 1791377525823
+  },
   "failures": {},
   "seeded": {}
 }
