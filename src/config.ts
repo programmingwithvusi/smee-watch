@@ -95,6 +95,8 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "RKLB", label: "Rocket Lab (space technology)", moveAlertPct: 7 },
   { symbol: "MU", label: "Micron (high-bandwidth memory)", moveAlertPct: 4 },
   { symbol: "SPCX", label: "SpaceX (space exploration)", moveAlertPct: 5 },
+  // Mariana Oncology has no listing of its own: Novartis owns it. A large pharma, so 3% is a big day
+  { symbol: "NVS", label: "Novartis (cancer therapy, owns Mariana Oncology)", moveAlertPct: 3 },
 ];
 
 /**

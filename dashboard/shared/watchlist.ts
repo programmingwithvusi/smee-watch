@@ -47,6 +47,8 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("RKLB", "Rocket Lab", "Space technology", "NASDAQ"),
   idea("MU", "Micron", "High-bandwidth memory", "NASDAQ"),
   idea("SPCX", "SpaceX", "Space exploration", "NASDAQ"),
+  // Mariana Oncology (radioligand cancer therapy) has no listing of its own: Novartis owns it
+  idea("NVS", "Novartis", "Cancer therapy, owns Mariana Oncology", "NYSE"),
 ];
 
 /**
