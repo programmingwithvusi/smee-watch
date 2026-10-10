@@ -10,6 +10,8 @@ const TRADES = {
 };
 const LUNO_SNAP = { asOf: "2026-02-01T00:00:00.000Z", balances: [{ asset: "XBT", balance: 0.1, reserved: 0 }] };
 const COSTED_SNAP = { asOf: "2026-02-01T00:00:00.000Z", balances: [{ asset: "XBT", balance: 0.1, reserved: 0, avgCostZar: 500_000 }] };
+// ASML also appears in TRADES (1 share at $900): the file's figures must win
+const EE_FILE = { asOf: "2026-08-31", holdings: [{ symbol: "ASML", name: "ASML Holding", quantity: 0.5, cost: 400, currency: "USD" }] };
 const JUP_SNAP = { asOf: "2026-02-01T00:00:00.000Z", balances: [{ asset: "JUP", balance: 10, reserved: 0 }] };
 const TICKERS = { tickers: [{ pair: "XBTZAR", last_trade: "1000000" }] };
 const QUOTES = {
@@ -36,7 +38,7 @@ const chart = (closes: number[], price: number, start = 1_767_225_600) => ({
 const BTC_USD = chart([50_000, 54_000], 55_000);
 const USD_ZAR = chart([20, 20], 20, 1_767_225_600 - 3600);
 
-type Mode = "ok" | "missing-files" | "luno-down" | "no-yahoo" | "jup" | "costed";
+type Mode = "ok" | "missing-files" | "luno-down" | "no-yahoo" | "jup" | "costed" | "ee-file";
 
 function stub(mode: Mode): void {
   vi.stubGlobal(
@@ -45,6 +47,9 @@ function stub(mode: Mode): void {
       const url = String(input);
       if (url.includes("/portfolio/trades.json")) {
         return mode === "missing-files" ? new Response("nf", { status: 404 }) : new Response(JSON.stringify(TRADES));
+      }
+      if (url.includes("/portfolio/easyequities-holdings.json")) {
+        return mode === "ee-file" ? new Response(JSON.stringify(EE_FILE)) : new Response("nf", { status: 404 });
       }
       if (url.includes("/portfolio/luno-balance.json")) {
         if (mode === "missing-files") return new Response("nf", { status: 404 });
@@ -150,6 +155,24 @@ describe("GET /api/portfolio", () => {
     stub("costed");
     const body = (await (await portfolio(req())).json()) as import("../shared/portfolio").PortfolioResponse;
     expect(body.luno.holdings).toEqual([expect.objectContaining({ symbol: "XBT", avgCost: 500_000 })]);
+  });
+
+  test("EasyEquities positions come from the holdings file, which wins over trades for the same share", async () => {
+    stub("ee-file");
+    const body: unknown = await (await portfolio(req())).json();
+    expect(isPortfolioResponse(body)).toBe(true);
+    const p = body as import("../shared/portfolio").PortfolioResponse;
+    expect(p.easyequities.asOf).toBe("2026-08-31");
+    // Half a share that cost $400, live at $1000: worth $500
+    expect(p.easyequities.holdings).toEqual([
+      { symbol: "ASML", name: "ASML Holding", source: "easyequities", quantity: 0.5, avgCost: 800, costCurrency: "USD", livePrice: 1000, liveCurrency: "USD", liveValue: 500, changePct: 1, series: [] },
+    ]);
+  });
+
+  test("without a holdings file, there is no statement date", async () => {
+    stub("ok");
+    const p = (await (await portfolio(req())).json()) as import("../shared/portfolio").PortfolioResponse;
+    expect(p.easyequities.asOf).toBeNull();
   });
 
   test("answers preflight with 204 and rejects other methods with 405", async () => {

@@ -54,6 +54,19 @@ This fetches your balances, values them in ZAR using Luno's public ticker, and w
 
 EasyEquities has **no official API** — I checked, including the unofficial third-party scrapers people have built, and those recently broke when EasyEquities moved its login to OIDC + MFA. Building against an unofficial, undocumented login flow isn't something I'll do without your go-ahead, and per your choice this uses a CSV export instead, which needs no credentials at all.
 
+**The simple route: a holdings file you keep by hand.** `public/portfolio/easyequities-holdings.json` lists what you hold, read off a monthly statement (website: ≡ → Statements → Monthly Statements) or the app's holdings screen:
+
+```json
+{
+  "asOf": "2026-08-31",
+  "holdings": [{ "symbol": "SPCX", "name": "SpaceX", "quantity": 0.6555, "cost": 90.58, "currency": "USD" }]
+}
+```
+
+`symbol` is the Yahoo Finance ticker, `quantity` and `cost` are the statement's closing **Qty** and **Cost** (cost includes trading costs). That is all it stores — no account number, trade dates or individual trades, because the file is public. Update it when you buy or sell, then commit and push. A holding shows a live price, daily change and gain on cost when its symbol is on the watchlist (`shared/watchlist.ts`), so add it there too.
+
+**The CSV route**, if EasyEquities gives you a transaction export (website: ≡ → Transaction History → Download). A share listed in the holdings file takes its figures from there instead.
+
 1. In EasyEquities, export your trade/transaction history as a CSV (Transactions or Trade History → Export/Download).
 2. `npm run import:easyequities -- path/to/your-export.csv --dry-run` to preview what it found without writing anything.
 3. Drop `--dry-run` to actually merge it into `public/portfolio/trades.json`, then `git add`/`commit`/`push`.
@@ -64,8 +77,8 @@ Re-running on the same file, or a new export that overlaps an old one, is safe: 
 
 ### What each side shows
 
-- **Luno holdings:** quantity plus a live ZAR value from Luno's public ticker. There's no cost basis (Luno's balance API doesn't give trade history), so "avg cost" isn't shown for these.
-- **EasyEquities holdings:** quantity and weighted-average cost from your imported trades. A live price is shown only when the symbol matches something already in the watchlist (ASML, SMIC); anything else shows cost basis with "no live price" — extending the live-price lookup to arbitrary JSE tickers would need a market-data source I haven't wired up.
+- **Luno holdings:** one tile with a coin picker: live ZAR value, the day's change, a month's trend, and gain or loss on what you paid where the statement gives a cost.
+- **EasyEquities holdings:** quantity and cost from the holdings file (or weighted-average cost from imported trades), with a live price, daily change and gain on cost when the symbol is on the watchlist; anything else shows its cost with "no live price".
 - Sells reduce the position but this **does not track realised profit/loss** — it's a current-holdings view, not a full accounting one.
 
 ## How the numbers work

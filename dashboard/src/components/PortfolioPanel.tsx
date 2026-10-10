@@ -13,6 +13,7 @@ const WORD = { up: "up", down: "down", flat: "unchanged" } as const;
 const GLYPH = { up: "▲", down: "▼", flat: "▬" } as const;
 
 const qtyFmt = new Intl.NumberFormat("en", { maximumFractionDigits: 8 });
+const dayFmt = new Intl.DateTimeFormat(undefined, { day: "numeric", month: "short", year: "numeric" });
 const asOfFmt = new Intl.DateTimeFormat(undefined, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
 /** Sum of live values per currency, e.g. "R703.07" or "R703.07 + $12.00". Null when nothing has a live price. */
@@ -202,13 +203,15 @@ export const PortfolioPanel = memo(function PortfolioPanel({ data, error, loadin
           <HoldingColumn
             id="easyequities"
             name="EasyEquities"
-            role="Share account"
+            role="USD share account"
             holdings={data.easyequities.holdings}
-            empty="No trades imported yet. Export a CSV from EasyEquities, then run npm run import:easyequities -- path/to/export.csv."
+            empty="No holdings yet. Add your positions to public/portfolio/easyequities-holdings.json (symbol, quantity and total cost), from a statement or the app."
             note={
-              data.easyequities.tradeCount > 0
-                ? `Built from ${data.easyequities.tradeCount} imported trade${data.easyequities.tradeCount === 1 ? "" : "s"}.`
-                : undefined
+              data.easyequities.asOf
+                ? `Positions and cost as of ${dayFmt.format(new Date(data.easyequities.asOf))}, from your EasyEquities statement. Cost includes trading costs, not the EasyFX fee.`
+                : data.easyequities.tradeCount > 0
+                  ? `Built from ${data.easyequities.tradeCount} imported trade${data.easyequities.tradeCount === 1 ? "" : "s"}.`
+                  : undefined
             }
           />
         </div>

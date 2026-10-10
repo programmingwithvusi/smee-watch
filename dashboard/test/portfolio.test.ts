@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { lunoCostBasis, priceInZar, zarTrend } from "../shared/luno";
-import { computeHoldings, isPortfolioResponse, mergeTrades, type Trade } from "../shared/portfolio";
+import { computeHoldings, holdingsFromFile, isPortfolioResponse, mergeTrades, type Trade } from "../shared/portfolio";
 import { tradeId } from "../shared/tradeId";
 
 const buy = (over: Partial<Trade> = {}): Omit<Trade, "id"> => ({
@@ -203,5 +203,22 @@ describe("lunoCostBasis", () => {
 
   test("ZAR itself never gets a cost basis", () => {
     expect(lunoCostBasis([e("d", "ZAR", 5000, "TRANSFER")]).size).toBe(0);
+  });
+});
+
+describe("holdingsFromFile", () => {
+  test("turns a statement's quantity and total cost into a per-share average", () => {
+    const [h] = holdingsFromFile({ asOf: "2026-08-31", holdings: [{ symbol: "SPCX", name: "SpaceX", quantity: 0.6555, cost: 90.58, currency: "USD" }] });
+    expect(h).toMatchObject({ symbol: "SPCX", name: "SpaceX", source: "easyequities", quantity: 0.6555, costCurrency: "USD" });
+    expect(h?.avgCost).toBeCloseTo(138.19, 1); // the statement shows this rounded, as its "Cost Price"
+  });
+
+  test("skips rows that aren't a position", () => {
+    const rows = [
+      { symbol: "A", quantity: 0, cost: 10, currency: "USD" },
+      { symbol: "B", quantity: Number.NaN, cost: 10, currency: "USD" },
+      { symbol: "C", quantity: 1, cost: 10, currency: "USD" },
+    ];
+    expect(holdingsFromFile({ asOf: null, holdings: rows }).map((h) => h.symbol)).toEqual(["C"]);
   });
 });

@@ -72,7 +72,7 @@ export function ListingRow({ item, quote, now, compact = false, usdZar = null }:
       <footer className="listing__foot">
         <p className="listing__meta">Last trade {formatLastTrade(quote.lastTradeAt, now)}</p>
         {usdZar !== null && quote.currency === "USD" && (
-          <p className="listing__meta listing__rand" title="One share in rand on EasyEquities: EasyFX conversion plus brokerage">
+          <p className="listing__meta listing__rand" title="One share in rand on EasyEquities: EasyFX conversion plus trading costs">
             ≈ R{rand.format(randCostPerShare(quote.price, usdZar))} a share
           </p>
         )}

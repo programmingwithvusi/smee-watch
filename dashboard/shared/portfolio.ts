@@ -121,10 +121,43 @@ export interface HoldingDto extends Holding {
   series?: SeriesPoint[];
 }
 
+/**
+ * public/portfolio/easyequities-holdings.json: what you hold on EasyEquities, typed in from a
+ * statement or the app's holdings screen. Only the position and its total cost — no account number,
+ * trade dates or individual trades, because the file is committed to a public repo.
+ */
+export interface EasyEquitiesHoldingsFile {
+  /** Date the positions were read off the statement, YYYY-MM-DD */
+  asOf: string | null;
+  holdings: Array<{
+    symbol: string;
+    name?: string;
+    quantity: number;
+    /** Total paid for what's still held, trading costs included, in `currency` */
+    cost: number;
+    currency: string;
+  }>;
+}
+
+/** Turns the hand-kept holdings file into holdings, skipping rows that aren't a real position. */
+export function holdingsFromFile(file: EasyEquitiesHoldingsFile): Holding[] {
+  return file.holdings
+    .filter((h) => isNum(h.quantity) && h.quantity > 0 && isNum(h.cost) && isStr(h.symbol) && isStr(h.currency))
+    .map((h) => ({
+      symbol: h.symbol,
+      ...(h.name !== undefined && { name: h.name }),
+      source: "easyequities" as const,
+      quantity: h.quantity,
+      avgCost: h.cost / h.quantity,
+      costCurrency: h.currency,
+    }));
+}
+
 export interface PortfolioResponse {
   generatedAt: number;
   luno: { asOf: string | null; holdings: HoldingDto[] };
-  easyequities: { holdings: HoldingDto[]; tradeCount: number };
+  /** `asOf` is the holdings file's date, when positions come from it rather than from imported trades */
+  easyequities: { holdings: HoldingDto[]; tradeCount: number; asOf?: string | null };
   /** Anything that went wrong fetching a live price, keyed by symbol; holdings still show cost basis. */
   errors: Record<string, string>;
 }

@@ -2,7 +2,14 @@ import type { Config } from "@netlify/functions";
 import { corsHeaders } from "../../shared/cors";
 import { priceInZar, USD_ZAR_SYMBOL, YAHOO_USD_SYMBOL, zarTrend, type LunoBalanceSnapshot, type LunoTicker } from "../../shared/luno";
 import { createLogger } from "../../shared/log";
-import { computeHoldings, type HoldingDto, type PortfolioResponse, type Trade } from "../../shared/portfolio";
+import {
+  computeHoldings,
+  holdingsFromFile,
+  type EasyEquitiesHoldingsFile,
+  type HoldingDto,
+  type PortfolioResponse,
+  type Trade,
+} from "../../shared/portfolio";
 import { isQuotesResponse } from "../../shared/types";
 import { chartUrl, parseChart, type ParsedChart } from "../../shared/yahoo";
 
@@ -84,11 +91,12 @@ export default async (req: Request): Promise<Response> => {
   const origin = new URL(req.url).origin;
   const errors: Record<string, string> = {};
 
-  const [tradesResult, lunoSnapResult, tickersResult, quotesResult] = await Promise.allSettled([
+  const [tradesResult, lunoSnapResult, tickersResult, quotesResult, eeFileResult] = await Promise.allSettled([
     fetchJsonOrEmpty<TradesFile>(`${origin}/portfolio/trades.json`, { trades: [] }),
     fetchJsonOrEmpty<LunoBalanceSnapshot>(`${origin}/portfolio/luno-balance.json`, { asOf: null, balances: [] }),
     fetchLunoTickers(),
     fetchJsonOrEmpty<unknown>(`${origin}/api/quotes`, null),
+    fetchJsonOrEmpty<EasyEquitiesHoldingsFile>(`${origin}/portfolio/easyequities-holdings.json`, { asOf: null, holdings: [] }),
   ]);
 
   const tradesFile = tradesResult.status === "fulfilled" ? tradesResult.value : { trades: [] };
@@ -134,7 +142,16 @@ export default async (req: Request): Promise<Response> => {
     };
   });
 
-  const eeHoldings: HoldingDto[] = computeHoldings(tradesFile.trades.filter((t) => t.source === "easyequities")).map((h) => {
+  const eeFile = eeFileResult.status === "fulfilled" && Array.isArray(eeFileResult.value?.holdings) ? eeFileResult.value : { asOf: null, holdings: [] };
+  if (eeFileResult.status === "rejected") {
+    errors.easyequities = eeFileResult.reason instanceof Error ? eeFileResult.reason.message : String(eeFileResult.reason);
+  }
+  // The hand-kept holdings file is the statement's own figures, so it wins over the same symbol rebuilt from trades
+  const fromFile = holdingsFromFile(eeFile);
+  const inFile = new Set(fromFile.map((h) => h.symbol));
+  const fromTrades = computeHoldings(tradesFile.trades.filter((t) => t.source === "easyequities")).filter((h) => !inFile.has(h.symbol));
+
+  const eeHoldings: HoldingDto[] = [...fromFile, ...fromTrades].map((h) => {
     const match = quotes?.quotes.find((quote) => quote.symbol === h.symbol || quote.symbol.split(".")[0] === h.symbol);
     const livePrice = match ? match.price : null;
     return {
@@ -150,7 +167,7 @@ export default async (req: Request): Promise<Response> => {
   const body: PortfolioResponse = {
     generatedAt: Math.floor(Date.now() / 1000),
     luno: { asOf: lunoSnap.asOf, holdings: lunoHoldings },
-    easyequities: { holdings: eeHoldings, tradeCount: tradesFile.trades.length },
+    easyequities: { holdings: eeHoldings, tradeCount: tradesFile.trades.length, asOf: fromFile.length > 0 ? eeFile.asOf : null },
     errors,
   };
 

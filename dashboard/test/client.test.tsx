@@ -254,13 +254,13 @@ describe("EasyEquities costs", () => {
     expect(easyFxRate(10)).toBeCloseTo(10 * 1.007 * 1.00575, 9);
   });
 
-  test("a USD watchlist tile shows one share in rand, conversion and brokerage included", () => {
+  test("a USD watchlist tile shows one share in rand, conversion and trading costs included", () => {
     const item = WATCH_IDEAS[0]!;
     const quote = { ...SAMPLE.quotes[0]!, symbol: item.symbol, label: item.label, company: "WATCH" as const, price: 100 };
     const html = renderToStaticMarkup(<ListingRow item={item} quote={quote} now={new Date("2026-09-21T14:00:00Z")} compact usdZar={10} />);
-    // $100 x R10 x 1.007 x 1.00575 x 1.0025 brokerage = R1,015.32
-    expect(randCostPerShare(100, 10)).toBeCloseTo(1015.32, 2);
-    expect(html).toContain("≈ R1,015 a share");
+    // $100 x R10 x 1.007 x 1.00575 x 1.0066 trading costs = R1,019.47
+    expect(randCostPerShare(100, 10)).toBeCloseTo(1019.47, 2);
+    expect(html).toContain("≈ R1,019 a share");
   });
 
   test("no rand price without a rate, or for a share that isn't priced in dollars", () => {
