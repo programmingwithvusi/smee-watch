@@ -16,7 +16,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "watch:catalysts": "tsx src/watch.ts --catalysts",
-    "earnings:check": "tsx src/earningsCheck.ts"
+    "earnings:check": "tsx src/earningsCheck.ts",
+    "bank:check": "tsx src/profitBankingCheck.ts"
   },
   "dependencies": {
     "fast-xml-parser": "^5.2.5",

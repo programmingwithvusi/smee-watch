@@ -126,6 +126,41 @@ export const WATCH_ETFS: WatchSymbol[] = [
   { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", moveAlertPct: 4 },
 ];
 
+// ---------------------------------------------------------------------------------------------
+// Profit-banking: positions actually held, with their average cost, so a check can compute
+// unrealised P&L% and tell you when it's worth banking some profit. Add a position here once you
+// buy it; update costPerUnit on a top-up; remove it once fully sold. Keep in step with
+// dashboard/public/portfolio/easyequities-holdings.json -- that file stores quantity + total cost
+// for the dashboard; costPerUnit here = that file's cost / quantity.
+//
+// Track rules (per the Buy/Sell/Bank plan agreed 2026-10-11):
+//   core        -- bank a slice at every +30% from cost, repeating at +60%, +90%, ...
+//   speculative -- bank a slice at +20%, then again at +40% (two fixed rungs, not repeating)
+// ---------------------------------------------------------------------------------------------
+export type BankTrack = "core" | "speculative";
+
+export interface Position {
+  symbol: string; // Yahoo Finance symbol
+  label: string;
+  track: BankTrack;
+  /** Average cost per unit, in the same currency fetchQuote reports for this symbol. */
+  costPerUnit: number;
+}
+
+export const POSITIONS: Position[] = [
+  { symbol: "ANG.JO", label: "AngloGold Ashanti", track: "core", costPerUnit: 93.67 / 0.0489 },
+  { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", track: "core", costPerUnit: 301.06 / 15.7895 },
+  { symbol: "MRNA", label: "Moderna", track: "core", costPerUnit: 38.25 / 0.2576 },
+  { symbol: "SPCX", label: "SpaceX", track: "core", costPerUnit: 90.58 / 0.6555 },
+  // Track B (ASML/SMIC) has no position yet -- add one here once you actually buy in, e.g.:
+  // { symbol: "ASML", label: "ASML", track: "speculative", costPerUnit: <total cost> / <quantity> },
+];
+
+/** Core track: bank a slice at every multiple of this (30, 60, 90, ...). */
+export const CORE_BANK_RUNG_PCT = 30;
+/** Speculative track: bank a slice at each of these, in order; does not repeat beyond the last one. */
+export const SPECULATIVE_BANK_RUNGS_PCT = [20, 40];
+
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium
 export const SMIC_A = "688981.SS";
 export const SMIC_H = "0981.HK";
