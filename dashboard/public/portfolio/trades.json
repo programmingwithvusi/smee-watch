@@ -1,3 +1,40 @@
 {
-  "trades": []
+  "trades": [
+    {
+      "id": "f6723c8257095e0f",
+      "source": "easyequities",
+      "date": "2026-09-25",
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "side": "buy",
+      "quantity": 3.01,
+      "price": 16.556,
+      "currency": "ZAR",
+      "fees": 0.186
+    },
+    {
+      "id": "dc02d7b12b432cec",
+      "source": "easyequities",
+      "date": "2026-09-25",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "side": "buy",
+      "quantity": 0.002231,
+      "price": 44655.55,
+      "currency": "ZAR",
+      "fees": 0.372
+    },
+    {
+      "id": "b19c967df5a3d0b4",
+      "source": "easyequities",
+      "date": "2026-09-25",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "side": "buy",
+      "quantity": 0.00003571,
+      "price": 1394677,
+      "currency": "ZAR",
+      "fees": 0.186
+    }
+  ]
 }

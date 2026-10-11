@@ -118,10 +118,23 @@ export default async (req: Request): Promise<Response> => {
     computeHoldings(tradesFile.trades.filter((t) => t.source === "luno" && t.currency === "ZAR")).map((h) => [h.symbol, h.avgCost]),
   );
   const lunoBalances = lunoSnap.balances.filter((b) => b.balance + b.reserved > 1e-9);
-  const trends = await fetchZarTrends(
-    lunoBalances.map((b) => b.asset),
-    errors,
-  );
+
+  const eeFile = eeFileResult.status === "fulfilled" && Array.isArray(eeFileResult.value?.holdings) ? eeFileResult.value : { asOf: null, holdings: [] };
+  if (eeFileResult.status === "rejected") {
+    errors.easyequities = eeFileResult.reason instanceof Error ? eeFileResult.reason.message : String(eeFileResult.reason);
+  }
+  // The hand-kept holdings file is the statement's own figures, so it wins over the same symbol rebuilt from trades
+  const fromFile = holdingsFromFile(eeFile);
+  const inFile = new Set(fromFile.map((h) => h.symbol));
+  const fromTrades = computeHoldings(tradesFile.trades.filter((t) => t.source === "easyequities")).filter((h) => !inFile.has(h.symbol));
+  const eeAll = [...fromFile, ...fromTrades];
+
+  // One combined ZAR-trend fetch covers both Luno balances and any EasyCrypto holdings (the
+  // crypto-currency side of EasyEquities, not Luno -- same "easyequities" trade source as your
+  // shares, just priced differently below since a coin has no Yahoo stock quote).
+  const eeCryptoAssets = [...new Set(eeAll.map((h) => h.symbol).filter((s) => YAHOO_USD_SYMBOL[s] !== undefined))];
+  const trendAssets = [...new Set([...lunoBalances.map((b) => b.asset), ...eeCryptoAssets])];
+  const trends = await fetchZarTrends(trendAssets, errors);
 
   const lunoHoldings: HoldingDto[] = lunoBalances.map((b) => {
     const qty = b.balance + b.reserved;
@@ -142,25 +155,29 @@ export default async (req: Request): Promise<Response> => {
     };
   });
 
-  const eeFile = eeFileResult.status === "fulfilled" && Array.isArray(eeFileResult.value?.holdings) ? eeFileResult.value : { asOf: null, holdings: [] };
-  if (eeFileResult.status === "rejected") {
-    errors.easyequities = eeFileResult.reason instanceof Error ? eeFileResult.reason.message : String(eeFileResult.reason);
-  }
-  // The hand-kept holdings file is the statement's own figures, so it wins over the same symbol rebuilt from trades
-  const fromFile = holdingsFromFile(eeFile);
-  const inFile = new Set(fromFile.map((h) => h.symbol));
-  const fromTrades = computeHoldings(tradesFile.trades.filter((t) => t.source === "easyequities")).filter((h) => !inFile.has(h.symbol));
-
-  const eeHoldings: HoldingDto[] = [...fromFile, ...fromTrades].map((h) => {
+  const eeHoldings: HoldingDto[] = eeAll.map((h) => {
     const match = quotes?.quotes.find((quote) => quote.symbol === h.symbol || quote.symbol.split(".")[0] === h.symbol);
-    const livePrice = match ? match.price : null;
+    if (match) {
+      return {
+        ...h,
+        livePrice: match.price,
+        liveCurrency: match.currency,
+        liveValue: match.price * h.quantity,
+        changePct: match.changePct,
+        series: match.series,
+      };
+    }
+    // No stock quote: fall back to the ZAR crypto trend, only when the holding's own cost is
+    // already in ZAR (the trend is ZAR-denominated; mixing currencies would misstate the value).
+    const trend = h.costCurrency === "ZAR" ? trends.get(h.symbol) : undefined;
+    const livePrice = trend ? (trend.series.at(-1)?.c ?? null) : null;
     return {
       ...h,
       livePrice,
-      liveCurrency: match ? match.currency : null,
+      liveCurrency: livePrice !== null ? "ZAR" : null,
       liveValue: livePrice !== null ? livePrice * h.quantity : null,
-      changePct: match ? match.changePct : null,
-      series: match ? match.series : [],
+      changePct: trend?.changePct ?? null,
+      series: trend?.series ?? [],
     };
   });
 
