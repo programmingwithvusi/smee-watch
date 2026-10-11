@@ -33,6 +33,15 @@ export const NEWS_QUERIES: NewsQuery[] = [
   { label: "zh: 上海微电子 借壳", q: "上海微电子 借壳", ...ZH },
   { label: "zh: 上海微电子 IPO 辅导", q: "上海微电子 IPO 辅导", ...ZH },
   { label: "zh: 芯上微装", q: "芯上微装", ...ZH },
+
+  // 中旗新材 (001212.SZ) is NOT a confirmed SMEE vehicle. Its controlling shareholder changed in
+  // April 2025 to 贺荣明 (via 星空科技), who is reported to have a lithography-industry background --
+  // which the market read as a precursor to an SMEE reverse merger, driving several limit-up days.
+  // Independent analysis (Eastmoney Caifuhao, Aug 2026) called that baseless: no business synergy
+  // (中旗新材 makes artificial stone/construction materials), a poor shell fit, and no link beyond
+  // one executive's past employer. Tracked here only to catch the NEXT wave of this specific rumor
+  // resurfacing -- a hit is a reason to re-verify, not a reason to act.
+  { label: "zh: 中旗新材 光刻机 借壳 (unconfirmed rumor)", q: "中旗新材 光刻机 OR 借壳 上海微电子", ...ZH },
   { label: "en: SMEE IPO", q: '"Shanghai Micro Electronics" IPO OR listing', ...EN },
   { label: "en: SMEE reverse merger", q: '"Shanghai Micro Electronics" reverse merger', ...EN },
 ];
@@ -135,7 +144,7 @@ export const SEEN_RETENTION_DAYS = 120;
 // ---------------------------------------------------------------------------------------------
 export interface EarningsEvent {
   id: string;
-  company: "ASML" | "SMIC";
+  company: "ASML" | "SMIC" | "ENPH";
   label: string;
   /** ISO date, UTC, no time — the calendar day the results are due */
   date: string;
@@ -159,6 +168,14 @@ export const EARNINGS: EarningsEvent[] = [
     date: "2026-11-12",
     confirmed: false, // estimate from SMIC's usual reporting cadence (Q2 2026 was reported Aug 13); not yet announced
     source: "https://www.smics.com/en/site/company_financialSummary",
+  },
+  {
+    id: "enph-q3-2026",
+    company: "ENPH",
+    label: "Enphase Energy (ENPH) Q3 2026 results",
+    date: "2026-10-27",
+    confirmed: true,
+    source: "https://www.globenewswire.com/news-release/2026/10/06/3375409/0/en/enphase-energy-announces-conference-call-to-review-third-quarter-2026-financial-results.html",
   },
 ];
 
