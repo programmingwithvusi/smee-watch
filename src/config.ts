@@ -144,13 +144,52 @@ export const SEEN_RETENTION_DAYS = 120;
 // ---------------------------------------------------------------------------------------------
 export interface EarningsEvent {
   id: string;
-  company: "ASML" | "SMIC" | "ENPH";
+  company:
+    | "ASML"
+    | "SMIC"
+    | "ENPH"
+    | "NVDA"
+    | "VST"
+    | "ROK"
+    | "IONQ"
+    | "CRWD"
+    | "MSFT"
+    | "TSM"
+    | "SOFI"
+    | "OKLO"
+    | "AVGO"
+    | "RKLB"
+    | "MU"
+    | "MRNA"
+    | "NVS";
   label: string;
   /** ISO date, UTC, no time — the calendar day the results are due */
   date: string;
   confirmed: boolean;
   source: string;
 }
+
+/** Which Yahoo symbol(s) react when this company reports. Add an entry here whenever you add a new
+ * value to EarningsEvent["company"] above. */
+export const EARNINGS_REACTION_SYMBOLS: Record<EarningsEvent["company"], string[]> = {
+  ASML: ["ASML", "ASML.AS"],
+  SMIC: ["688981.SS", "0981.HK"],
+  ENPH: ["ENPH"],
+  NVDA: ["NVDA"],
+  VST: ["VST"],
+  ROK: ["ROK"],
+  IONQ: ["IONQ"],
+  CRWD: ["CRWD"],
+  MSFT: ["MSFT"],
+  TSM: ["TSM"],
+  SOFI: ["SOFI"],
+  OKLO: ["OKLO"],
+  AVGO: ["AVGO"],
+  RKLB: ["RKLB"],
+  MU: ["MU"],
+  MRNA: ["MRNA"],
+  NVS: ["NVS"],
+};
 
 export const EARNINGS: EarningsEvent[] = [
   {
@@ -177,10 +216,130 @@ export const EARNINGS: EarningsEvent[] = [
     confirmed: true,
     source: "https://www.globenewswire.com/news-release/2026/10/06/3375409/0/en/enphase-energy-announces-conference-call-to-review-third-quarter-2026-financial-results.html",
   },
+
+  // --- WATCH_IDEAS earnings. Dates marked confirmed: false are estimated from each company's own
+  // cadence last year/quarter (not a generic guess) -- re-check closer to the time and correct if
+  // the real date differs. SpaceX (SPCX) is private and has no public earnings, so it's excluded.
+  {
+    id: "tsm-q3-2026",
+    company: "TSM",
+    label: "TSMC (TSM) Q3 2026 results",
+    date: "2026-10-15",
+    confirmed: true,
+    source: "https://investor.tsmc.com/quarterly-results",
+  },
+  {
+    id: "nvs-q3-2026",
+    company: "NVS",
+    label: "Novartis (NVS) Q3 2026 results",
+    date: "2026-10-27",
+    confirmed: true,
+    source: "https://www.novartis.com/investors/financial-data/quarterly-results",
+  },
+  {
+    id: "vst-q3-2026",
+    company: "VST",
+    label: "Vistra (VST) Q3 2026 results",
+    date: "2026-11-06",
+    confirmed: true,
+    source: "https://investor.vistracorp.com",
+  },
+  {
+    id: "sofi-q3-2026",
+    company: "SOFI",
+    label: "SoFi (SOFI) Q3 2026 results",
+    date: "2026-10-27",
+    confirmed: false, // estimate: Q3 2025 was reported Oct 28, 2025
+    source: "https://investors.sofi.com",
+  },
+  {
+    id: "msft-q1-fy2027",
+    company: "MSFT",
+    label: "Microsoft (MSFT) fiscal Q1 2027 results",
+    date: "2026-10-28",
+    confirmed: false, // estimate: fiscal Q1 2026 was reported Oct 29, 2025
+    source: "https://www.microsoft.com/en-us/investor",
+  },
+  {
+    id: "rklb-q3-2026",
+    company: "RKLB",
+    label: "Rocket Lab (RKLB) Q3 2026 results",
+    date: "2026-11-09",
+    confirmed: false, // estimate: Q3 2025 was reported Nov 10, 2025
+    source: "https://investors.rocketlabcorp.com",
+  },
+  {
+    id: "mrna-q3-2026",
+    company: "MRNA",
+    label: "Moderna (MRNA) Q3 2026 results",
+    date: "2026-11-05",
+    confirmed: false, // estimate: Q3 2025 was reported Nov 6, 2025
+    source: "https://investors.modernatx.com",
+  },
+  {
+    id: "rok-q4-fy2026",
+    company: "ROK",
+    label: "Rockwell Automation (ROK) fiscal Q4 2026 results",
+    date: "2026-11-05",
+    confirmed: false, // estimate: fiscal Q4 2025 was reported Nov 6, 2025
+    source: "https://www.rockwellautomation.com/en-us/company/news/press-releases.html",
+  },
+  {
+    id: "ionq-q3-2026",
+    company: "IONQ",
+    label: "IonQ (IONQ) Q3 2026 results",
+    date: "2026-11-04",
+    confirmed: false, // estimate: Q3 2025 was reported Nov 5, 2025
+    source: "https://ionq.com/news",
+  },
+  {
+    id: "oklo-q3-2026",
+    company: "OKLO",
+    label: "Oklo (OKLO) Q3 2026 results",
+    date: "2026-11-06",
+    confirmed: false, // estimate: Q2 2026 was reported Aug 7, 2026
+    source: "https://oklo.com/investors",
+  },
+  {
+    id: "nvda-q3-fy2027",
+    company: "NVDA",
+    label: "NVIDIA (NVDA) fiscal Q3 2027 results",
+    date: "2026-11-18",
+    confirmed: false, // estimate: fiscal Q3 2026 was reported Nov 19, 2025
+    source: "https://investor.nvidia.com",
+  },
+  {
+    id: "crwd-q3-fy2027",
+    company: "CRWD",
+    label: "CrowdStrike (CRWD) fiscal Q3 2027 results",
+    date: "2026-12-01",
+    confirmed: false, // estimate: fiscal Q3 2026 was reported Dec 2, 2025
+    source: "https://ir.crowdstrike.com",
+  },
+  {
+    id: "avgo-q4-fy2026",
+    company: "AVGO",
+    label: "Broadcom (AVGO) fiscal Q4 2026 results",
+    date: "2026-12-10",
+    confirmed: false, // estimate: fiscal Q4 2025 was reported Dec 11, 2025
+    source: "https://investors.broadcom.com",
+  },
+  {
+    id: "mu-q1-fy2027",
+    company: "MU",
+    label: "Micron (MU) fiscal Q1 2027 results",
+    date: "2026-12-16",
+    confirmed: false, // estimate: fiscal Q1 2026 was reported Dec 17, 2025
+    source: "https://investors.micron.com",
+  },
 ];
 
 /** Days-before-the-event a reminder fires, each exactly once (state/earnings.json tracks which). */
 export const EARNINGS_REMINDER_DAYS_BEFORE = [7, 3, 1, 0];
+
+/** How many days after the date to keep checking for a real price reaction (see earningsReaction
+ * in earnings.ts) before giving up on that event. */
+export const EARNINGS_REACTION_WINDOW_DAYS = 3;
 
 // ---------------------------------------------------------------------------------------------
 // Volatility widening: alerts when a symbol's move today is unusually large next to its own

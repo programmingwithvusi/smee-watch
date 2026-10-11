@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import type { EarningsEvent } from "../src/config";
-import { daysUntil, dueReminders, formatReminder } from "../src/earnings";
+import { daysUntil, dueReactions, dueReminders, formatReaction, formatReminder, symbolsForCompany } from "../src/earnings";
 
 const EVENT: EarningsEvent = {
   id: "test-co-q1",
@@ -42,5 +42,33 @@ describe("formatReminder", () => {
     const unconfirmed = formatReminder({ event: { ...EVENT, confirmed: false }, daysBefore: 3 });
     expect(unconfirmed).toContain("estimated date");
     expect(unconfirmed).toContain("in 3 days");
+  });
+});
+
+describe("symbolsForCompany", () => {
+  test("maps each tracked company to its Yahoo symbol(s)", () => {
+    expect(symbolsForCompany("ASML")).toEqual(["ASML", "ASML.AS"]);
+    expect(symbolsForCompany("SMIC")).toEqual(["688981.SS", "0981.HK"]);
+    expect(symbolsForCompany("ENPH")).toEqual(["ENPH"]);
+  });
+});
+
+describe("dueReactions", () => {
+  test("fires for 1..windowDays after the date, not before and not after the window", () => {
+    expect(dueReactions([EVENT], new Date("2026-10-13T00:00:00Z"), 3)).toHaveLength(0); // day before
+    expect(dueReactions([EVENT], new Date("2026-10-14T00:00:00Z"), 3)).toHaveLength(0); // the day itself
+    expect(dueReactions([EVENT], new Date("2026-10-15T00:00:00Z"), 3)).toEqual([{ event: EVENT, daysAfter: 1 }]);
+    expect(dueReactions([EVENT], new Date("2026-10-17T00:00:00Z"), 3)).toEqual([{ event: EVENT, daysAfter: 3 }]);
+    expect(dueReactions([EVENT], new Date("2026-10-18T00:00:00Z"), 3)).toHaveLength(0); // window closed
+  });
+});
+
+describe("formatReaction", () => {
+  test("shows a signed percent and points at the source", () => {
+    const up = formatReaction(EVENT, "Test Co (Nasdaq)", 4.2);
+    expect(up).toContain("+4.2%");
+    expect(up).toContain("Test Co (Nasdaq)");
+    expect(up).toContain(EVENT.source);
+    expect(formatReaction(EVENT, "Test Co (Nasdaq)", -5.6)).toContain("-5.6%");
   });
 });
