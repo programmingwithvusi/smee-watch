@@ -1,4 +1,5 @@
 import { memo, useId, useState, type ReactNode } from "react";
+import { bankBadge } from "../../shared/bankTracks";
 import type { HoldingDto, PortfolioResponse } from "../../shared/portfolio";
 import { direction, formatPct, formatPrice } from "../lib/format";
 import { Sparkline } from "./Sparkline";
@@ -48,6 +49,17 @@ function gainOnCost(h: HoldingDto): number | null {
  * and the gain on cost where they're known, a month's sparkline beside it, details in the foot.
  * `head` is the tile's title row, so the crypto tile can put its coin picker there.
  */
+function BankBadge({ symbol, gain }: { symbol: string; gain: number | null }) {
+  if (gain === null) return null;
+  const badge = bankBadge(symbol, gain);
+  if (!badge) return null;
+  return (
+    <p className={`bank-badge bank-badge--${badge}`}>
+      {badge === "reached" ? "💰 Worth banking some profit" : "Approaching a bank point"}
+    </p>
+  );
+}
+
 function HoldingTile({ h, head, share }: { h: HoldingDto; head: ReactNode; share?: number | null }) {
   const label = h.name ? `${h.symbol}, ${h.name}` : h.symbol;
   const hasLive = h.liveValue !== null && h.liveCurrency !== null;
@@ -65,6 +77,7 @@ function HoldingTile({ h, head, share }: { h: HoldingDto; head: ReactNode; share
         )}
         {h.changePct != null && <Change pct={h.changePct} suffix="today" sr="from the previous close" />}
         {gain !== null && <Change pct={gain} suffix="on cost" sr="on what you paid" />}
+        <BankBadge symbol={h.symbol} gain={gain} />
       </div>
       {series.length >= 2 && (
         <div className="listing__trend">

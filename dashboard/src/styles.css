@@ -704,6 +704,29 @@ h1, h2, h3, p, dl, dd, dt {
   color: var(--muted);
 }
 
+.bank-badge {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  padding: 2px 10px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.bank-badge--reached {
+  color: var(--gold-ink);
+  border: 1px solid var(--gold);
+  background: color-mix(in srgb, var(--gold) 16%, transparent);
+}
+
+.bank-badge--approaching {
+  color: var(--muted);
+  border: 1px dashed var(--muted);
+}
+
 /* Coin picker: sits where a listing's name does, and reads like one */
 .picker {
   font: inherit;
