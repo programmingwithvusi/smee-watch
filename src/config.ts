@@ -107,6 +107,7 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "MRNA", label: "Moderna (mRNA medicines)", moveAlertPct: 5 },
   // Mariana Oncology has no listing of its own: Novartis owns it. A large pharma, so 3% is a big day
   { symbol: "NVS", label: "Novartis (cancer therapy, owns Mariana Oncology)", moveAlertPct: 3 },
+  { symbol: "ANG.JO", label: "AngloGold Ashanti (gold mining, JSE)", moveAlertPct: 5 },
 ];
 
 /**
@@ -122,6 +123,7 @@ export const WATCH_ETFS: WatchSymbol[] = [
   { symbol: "STX500.JO", label: "Satrix S&P 500", moveAlertPct: 3 },
   { symbol: "STXWDM.JO", label: "Satrix MSCI World", moveAlertPct: 3 },
   { symbol: "STX40.JO", label: "Satrix 40", moveAlertPct: 3 },
+  { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", moveAlertPct: 4 },
 ];
 
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium

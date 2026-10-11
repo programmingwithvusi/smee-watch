@@ -1,7 +1,33 @@
 {
   "asOf": "2026-08-31",
   "holdings": [
-    { "symbol": "MRNA", "name": "Moderna", "quantity": 0.2576, "cost": 38.25, "currency": "USD" },
-    { "symbol": "SPCX", "name": "SpaceX", "quantity": 0.6555, "cost": 90.58, "currency": "USD" }
+    {
+      "symbol": "MRNA",
+      "name": "Moderna",
+      "quantity": 0.2576,
+      "cost": 38.25,
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPCX",
+      "name": "SpaceX",
+      "quantity": 0.6555,
+      "cost": 90.58,
+      "currency": "USD"
+    },
+    {
+      "symbol": "ANG.JO",
+      "name": "AngloGold Ashanti",
+      "quantity": 0.0489,
+      "cost": 93.67,
+      "currency": "ZAR"
+    },
+    {
+      "symbol": "STXMMT.JO",
+      "name": "Satrix Momentum ETF",
+      "quantity": 15.7895,
+      "cost": 301.06,
+      "currency": "ZAR"
+    }
   ]
 }

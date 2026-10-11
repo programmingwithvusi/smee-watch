@@ -50,6 +50,7 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("MRNA", "Moderna", "mRNA medicines", "NASDAQ"),
   // Mariana Oncology (radioligand cancer therapy) has no listing of its own: Novartis owns it
   idea("NVS", "Novartis", "Cancer therapy, owns Mariana Oncology", "NYSE"),
+  idea("ANG.JO", "AngloGold Ashanti", "Gold mining", "JSE"),
 ];
 
 /**
@@ -74,6 +75,7 @@ export const WATCH_ETFS: readonly WatchItem[] = [
   etf("STX500.JO", "Satrix S&P 500", "500 largest US companies"),
   etf("STXWDM.JO", "Satrix MSCI World", "Developed-market shares"),
   etf("STX40.JO", "Satrix 40", "40 largest JSE companies"),
+  etf("STXMMT.JO", "Satrix Momentum ETF", "Equity momentum factor"),
 ];
 
 /** ZAR per 1 USD */
