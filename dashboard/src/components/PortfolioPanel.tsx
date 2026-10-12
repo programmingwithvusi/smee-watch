@@ -143,6 +143,7 @@ function HoldingColumn({
   empty,
   note,
   picker = false,
+  cards = false,
 }: {
   id: string;
   name: string;
@@ -152,6 +153,9 @@ function HoldingColumn({
   note?: string;
   /** Show every holding in one tile with a picker, rather than a tile each */
   picker?: boolean;
+  /** Lay the tiles out as a wrapping grid of cards, rather than one stacked column -- for a
+   *  holdings list long enough that a single column would run the page out forever. */
+  cards?: boolean;
 }) {
   const total = totalLabel(holdings);
   return (
@@ -166,7 +170,7 @@ function HoldingColumn({
           </>
         )}
       </p>
-      <div className="col__rows">
+      <div className={cards ? "col__rows col__rows--cards" : "col__rows"}>
         {holdings.length === 0 ? (
           <article className="listing listing--missing">
             <p className="listing__missing">{empty}</p>
@@ -203,7 +207,7 @@ export const PortfolioPanel = memo(function PortfolioPanel({ data, error, loadin
       {!data && loading && <p className="portfolio__empty">Loading holdings…</p>}
 
       {data && (
-        <div className="stack stack--holdings">
+        <div className="portfolio__sections">
           <HoldingColumn
             id="luno"
             name="Luno"
@@ -216,8 +220,9 @@ export const PortfolioPanel = memo(function PortfolioPanel({ data, error, loadin
           <HoldingColumn
             id="easyequities"
             name="EasyEquities"
-            role="USD share account"
+            role="USD + ZAR share accounts"
             holdings={data.easyequities.holdings}
+            cards
             empty="No holdings yet. Add your positions to public/portfolio/easyequities-holdings.json (symbol, quantity and total cost), from a statement or the app."
             note={
               data.easyequities.asOf

@@ -652,8 +652,14 @@ h1, h2, h3, p, dl, dd, dt {
   max-width: 56ch;
 }
 
-.stack--holdings {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.portfolio__sections {
+  display: grid;
+  gap: 56px;
+}
+
+.col__rows--cards {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  align-items: start;
 }
 
 .col--luno {
@@ -754,10 +760,13 @@ h1, h2, h3, p, dl, dd, dt {
 /* ---------- small screens ---------- */
 
 @media (max-width: 880px) {
-  .stack,
-  .stack--holdings {
+  .stack {
     grid-template-columns: minmax(0, 1fr);
     gap: 56px;
+  }
+
+  .col__rows--cards {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .col__name {
