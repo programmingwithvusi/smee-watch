@@ -1,6 +1,7 @@
 import { classify, type Level } from "./classify";
 import { classifyCatalyst } from "./catalystClassify";
-import { CATALYST_QUERIES, FAIL_ALERT_AFTER } from "./config";
+import { AI_LEVERAGE_QUERIES, CATALYST_QUERIES, FAIL_ALERT_AFTER } from "./config";
+import { classifyLeverage } from "./leverageClassify";
 import { errMsg, log } from "./log";
 import { fetchNews } from "./news";
 import { notify } from "./notify";
@@ -8,11 +9,11 @@ import { fetchPages } from "./pages";
 import { openState } from "./state";
 import type { Hit } from "./types";
 
-type Mode = "news" | "pages" | "catalysts";
+type Mode = "news" | "pages" | "catalysts" | "leverage";
 
 function parseMode(args: string[]): Mode {
-  const flags = ["--news", "--pages", "--catalysts"].filter((f) => args.includes(f));
-  if (flags.length !== 1) throw new Error("pass exactly one of --news, --pages or --catalysts");
+  const flags = ["--news", "--pages", "--catalysts", "--leverage"].filter((f) => args.includes(f));
+  if (flags.length !== 1) throw new Error("pass exactly one of --news, --pages, --catalysts or --leverage");
   return flags[0]!.slice(2) as Mode;
 }
 
@@ -22,9 +23,11 @@ function format(hit: Hit, level: Level, mode: Mode): string {
       ? `🚨 SMEE spotted on ${hit.source}`
       : mode === "catalysts"
         ? `⚡ Chip catalyst (${hit.source})`
-        : level === "high"
-          ? `🚨 SMEE listing signal (${hit.source})`
-          : `📰 SMEE news (${hit.source})`;
+        : mode === "leverage"
+          ? `🏦 AI leverage (${hit.source})`
+          : level === "high"
+            ? `🚨 SMEE listing signal (${hit.source})`
+            : `📰 SMEE news (${hit.source})`;
   return [head, hit.title, hit.url].join("\n");
 }
 
@@ -38,7 +41,10 @@ async function main(): Promise<void> {
   const firstRun = Object.keys(state.seeded).length === 0;
   log.info("run started", { mode, firstRun, dryRun, alertAll });
 
-  const result = mode === "pages" ? await fetchPages() : await fetchNews(mode === "catalysts" ? CATALYST_QUERIES : undefined);
+  const result =
+    mode === "pages"
+      ? await fetchPages()
+      : await fetchNews(mode === "catalysts" ? CATALYST_QUERIES : mode === "leverage" ? AI_LEVERAGE_QUERIES : undefined);
 
   // Source health: a watcher that silently stops seeing anything is worse than no watcher.
   const failing: string[] = [];
@@ -55,7 +61,14 @@ async function main(): Promise<void> {
 
   for (const hit of result.hits) {
     if (state.seen[hit.id] !== undefined) continue;
-    const level: Level = mode === "pages" ? "high" : mode === "catalysts" ? classifyCatalyst(hit.title) : classify(hit.title);
+    const level: Level =
+      mode === "pages"
+        ? "high"
+        : mode === "catalysts"
+          ? classifyCatalyst(hit.title)
+          : mode === "leverage"
+            ? classifyLeverage(hit.title)
+            : classify(hit.title);
     if (level === "none") continue; // not relevant; don't clutter state
 
     if (mode !== "pages" && state.seeded[hit.source] === undefined) {

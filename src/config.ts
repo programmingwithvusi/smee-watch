@@ -68,6 +68,20 @@ export const CATALYST_QUERIES: NewsQuery[] = [
   { label: "zh: 阿斯麦 出口管制", q: "阿斯麦 出口管制 OR 限制", ...ZH },
 ];
 
+/**
+ * AI-leverage watch: Anthropic and OpenAI can't be bought directly today (see the money-and-wealth
+ * discussion, 2026-10-12) -- this watches for either one becoming reachable: an IPO, a public
+ * listing, or secondary-market trading restrictions easing. Their publicly traded infrastructure
+ * partners/investors (Amazon, Alphabet, AMD -- see WATCH_IDEAS) are the closest indirect proxy
+ * available in the meantime.
+ */
+export const AI_LEVERAGE_QUERIES: NewsQuery[] = [
+  { label: "en: Anthropic IPO", q: '"Anthropic" ("IPO" OR "initial public offering" OR "public listing" OR "going public")', ...EN },
+  { label: "en: OpenAI IPO", q: '"OpenAI" ("IPO" OR "initial public offering" OR "public listing" OR "going public")', ...EN },
+  { label: "en: Anthropic secondary market", q: '"Anthropic" ("secondary market" OR "tender offer" OR "share sale")', ...EN },
+  { label: "en: OpenAI secondary market", q: '"OpenAI" ("secondary market" OR "tender offer" OR "share sale")', ...EN },
+];
+
 export const PAGES: PageSource[] = [
   {
     name: "SSE IPO review status",
@@ -108,6 +122,11 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   // Mariana Oncology has no listing of its own: Novartis owns it. A large pharma, so 3% is a big day
   { symbol: "NVS", label: "Novartis (cancer therapy, owns Mariana Oncology)", moveAlertPct: 3 },
   { symbol: "ANG.JO", label: "AngloGold Ashanti (gold mining, JSE)", moveAlertPct: 5 },
+  // AI-infrastructure proxies: can't buy Anthropic/OpenAI directly, so these publicly traded
+  // partners/investors are the closest indirect exposure -- see AI_LEVERAGE_QUERIES above.
+  { symbol: "AMZN", label: "Amazon (AWS, $33B+ invested in Anthropic)", moveAlertPct: 3 },
+  { symbol: "GOOGL", label: "Alphabet (invests in + hosts Anthropic on TPUs)", moveAlertPct: 3 },
+  { symbol: "AMD", label: "AMD ($5B stake, MI450 chip deal with Anthropic)", moveAlertPct: 4 },
 ];
 
 /**

@@ -51,6 +51,11 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   // Mariana Oncology (radioligand cancer therapy) has no listing of its own: Novartis owns it
   idea("NVS", "Novartis", "Cancer therapy, owns Mariana Oncology", "NYSE"),
   idea("ANG.JO", "AngloGold Ashanti", "Gold mining", "JSE"),
+  // AI-infrastructure proxies: can't buy Anthropic/OpenAI directly, so these publicly traded
+  // partners/investors are the closest indirect exposure.
+  idea("AMZN", "Amazon", "AWS, invests in Anthropic", "NASDAQ"),
+  idea("GOOGL", "Alphabet", "Invests in + hosts Anthropic on TPUs", "NASDAQ"),
+  idea("AMD", "AMD", "Chip deal + stake in Anthropic", "NASDAQ"),
 ];
 
 /**

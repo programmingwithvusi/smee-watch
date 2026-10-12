@@ -1,0 +1,46 @@
+name: leverage
+
+# Every 4 hours: corporate events like an IPO filing or a secondary-market policy change don't
+# happen on a trading-hours schedule, but they're also not minute-to-minute news (unlike catalysts.yml's
+# 2-hour cadence for export-control policy, which can move ASML/SMIC same-day).
+on:
+  schedule:
+    - cron: "35 */4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: state-leverage
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Watch AI-leverage news
+        run: npm run watch:leverage
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          LOG_LEVEL: ${{ vars.LOG_LEVEL || 'info' }}
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "smee-watch[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add state
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(state): leverage"
+            git pull --rebase --autostash
+            git push
+          fi
