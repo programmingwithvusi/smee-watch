@@ -14,7 +14,9 @@ export const BANK_TRACK: Record<string, BankTrack> = {
   "STXMMT.JO": "core",
   MRNA: "core",
   SPCX: "core",
-  // Track B (ASML/SMIC) has no position yet -- add it here once held, matching src/config.ts.
+  // Track B: first buy-in, 2026-10-12.
+  ASML: "speculative",
+  // SMIC still has no position -- add it here once held, matching src/config.ts.
 };
 
 /** Core track: bank a slice at every multiple of this (30, 60, 90, ...). */

@@ -127,6 +127,49 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "AMZN", label: "Amazon (AWS, $33B+ invested in Anthropic)", moveAlertPct: 3 },
   { symbol: "GOOGL", label: "Alphabet (invests in + hosts Anthropic on TPUs)", moveAlertPct: 3 },
   { symbol: "AMD", label: "AMD ($5B stake, MI450 chip deal with Anthropic)", moveAlertPct: 4 },
+  { symbol: "ASML", label: "ASML (lithography equipment, Track B)", moveAlertPct: 5 },
+  // Added 2026-10-12: the rest of the EasyEquities AI/chip/infra micro-buy basket, plus a few new
+  // ZAR single-stock buys. Watch-only -- these are small weekly round-ups, not worth profit-banking
+  // rungs (see POSITIONS above for what actually gets rung-tracked). Keep in step with dashboard/
+  // shared/watchlist.ts.
+  { symbol: "AMAT", label: "Applied Materials (chip equipment)", moveAlertPct: 4 },
+  { symbol: "ANET", label: "Arista Networks (data centre networking)", moveAlertPct: 4 },
+  { symbol: "GLW", label: "Corning (fibre optics)", moveAlertPct: 4 },
+  { symbol: "CDNS", label: "Cadence (chip design software)", moveAlertPct: 4 },
+  { symbol: "CARR", label: "Carrier Global (data centre cooling)", moveAlertPct: 4 },
+  { symbol: "COHR", label: "Coherent (optical components)", moveAlertPct: 5 },
+  { symbol: "CEG", label: "Constellation Energy (nuclear, data centre power)", moveAlertPct: 4 },
+  { symbol: "DELL", label: "Dell Technologies (AI servers)", moveAlertPct: 4 },
+  { symbol: "HACK", label: "ETFMG Prime Cyber Security ETF", moveAlertPct: 3 },
+  { symbol: "ETN", label: "Eaton (data centre power management)", moveAlertPct: 4 },
+  { symbol: "EQIX", label: "Equinix (data centres)", moveAlertPct: 3 },
+  { symbol: "CLOU", label: "Global X Cloud Computing ETF", moveAlertPct: 3 },
+  { symbol: "PAVE", label: "Global X US Infrastructure Development ETF", moveAlertPct: 3 },
+  { symbol: "HPE", label: "Hewlett Packard Enterprise (AI servers)", moveAlertPct: 4 },
+  { symbol: "KLAC", label: "KLA Corp (chip equipment)", moveAlertPct: 4 },
+  { symbol: "LRCX", label: "Lam Research (chip equipment)", moveAlertPct: 4 },
+  { symbol: "LITE", label: "Lumentum (optical components)", moveAlertPct: 6 },
+  { symbol: "MRVL", label: "Marvell Technology (custom AI silicon)", moveAlertPct: 5 },
+  { symbol: "MRK", label: "Merck (pharma)", moveAlertPct: 3 },
+  { symbol: "NEE", label: "NextEra Energy (data centre power)", moveAlertPct: 3 },
+  { symbol: "PANW", label: "Palo Alto Networks (cybersecurity)", moveAlertPct: 4 },
+  { symbol: "PWR", label: "Quanta Services (data centre + grid infrastructure)", moveAlertPct: 4 },
+  { symbol: "SKHY", label: "SK Hynix ADR (high-bandwidth memory)", moveAlertPct: 5 },
+  { symbol: "SNDK", label: "Sandisk (NAND flash)", moveAlertPct: 6 },
+  { symbol: "XSD", label: "SPDR S&P Semiconductor ETF", moveAlertPct: 3 },
+  { symbol: "SMCI", label: "Super Micro Computer (AI servers)", moveAlertPct: 7 },
+  { symbol: "SNPS", label: "Synopsys (chip design software)", moveAlertPct: 4 },
+  { symbol: "TSLA", label: "Tesla (EVs, robotics)", moveAlertPct: 5 },
+  { symbol: "SMH", label: "VanEck Semiconductor ETF", moveAlertPct: 3 },
+  { symbol: "VGT", label: "Vanguard Information Technology ETF", moveAlertPct: 3 },
+  { symbol: "VRT", label: "Vertiv Holdings (data centre cooling + power)", moveAlertPct: 5 },
+  { symbol: "WCLD", label: "WisdomTree Cloud Computing Fund", moveAlertPct: 3 },
+  { symbol: "SOXX", label: "iShares PHLX Semiconductor ETF", moveAlertPct: 3 },
+  { symbol: "IYW", label: "iShares U.S. Technology ETF", moveAlertPct: 3 },
+  { symbol: "APN.JO", label: "Aspen Pharmacare (JSE)", moveAlertPct: 4 },
+  { symbol: "DSY.JO", label: "Discovery (JSE)", moveAlertPct: 4 },
+  { symbol: "EPS.JO", label: "Eastern Platinum (JSE, speculative miner)", moveAlertPct: 7 },
+  { symbol: "PRX.JO", label: "Prosus (JSE, Tencent/Naspers holding)", moveAlertPct: 4 },
 ];
 
 /**
@@ -143,6 +186,7 @@ export const WATCH_ETFS: WatchSymbol[] = [
   { symbol: "STXWDM.JO", label: "Satrix MSCI World", moveAlertPct: 3 },
   { symbol: "STX40.JO", label: "Satrix 40", moveAlertPct: 3 },
   { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", moveAlertPct: 4 },
+  { symbol: "SYGUS.JO", label: "Sygnia Itrix MSCI USA", moveAlertPct: 3 },
 ];
 
 // ---------------------------------------------------------------------------------------------
@@ -167,12 +211,16 @@ export interface Position {
 }
 
 export const POSITIONS: Position[] = [
-  { symbol: "ANG.JO", label: "AngloGold Ashanti", track: "core", costPerUnit: 93.67 / 0.0489 },
-  { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", track: "core", costPerUnit: 301.06 / 15.7895 },
-  { symbol: "MRNA", label: "Moderna", track: "core", costPerUnit: 38.25 / 0.2576 },
-  { symbol: "SPCX", label: "SpaceX", track: "core", costPerUnit: 90.58 / 0.6555 },
-  // Track B (ASML/SMIC) has no position yet -- add one here once you actually buy in, e.g.:
-  // { symbol: "ASML", label: "ASML", track: "speculative", costPerUnit: <total cost> / <quantity> },
+  // Costs recomputed 2026-10-12 from the full EasyEquities transaction history (previously from a
+  // partial statement), so these are now the true weighted-average cost across every buy to date.
+  { symbol: "ANG.JO", label: "AngloGold Ashanti", track: "core", costPerUnit: 99.06 / 0.0527 },
+  { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", track: "core", costPerUnit: 300.0 / 15.7895 },
+  { symbol: "MRNA", label: "Moderna", track: "core", costPerUnit: 38.0 / 0.2576 },
+  { symbol: "SPCX", label: "SpaceX", track: "core", costPerUnit: 89.99 / 0.6555 },
+  // Track B: first buy-in, 2026-10-12.
+  { symbol: "ASML", label: "ASML", track: "speculative", costPerUnit: 29.92 / 0.0177 },
+  // SMIC has no position yet -- add one here once you actually buy in, e.g.:
+  // { symbol: "688981.SS", label: "SMIC A-share", track: "speculative", costPerUnit: <total cost> / <quantity> },
 ];
 
 /** Core track: bank a slice at every multiple of this (30, 60, 90, ...). */
