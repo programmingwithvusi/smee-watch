@@ -26,6 +26,20 @@ npm run typecheck
 
 Because the watcher's Actions commit `state/` files to the same repo, every commit would trigger a Netlify build. In **Site configuration → Build & deploy → Build settings → Ignore builder**, use `git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF .` (run from the `dashboard` base directory) so it only rebuilds when the dashboard changes. Check that your very first deploy still builds.
 
+## Install it on your phone
+
+The page is a PWA (`public/manifest.webmanifest`, `public/sw.js`, registered from `src/main.tsx`
+only in the production build): once it's deployed,
+
+- **iOS Safari:** open the site, tap Share → **Add to Home Screen**.
+- **Android Chrome:** open the site, tap the menu (⋮) → **Install app** (or **Add to Home screen**).
+
+Either way you get a real home-screen icon and a full-screen window with no browser chrome. The
+service worker caches the app shell for fast/offline loading, but always goes to the network first
+for anything live (`/api/*`, `/portfolio/*.json`) -- it only falls back to a cached copy if the
+request itself fails, so prices never look live when they're actually stale. Bump `CACHE_NAME` in
+`public/sw.js` on any deploy where you've changed what the shell caches.
+
 ## Endpoints
 
 | Path | What it does |

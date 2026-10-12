@@ -32,3 +32,15 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    # Never let a CDN/browser cache the service worker itself stale -- the whole point of bumping
+    # CACHE_NAME on a deploy is that the new sw.js is seen promptly, not after some TTL.
+    Cache-Control = "no-cache"
