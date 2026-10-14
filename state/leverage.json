@@ -266,7 +266,12 @@
     "83d81d1c358d3b6db1916b180de1e2e11b4fa1e9": 1792009096824
   },
   "alerted": {},
-  "failures": {},
+  "failures": {
+    "en: Anthropic IPO": 1,
+    "en: OpenAI IPO": 1,
+    "en: Anthropic secondary market": 1,
+    "en: OpenAI secondary market": 1
+  },
   "seeded": {
     "en: Anthropic IPO": 1791857567797,
     "en: OpenAI IPO": 1791857567797,
