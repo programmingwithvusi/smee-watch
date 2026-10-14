@@ -1,9 +1,7 @@
 {
   "seen": {},
   "alerted": {},
-  "failures": {
-    "SSE IPO review status": 1
-  },
+  "failures": {},
   "seeded": {
     "SSE IPO review status": 1790331220841
   }
