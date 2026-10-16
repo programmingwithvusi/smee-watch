@@ -228,6 +228,16 @@ export const CORE_BANK_RUNG_PCT = 30;
 /** Speculative track: bank a slice at each of these, in order; does not repeat beyond the last one. */
 export const SPECULATIVE_BANK_RUNGS_PCT = [20, 40];
 
+/**
+ * What to do with proceeds once a bank rung fires, agreed 2026-10-16 (see the money-and-wealth
+ * discussion): the growth sleeve (POSITIONS) is where these rungs happen, and it's irregular by
+ * nature. Splitting the proceeds routes half toward real, spendable income and half toward
+ * building a second, steadier income sleeve -- dividend-paying instead of growth -- so the
+ * irregular wins eventually fund something that pays out on its own schedule.
+ */
+export const BANK_SPLIT_INCOME_PCT = 50; // withdraw this much as cash income
+export const BANK_INCOME_SLEEVE = "STXDIV (Satrix Divi ETF, JSE -- buyable on EasyEquities, ~6.5% distribution yield)";
+
 export const FX_SYMBOL = "CNYHKD=X"; // HKD per 1 CNY, used for the SMIC A/H premium
 export const SMIC_A = "688981.SS";
 export const SMIC_H = "0981.HK";

@@ -72,4 +72,11 @@ describe("formatBankAlert", () => {
     const msg = formatBankAlert(SPEC, 22, 20, 854, "USD");
     expect(msg).toContain("Speculative-track rung");
   });
+
+  test("names the income/reinvest split and the income sleeve", () => {
+    const msg = formatBankAlert(CORE, 65.2, 60, 3125, "ZAR");
+    expect(msg).toContain("Withdraw 50% as cash income");
+    expect(msg).toContain("reinvest the other 50%");
+    expect(msg).toContain("STXDIV");
+  });
 });
