@@ -37,8 +37,12 @@ only in the production build): once it's deployed,
 Either way you get a real home-screen icon and a full-screen window with no browser chrome. The
 service worker caches the app shell for fast/offline loading, but always goes to the network first
 for anything live (`/api/*`, `/portfolio/*.json`) -- it only falls back to a cached copy if the
-request itself fails, so prices never look live when they're actually stale. Bump `CACHE_NAME` in
-`public/sw.js` on any deploy where you've changed what the shell caches.
+request itself fails, so prices never look live when they're actually stale. `CACHE_NAME` in
+`public/sw.js` is stamped automatically on every build (`scripts/stamp-sw-cache.mjs`, wired as the
+"postbuild" script in `package.json`), so a new deploy always busts the old cache -- this used to be
+a manual step and got missed three deploys running before it was automated. No action needed when
+you change shell-affecting code; just don't hand-edit the `CACHE_NAME` value in `public/sw.js`
+itself, since the build overwrites it anyway.
 
 ## Endpoints
 

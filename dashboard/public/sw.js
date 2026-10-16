@@ -2,12 +2,18 @@
 // change without a build step of its own. Two strategies only:
 //
 //  - Static assets (JS/CSS/the page itself): cache-first, so the app still opens with no signal.
-//    A new deploy gets a new CACHE_NAME (bump it below), which drops the old cache on activate.
+//    Every deploy needs a new CACHE_NAME so the old cache gets dropped on activate -- this used to
+//    be a manual bump-it-yourself step here, and it got forgotten three deploys running (2026-10-16),
+//    leaving the installed phone app stuck on a stale bundle with no visible error. It's no longer
+//    manual: scripts/stamp-sw-cache.mjs rewrites the line below in dist/sw.js after every
+//    `npm run build` (wired as the "postbuild" script in package.json), stamping in the Netlify
+//    commit SHA (or local git SHA / timestamp as a fallback). Don't hand-edit the value below for
+//    a real deploy -- it's just the placeholder this file ships with; the build always overwrites it.
 //  - Everything live (/api/*, /portfolio/*.json): network-first. Prices and holdings must never
 //    look live when they're actually a stale cache; the cached copy is only a fallback for when
 //    the network request itself fails (e.g. truly offline), and the app's own "as of" labels
 //    already say when the data is from.
-const CACHE_NAME = "chip-watch-shell-v2";
+const CACHE_NAME = "chip-watch-shell-dev";
 const SHELL_PATHS = ["/", "/manifest.webmanifest", "/favicon.svg"];
 
 self.addEventListener("install", (event) => {
