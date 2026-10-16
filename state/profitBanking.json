@@ -1,6 +1,9 @@
 {
   "seen": {},
-  "alerted": {},
+  "alerted": {
+    "bank:MRNA:+30%": 1791851990895,
+    "bank:MRNA:+60%": 1792083275639
+  },
   "failures": {},
   "seeded": {}
 }

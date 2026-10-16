@@ -1,5 +1,8 @@
 {
-  "seen": {},
+  "seen": {
+    "ca3d103f3efbc76cb272e47825080173c7f2815b": 1791973542129,
+    "eed78b15f36d2c0096434c869780e69bf14854ee": 1791991257503
+  },
   "alerted": {},
   "failures": {},
   "seeded": {
@@ -8,6 +11,7 @@
     "zh: 上海微电子 IPO 辅导": 1790332845496,
     "zh: 芯上微装": 1790332845496,
     "en: SMEE IPO": 1790332845496,
-    "en: SMEE reverse merger": 1790332845496
+    "en: SMEE reverse merger": 1790332845496,
+    "zh: 中旗新材 光刻机 借壳 (unconfirmed rumor)": 1791829967633
   }
 }
