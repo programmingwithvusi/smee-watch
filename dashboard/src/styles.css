@@ -691,6 +691,94 @@ h1, h2, h3, p, dl, dd, dt {
   color: var(--muted);
 }
 
+/* ---------- the collapsed tail of small holdings ---------- */
+
+.col__compact {
+  margin-top: 16px;
+}
+
+.col__more {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--accent-ink);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+}
+
+.col__more:hover {
+  border-color: var(--accent);
+}
+
+.compact-list {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.compact-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  font: inherit;
+  text-align: start;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--scribe);
+  padding: 7px 2px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.compact-row:hover {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.compact-row__name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.compact-row__symbol {
+  font-weight: 650;
+  flex-shrink: 0;
+}
+
+.compact-row__label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.compact-row__value {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.compact-row__gain {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.compact-row__gain.is-up {
+  color: var(--up);
+}
+
+.compact-row__gain.is-down {
+  color: var(--down);
+}
+
 /* A holding with no live price has no figure: keep the grid but let the note sit in the figures cell */
 .listing--nolive .listing__missing {
   margin-top: 6px;

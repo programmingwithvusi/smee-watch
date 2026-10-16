@@ -135,6 +135,23 @@ function CoinPicker({ holdings }: { holdings: HoldingDto[] }) {
   return <HoldingTile h={h} head={head} share={share} />;
 }
 
+/** One line per holding: symbol, value, gain -- for the long tail of small positions that don't
+ *  earn a full card. Click a row to promote it to a full HoldingTile in place. */
+function CompactRow({ h, onExpand }: { h: HoldingDto; onExpand: () => void }) {
+  const hasLive = h.liveValue !== null && h.liveCurrency !== null;
+  const gain = gainOnCost(h);
+  return (
+    <button type="button" className="compact-row" onClick={onExpand}>
+      <span className="compact-row__name">
+        <span className="compact-row__symbol">{h.symbol}</span>
+        {h.name && <span className="compact-row__label">{h.name}</span>}
+      </span>
+      <span className="compact-row__value">{hasLive ? formatPrice(h.liveValue!, h.liveCurrency!) : "—"}</span>
+      {gain !== null && <span className={`compact-row__gain is-${direction(gain)}`}>{formatPct(gain)}</span>}
+    </button>
+  );
+}
+
 function HoldingColumn({
   id,
   name,
@@ -144,6 +161,7 @@ function HoldingColumn({
   note,
   picker = false,
   cards = false,
+  maxCards,
 }: {
   id: string;
   name: string;
@@ -156,8 +174,25 @@ function HoldingColumn({
   /** Lay the tiles out as a wrapping grid of cards, rather than one stacked column -- for a
    *  holdings list long enough that a single column would run the page out forever. */
   cards?: boolean;
+  /** Full HoldingTile cards for only the top this-many holdings by live value; the rest show as
+   *  compact one-line rows, with a click to promote any one of them to a full card. Omit to show
+   *  every holding as a full card, as before. */
+  maxCards?: number;
 }) {
   const total = totalLabel(holdings);
+  const sorted = [...holdings].sort((a, b) => (b.liveValue ?? -1) - (a.liveValue ?? -1));
+  const [expanded, setExpanded] = useState<ReadonlySet<string>>(new Set());
+  const [showAllCompact, setShowAllCompact] = useState(false);
+
+  const splitAt = maxCards ?? sorted.length;
+  const headline = sorted.slice(0, splitAt);
+  const rest = sorted.slice(splitAt);
+  const compact = rest.filter((h) => !expanded.has(`${h.source}:${h.symbol}`));
+  const promoted = rest.filter((h) => expanded.has(`${h.source}:${h.symbol}`));
+  const compactVisible = showAllCompact ? compact : [];
+
+  const promote = (h: HoldingDto) => setExpanded((prev) => new Set(prev).add(`${h.source}:${h.symbol}`));
+
   return (
     <section className={`col col--holdings col--${id}`} aria-labelledby={`${id}-title`}>
       <h2 id={`${id}-title`} className="col__name">{name}</h2>
@@ -178,9 +213,33 @@ function HoldingColumn({
         ) : picker ? (
           <CoinPicker holdings={holdings} />
         ) : (
-          holdings.map((h) => <HoldingTile key={`${h.source}:${h.symbol}`} h={h} head={holdingName(h)} />)
+          <>
+            {[...headline, ...promoted].map((h) => (
+              <HoldingTile key={`${h.source}:${h.symbol}`} h={h} head={holdingName(h)} />
+            ))}
+          </>
         )}
       </div>
+      {!picker && compact.length > 0 && (
+        <div className="col__compact">
+          {!showAllCompact ? (
+            <button type="button" className="col__more" onClick={() => setShowAllCompact(true)}>
+              Show {compact.length} more holding{compact.length === 1 ? "" : "s"}
+            </button>
+          ) : (
+            <>
+              <div className="compact-list">
+                {compactVisible.map((h) => (
+                  <CompactRow key={`${h.source}:${h.symbol}`} h={h} onExpand={() => promote(h)} />
+                ))}
+              </div>
+              <button type="button" className="col__more" onClick={() => setShowAllCompact(false)}>
+                Show fewer
+              </button>
+            </>
+          )}
+        </div>
+      )}
       {note && <p className="col__note">{note}</p>}
     </section>
   );
@@ -223,6 +282,7 @@ export const PortfolioPanel = memo(function PortfolioPanel({ data, error, loadin
             role="USD + ZAR share accounts"
             holdings={data.easyequities.holdings}
             cards
+            maxCards={10}
             empty="No holdings yet. Add your positions to public/portfolio/easyequities-holdings.json (symbol, quantity and total cost), from a statement or the app."
             note={
               data.easyequities.asOf
