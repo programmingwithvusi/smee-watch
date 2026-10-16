@@ -123,6 +123,8 @@ export const WATCH_ETFS: readonly WatchItem[] = [
   etf("STX40.JO", "Satrix 40", "40 largest JSE companies"),
   etf("STXMMT.JO", "Satrix Momentum ETF", "Equity momentum factor"),
   etf("SYGUS.JO", "Sygnia Itrix MSCI USA", "US large-cap tracker"),
+  // Income sleeve, added 2026-10-16 -- see BANK_INCOME_SLEEVE in src/config.ts.
+  etf("STXDIV.JO", "Satrix Divi ETF (income sleeve)", "High-dividend JSE shares, ~6.5% yield"),
 ];
 
 /** ZAR per 1 USD */

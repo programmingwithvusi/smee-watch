@@ -187,6 +187,8 @@ export const WATCH_ETFS: WatchSymbol[] = [
   { symbol: "STX40.JO", label: "Satrix 40", moveAlertPct: 3 },
   { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", moveAlertPct: 4 },
   { symbol: "SYGUS.JO", label: "Sygnia Itrix MSCI USA", moveAlertPct: 3 },
+  // Income sleeve, added 2026-10-16: see BANK_INCOME_SLEEVE above.
+  { symbol: "STXDIV.JO", label: "Satrix Divi ETF (income sleeve)", moveAlertPct: 3 },
 ];
 
 // ---------------------------------------------------------------------------------------------
