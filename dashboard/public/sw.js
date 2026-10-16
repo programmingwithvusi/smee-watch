@@ -7,7 +7,7 @@
 //    look live when they're actually a stale cache; the cached copy is only a fallback for when
 //    the network request itself fails (e.g. truly offline), and the app's own "as of" labels
 //    already say when the data is from.
-const CACHE_NAME = "chip-watch-shell-v1";
+const CACHE_NAME = "chip-watch-shell-v2";
 const SHELL_PATHS = ["/", "/manifest.webmanifest", "/favicon.svg"];
 
 self.addEventListener("install", (event) => {
