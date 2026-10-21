@@ -106,6 +106,16 @@ Re-running on the same file, or a new export that overlaps an old one, is safe: 
 - **Open/closed and the countdown** follow each exchange's regular hours (Nasdaq 09:30-16:00 ET; Amsterdam 09:00-17:30; STAR 09:30-11:30 and 13:00-15:00; HKEX 09:30-12:00 and 13:00-16:00), ticking every second as `hh:mm:ss`, or `2d hh:mm:ss` over a weekend. The target is computed as a real instant in the exchange's time zone, so it stays exact across daylight-saving changes (a test sweeps both the European and US clock changes and checks the state flips on the exact second the countdown reaches zero). There is **no holiday calendar**, so on an exchange holiday it will count down to a close that never had an open. The "last trade" time is shown beside it for that reason. Data can lag by up to 15 minutes.
 - **Accessibility:** the ticking digits are hidden from screen readers so they don't chatter every second. A visually hidden sentence ("Open, closes in 5h 56m") carries the same information.
 
+## Income candidates and tax notes
+
+The watch list carries a few dividend payers for the income sleeve (STXDIV in rand; SCHD, VYM, VIG and
+Realty Income in dollars). Their `yieldPct` in `shared/watchlist.ts` is a hand-entered, approximate
+reference figure dated by `YIELD_AS_OF`, not a live number: refresh both together and check the
+fund's own page before buying. Rough tax picture for a South African resident, to confirm with
+EasyEquities or a tax adviser: US dividends are usually withheld at source at 15% under the treaty,
+local JSE dividends carry SA dividend tax, and dividends inside a tax-free savings account (TFSA) are
+not taxed, subject to its annual and lifetime contribution limits.
+
 ## Not verified live
 
 I could not open this in a real browser or reach Yahoo from my sandbox. What I did verify: types, 51 unit tests (including the functions with a mocked upstream), a production build, and a server-rendered layout check at desktop and phone widths. Please check in a browser: the Archivo font loading (it falls back to Arial Narrow), the overlay box's one-time slide-in on first load, dark mode, and that Yahoo answers from Netlify's servers. If Yahoo blocks them, only `shared/yahoo.ts` and `chartUrl` need replacing with another provider.

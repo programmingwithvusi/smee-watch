@@ -9,7 +9,15 @@ export interface WatchItem {
   name?: string;
   /** Why it's on the list, e.g. "AI" */
   theme?: string;
+  /**
+   * Approximate trailing dividend yield in %, for the income candidates only. A hand-entered
+   * reference figure (see YIELD_AS_OF), not a live number: check the fund's own page before buying.
+   */
+  yieldPct?: number;
 }
+
+/** When the yieldPct figures were last checked by hand; yields drift, so refresh this with them. */
+export const YIELD_AS_OF = "2026-10-21";
 
 export const WATCHLIST: readonly WatchItem[] = [
   { symbol: "ASML", label: "ASML on Nasdaq", company: "ASML", exchange: "NASDAQ" },
@@ -97,6 +105,11 @@ export const WATCH_IDEAS: readonly WatchItem[] = [
   idea("DSY.JO", "Discovery", "Insurance/health, JSE", "JSE"),
   idea("EPS.JO", "Eastern Platinum", "Speculative miner, JSE", "JSE"),
   idea("PRX.JO", "Prosus", "Tencent/Naspers holding, JSE", "JSE"),
+  // Dollar-side income candidates, added 2026-10-21 -- see BANK_INCOME_SLEEVE in src/config.ts.
+  { ...idea("SCHD", "Schwab US Dividend Equity ETF", "Income: quality US dividend payers", "NYSE"), yieldPct: 3.8 },
+  { ...idea("VYM", "Vanguard High Dividend Yield ETF", "Income: broad high-yield US shares", "NYSE"), yieldPct: 2.9 },
+  { ...idea("VIG", "Vanguard Dividend Appreciation ETF", "Income growth: rising payouts", "NYSE"), yieldPct: 1.7 },
+  { ...idea("O", "Realty Income", "Income: monthly-dividend REIT", "NYSE"), yieldPct: 5.5 },
 ];
 
 /**
@@ -124,7 +137,7 @@ export const WATCH_ETFS: readonly WatchItem[] = [
   etf("STXMMT.JO", "Satrix Momentum ETF", "Equity momentum factor"),
   etf("SYGUS.JO", "Sygnia Itrix MSCI USA", "US large-cap tracker"),
   // Income sleeve, added 2026-10-16 -- see BANK_INCOME_SLEEVE in src/config.ts.
-  etf("STXDIV.JO", "Satrix Divi ETF (income sleeve)", "High-dividend JSE shares, ~6.5% yield"),
+  { ...etf("STXDIV.JO", "Satrix Divi ETF (income sleeve)", "High-dividend JSE shares"), yieldPct: 6.5 },
 ];
 
 /** ZAR per 1 USD */
