@@ -28,7 +28,8 @@ export function ListingRow({ item, quote, now, compact = false, usdZar = null }:
   const title = item.name ?? ex.name;
   // The JSE code as EasyEquities shows it, without Yahoo's ".JO" suffix
   const ticker = item.exchange === "JSE" ? item.symbol.replace(/\.JO$/, "") : item.symbol;
-  const theme = item.theme && <p className="listing__theme">{item.theme} · {ex.name}</p>;
+  const yieldNote = item.yieldPct !== undefined ? ` · ~${item.yieldPct}% yield` : "";
+  const theme = item.theme && <p className="listing__theme">{item.theme} · {ex.name}{yieldNote}</p>;
 
   if (!quote) {
     return (

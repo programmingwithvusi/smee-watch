@@ -170,6 +170,12 @@ export const WATCH_IDEAS: WatchSymbol[] = [
   { symbol: "DSY.JO", label: "Discovery (JSE)", moveAlertPct: 4 },
   { symbol: "EPS.JO", label: "Eastern Platinum (JSE, speculative miner)", moveAlertPct: 7 },
   { symbol: "PRX.JO", label: "Prosus (JSE, Tencent/Naspers holding)", moveAlertPct: 4 },
+  // USD income candidates, added 2026-10-21 -- the dollar side of the income sleeve (see
+  // BANK_INCOME_SLEEVE). Funds first: they move less and a single payout cut hurts less.
+  { symbol: "SCHD", label: "Schwab US Dividend Equity ETF (income)", moveAlertPct: 3 },
+  { symbol: "VYM", label: "Vanguard High Dividend Yield ETF (income)", moveAlertPct: 3 },
+  { symbol: "VIG", label: "Vanguard Dividend Appreciation ETF (income, growth)", moveAlertPct: 3 },
+  { symbol: "O", label: "Realty Income (monthly-dividend REIT)", moveAlertPct: 4 },
 ];
 
 /**
