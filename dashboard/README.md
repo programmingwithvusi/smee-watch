@@ -56,7 +56,22 @@ Logs are one JSON object per line with a per-request `correlationId`.
 
 ## Your holdings
 
-The page also shows your own Luno and EasyEquities positions, in a section below the market watchlist. Neither service is queried live from the deployed site — there's no API key sitting on Netlify. Instead, **you run a script locally, it writes a small JSON file, and you commit that file to this repo.** The `/api/portfolio` function just reads whatever was last committed and adds a live price where it can.
+Your own Luno and EasyEquities positions live on a separate **Portfolio** page (the button in the top bar, `#/portfolio`), not on the watch page. Neither service is queried live from the deployed site — there's no API key sitting on Netlify. Instead, **you run a script locally, it writes a small JSON file, and you commit that file to a PRIVATE repo of your own.** The `/api/portfolio` function reads those files from the private repo and adds a live price where it can.
+
+### Keeping your numbers private (set this up once)
+
+This repo is public, so your holdings, cost basis, trades and balances must never be committed here. They sit in a private data repo, and the function only answers someone who has your access code.
+
+1. **Create a private GitHub repo** for the data, e.g. `smee-watch-data`, with a `portfolio/` folder holding `easyequities-holdings.json`, `luno-balance.json` and `trades.json`.
+2. **Create a read-only token** for it: GitHub → Settings → Developer settings → Fine-grained tokens → repository access *only that repo* → Permissions → Contents: **Read-only**.
+3. **Set these in Netlify** (Site configuration → Environment variables):
+   - `PORTFOLIO_DATA_REPO` = `your-username/smee-watch-data`
+   - `PORTFOLIO_DATA_TOKEN` = the token from step 2
+   - `PORTFOLIO_ACCESS_CODE` = a long passphrase you invent (16+ characters); you type it once per device on the Portfolio page
+4. **Profit-banking alerts** read your cost basis from a GitHub Actions secret called `POSITIONS_JSON` (see `src/config.ts` for the format) instead of the repo.
+5. **Updating the numbers:** point the scripts at your data checkout with `PORTFOLIO_DATA_PATH` (e.g. `C:\Projects\Dev\smee-watch-data\portfolio`), run them, then commit and push **in the private repo**.
+
+If `PORTFOLIO_ACCESS_CODE` is missing the endpoint refuses everything (it fails closed) rather than serving the data. Deleting a file from this repo does not remove it from git history, so anything committed here in the past stays readable there.
 
 ### Luno (crypto)
 
@@ -66,13 +81,13 @@ Luno has an official, read-only API, so this is a live snapshot of your balances
 2. Add two lines to the project's `.env` (or `dashboard/.env`; both are gitignored): `LUNO_API_KEY_ID=...` and `LUNO_API_KEY_SECRET=...`.
 3. `npm run luno:snapshot` — the script loads `.env` itself, in any shell (PowerShell included).
 
-This fetches your balances, values them in ZAR using Luno's public ticker, and writes `public/portfolio/luno-balance.json`. With `Perm_R_Transactions` it also replays your Luno statement to work out the average rand price you paid per coin, and writes **only that average** — no individual transactions, dates or amounts, since the file is public. Coins that arrived by transfer or a coin-for-coin swap get no average, rather than a wrong one. It prints what it found and reminds you to `git add`/`commit`/`push`. **The API key stays on your machine and is never written to any file that gets committed** — only the resulting numbers are. Re-run it whenever you want a fresher snapshot; each run overwrites the file, so the git history is your history of balances over time.
+This fetches your balances, values them in ZAR using Luno's public ticker, and writes `public/portfolio/luno-balance.json`. With `Perm_R_Transactions` it also replays your Luno statement to work out the average rand price you paid per coin, and writes **only that average** — no individual transactions, dates or amounts. Coins that arrived by transfer or a coin-for-coin swap get no average, rather than a wrong one. It prints what it found and reminds you to commit and push in your private data repo. **The API key stays on your machine and is never written to any file that gets committed** — only the resulting numbers are. Re-run it whenever you want a fresher snapshot; each run overwrites the file, so the git history is your history of balances over time.
 
 ### EasyEquities (JSE/US shares)
 
 EasyEquities has **no official API** — I checked, including the unofficial third-party scrapers people have built, and those recently broke when EasyEquities moved its login to OIDC + MFA. Building against an unofficial, undocumented login flow isn't something I'll do without your go-ahead, and per your choice this uses a CSV export instead, which needs no credentials at all.
 
-**The simple route: a holdings file you keep by hand.** `public/portfolio/easyequities-holdings.json` lists what you hold, read off a monthly statement (website: ≡ → Statements → Monthly Statements) or the app's holdings screen:
+**The simple route: a holdings file you keep by hand.** `easyequities-holdings.json` (in your private data repo's `portfolio/` folder) lists what you hold, read off a monthly statement (website: ≡ → Statements → Monthly Statements) or the app's holdings screen:
 
 ```json
 {
@@ -81,13 +96,13 @@ EasyEquities has **no official API** — I checked, including the unofficial thi
 }
 ```
 
-`symbol` is the Yahoo Finance ticker, `quantity` and `cost` are the statement's closing **Qty** and **Cost** (cost includes trading costs). That is all it stores — no account number, trade dates or individual trades, because the file is public. Update it when you buy or sell, then commit and push. A holding shows a live price, daily change and gain on cost when its symbol is on the watchlist (`shared/watchlist.ts`), so add it there too.
+`symbol` is the Yahoo Finance ticker, `quantity` and `cost` are the statement's closing **Qty** and **Cost** (cost includes trading costs). That is all it stores — no account number, trade dates or individual trades. Update it when you buy or sell, then commit and push in the private repo. A holding shows a live price, daily change and gain on cost when its symbol is on the watchlist (`shared/watchlist.ts`), so add it there too.
 
 **The CSV route**, if EasyEquities gives you a transaction export (website: ≡ → Transaction History → Download). A share listed in the holdings file takes its figures from there instead.
 
 1. In EasyEquities, export your trade/transaction history as a CSV (Transactions or Trade History → Export/Download).
 2. `npm run import:easyequities -- path/to/your-export.csv --dry-run` to preview what it found without writing anything.
-3. Drop `--dry-run` to actually merge it into `public/portfolio/trades.json`, then `git add`/`commit`/`push`.
+3. Drop `--dry-run` to actually merge it into `trades.json` (in the folder `PORTFOLIO_DATA_PATH` points to), then commit and push in the private repo.
 
 Re-running on the same file, or a new export that overlaps an old one, is safe: each row gets an id from its own contents, so anything already on file is skipped, never duplicated.
 

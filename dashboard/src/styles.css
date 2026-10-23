@@ -877,3 +877,35 @@ h1, h2, h3, p, dl, dd, dt {
   }
 
 }
+
+/* ---------- portfolio unlock ---------- */
+
+.unlock {
+  display: grid;
+  gap: 16px;
+  max-width: 420px;
+  margin-top: 8px;
+}
+
+.unlock__field {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.unlock__field input {
+  font: inherit;
+  padding: 9px 12px;
+  min-height: 44px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+}
+
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}

@@ -4,7 +4,7 @@ import { corsHeaders } from "../shared/cors";
 import { premiumPct, premiumSeries } from "../shared/premium";
 import { isQuotesResponse } from "../shared/types";
 import { parseChart } from "../shared/yahoo";
-import { WATCH_ETFS, WATCH_IDEAS } from "../shared/watchlist";
+import { FX_SYMBOL, USD_ZAR, WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import { SAMPLE, yahooChart } from "./fixtures";
 
 describe("parseChart", () => {
@@ -117,7 +117,9 @@ describe("buildQuotesResponse", () => {
     });
     expect(r.quotes).toEqual([]);
     expect(r.usdZar).toBeNull();
-    expect(Object.keys(r.errors)).toHaveLength(6 + WATCH_IDEAS.length + WATCH_ETFS.length);
+    // One error per DISTINCT symbol: a symbol on more than one list (ASML is on the chip columns and the watchlist) is fetched once
+    const distinct = new Set([...WATCHLIST, ...WATCH_IDEAS, ...WATCH_ETFS].map((w) => w.symbol).concat(USD_ZAR, FX_SYMBOL));
+    expect(Object.keys(r.errors)).toHaveLength(distinct.size);
   });
 });
 

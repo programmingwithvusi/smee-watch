@@ -70,13 +70,19 @@ function stub(mode: Mode): void {
   );
 }
 
-const req = (url = "https://site.test/api/portfolio", method = "GET") => new Request(url, { method });
+const CODE = "correct horse battery staple";
+/** An authorised request by default; pass code=null to send none. */
+const req = (url = "https://site.test/api/portfolio", method = "GET", code: string | null = CODE) =>
+  new Request(url, { method, headers: code ? { Authorization: `Bearer ${code}` } : {} });
 
 beforeEach(() => {
+  vi.stubEnv("PORTFOLIO_ACCESS_CODE", CODE);
+  vi.stubEnv("PORTFOLIO_DATA_REPO", "");
   vi.spyOn(process.stdout, "write").mockImplementation(() => true);
   vi.spyOn(process.stderr, "write").mockImplementation(() => true);
 });
 afterEach(() => {
+  vi.unstubAllEnvs();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
 });
@@ -180,5 +186,59 @@ describe("GET /api/portfolio", () => {
     expect((await portfolio(req("https://site.test/api/portfolio", "OPTIONS"))).status).toBe(204);
     const post = await portfolio(req("https://site.test/api/portfolio", "POST"));
     expect(post.status).toBe(405);
+  });
+});
+
+describe("access control", () => {
+  test("no code is refused with 401 and no data, and is never cacheable", async () => {
+    stub("ok");
+    const res = await portfolio(req("https://site.test/api/portfolio", "GET", null));
+    expect(res.status).toBe(401);
+    expect(res.headers.get("Cache-Control")).toBe("no-store");
+    const text = await res.text();
+    expect(text).not.toContain("XBT");
+    expect(text).not.toContain("holdings");
+  });
+
+  test("a wrong code is refused", async () => {
+    stub("ok");
+    expect((await portfolio(req("https://site.test/api/portfolio", "GET", "wrong"))).status).toBe(401);
+  });
+
+  test("fails closed with 503 when no code is configured on the server", async () => {
+    stub("ok");
+    vi.stubEnv("PORTFOLIO_ACCESS_CODE", "");
+    vi.stubEnv("NETLIFY_DEV", "");
+    expect((await portfolio(req())).status).toBe(503);
+  });
+
+  test("an authorised response is private, not shared-cacheable", async () => {
+    stub("ok");
+    const res = await portfolio(req());
+    expect(res.status).toBe(200);
+    expect(res.headers.get("Cache-Control")).toBe("private, no-store");
+    expect(res.headers.get("Netlify-CDN-Cache-Control")).toBeNull();
+  });
+});
+
+describe("private data source", () => {
+  test("reads from the private GitHub repo with the token when configured", async () => {
+    stub("ok");
+    vi.stubEnv("PORTFOLIO_DATA_REPO", "me/private-data");
+    vi.stubEnv("PORTFOLIO_DATA_TOKEN", "ghp_test");
+    const calls: Array<{ url: string; auth: string | null }> = [];
+    const inner = globalThis.fetch;
+    vi.stubGlobal("fetch", vi.fn(async (input: unknown, init?: RequestInit) => {
+      const url = String(input);
+      if (url.startsWith("https://api.github.com/repos/me/private-data/contents/portfolio/")) {
+        calls.push({ url, auth: new Headers(init?.headers).get("Authorization") });
+        return url.endsWith("trades.json") ? new Response(JSON.stringify(TRADES)) : new Response("nf", { status: 404 });
+      }
+      return inner(input as RequestInfo, init);
+    }));
+    const res = await portfolio(req());
+    expect(res.status).toBe(200);
+    expect(calls.length).toBe(3);
+    expect(calls.every((c) => c.auth === "Bearer ghp_test")).toBe(true);
   });
 });

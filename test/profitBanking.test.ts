@@ -80,3 +80,21 @@ describe("formatBankAlert", () => {
     expect(msg).toContain("STXDIV");
   });
 });
+
+describe("parsePositions", () => {
+  test("unset or blank means no positions", async () => {
+    const { parsePositions } = await import("../src/config");
+    expect(parsePositions(undefined)).toEqual([]);
+    expect(parsePositions("  ")).toEqual([]);
+  });
+
+  test("parses a valid array and rejects broken secrets loudly", async () => {
+    const { parsePositions } = await import("../src/config");
+    const ok = '[{"symbol":"ANG.JO","label":"AngloGold","track":"core","costPerUnit":1879.7}]';
+    expect(parsePositions(ok)).toEqual([{ symbol: "ANG.JO", label: "AngloGold", track: "core", costPerUnit: 1879.7 }]);
+    expect(() => parsePositions("not json")).toThrow(/valid JSON/);
+    expect(() => parsePositions("{}")).toThrow(/array/);
+    expect(() => parsePositions('[{"symbol":"X","label":"X","track":"bad","costPerUnit":1}]')).toThrow(/entry 0/);
+    expect(() => parsePositions('[{"symbol":"X","label":"X","track":"core","costPerUnit":-1}]')).toThrow(/entry 0/);
+  });
+});

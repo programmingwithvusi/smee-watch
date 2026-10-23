@@ -1,5 +1,7 @@
 import type { Config } from "@netlify/functions";
+import { checkAccess } from "../../shared/access";
 import { corsHeaders } from "../../shared/cors";
+import { loadDataFile } from "../../shared/privateData";
 import { priceInZar, USD_ZAR_SYMBOL, YAHOO_USD_SYMBOL, zarTrend, type LunoBalanceSnapshot, type LunoTicker } from "../../shared/luno";
 import { createLogger } from "../../shared/log";
 import {
@@ -19,8 +21,8 @@ interface TradesFile {
   trades: Trade[];
 }
 
-/** Same-origin static files under public/portfolio/ (committed to the repo, see the README). A
- *  missing file (nobody has run the import/snapshot script yet) is an empty result, not an error. */
+/** Same-origin JSON (used for the public /api/quotes only; the private portfolio files go through
+ *  loadDataFile, which reads a private repo). A 404 is an empty result, not an error. */
 async function fetchJsonOrEmpty<T>(url: string, fallback: T): Promise<T> {
   const res = await fetch(url, { signal: AbortSignal.timeout(8_000) });
   if (res.status === 404) return fallback;
@@ -88,15 +90,30 @@ export default async (req: Request): Promise<Response> => {
     });
   }
 
+  // Everything below is private financial data: no code, no data (and no caching of the refusal's
+  // absence either -- see the Cache-Control on the success response).
+  const access = checkAccess(req.headers.get("authorization"), process.env);
+  if (access !== "ok") {
+    const unconfigured = access === "unconfigured";
+    log.warn("portfolio refused", { reason: access });
+    return new Response(
+      JSON.stringify({ error: unconfigured ? "portfolio access is not configured on the server" : "access code required" }),
+      {
+        status: unconfigured ? 503 : 401,
+        headers: { ...cors, "Content-Type": "application/json", "Cache-Control": "no-store" },
+      },
+    );
+  }
+
   const origin = new URL(req.url).origin;
   const errors: Record<string, string> = {};
 
   const [tradesResult, lunoSnapResult, tickersResult, quotesResult, eeFileResult] = await Promise.allSettled([
-    fetchJsonOrEmpty<TradesFile>(`${origin}/portfolio/trades.json`, { trades: [] }),
-    fetchJsonOrEmpty<LunoBalanceSnapshot>(`${origin}/portfolio/luno-balance.json`, { asOf: null, balances: [] }),
+    loadDataFile<TradesFile>("trades.json", { trades: [] }, origin, process.env),
+    loadDataFile<LunoBalanceSnapshot>("luno-balance.json", { asOf: null, balances: [] }, origin, process.env),
     fetchLunoTickers(),
     fetchJsonOrEmpty<unknown>(`${origin}/api/quotes`, null),
-    fetchJsonOrEmpty<EasyEquitiesHoldingsFile>(`${origin}/portfolio/easyequities-holdings.json`, { asOf: null, holdings: [] }),
+    loadDataFile<EasyEquitiesHoldingsFile>("easyequities-holdings.json", { asOf: null, holdings: [] }, origin, process.env),
   ]);
 
   const tradesFile = tradesResult.status === "fulfilled" ? tradesResult.value : { trades: [] };
@@ -200,8 +217,8 @@ export default async (req: Request): Promise<Response> => {
     headers: {
       ...cors,
       "Content-Type": "application/json",
-      "Cache-Control": "public, max-age=0, must-revalidate",
-      "Netlify-CDN-Cache-Control": "public, s-maxage=30, stale-while-revalidate=120",
+      // Private: never stored by a shared cache (CDN) or the service worker; the browser may not keep it either.
+      "Cache-Control": "private, no-store",
     },
   });
 };

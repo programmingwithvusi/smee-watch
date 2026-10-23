@@ -3,7 +3,7 @@ import { bankBadge } from "../shared/bankTracks";
 
 describe("bankBadge", () => {
   test("a symbol not actually held gets no badge, at any gain", () => {
-    expect(bankBadge("ASML", 500)).toBeNull();
+    expect(bankBadge("NVDA", 500)).toBeNull();
   });
 
   test("core track (ANG.JO): nothing below the approach window", () => {

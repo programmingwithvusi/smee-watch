@@ -2,3 +2,5 @@ node_modules
 dist
 .netlify
 .env
+# Private financial data: never commit (it lives in your private data repo, see the README)
+public/portfolio/

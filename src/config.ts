@@ -222,10 +222,14 @@ export const WATCH_ETFS: WatchSymbol[] = [
 
 // ---------------------------------------------------------------------------------------------
 // Profit-banking: positions actually held, with their average cost, so a check can compute
-// unrealised P&L% and tell you when it's worth banking some profit. Add a position here once you
-// buy it; update costPerUnit on a top-up; remove it once fully sold. Keep in step with
-// dashboard/public/portfolio/easyequities-holdings.json -- that file stores quantity + total cost
-// for the dashboard; costPerUnit here = that file's cost / quantity.
+// unrealised P&L% and tell you when it's worth banking some profit.
+//
+// The positions themselves are PRIVATE (cost basis is your financial data and this repo is public),
+// so they come from the POSITIONS_JSON environment variable -- a GitHub Actions secret in CI, or
+// your .env locally -- as a JSON array, e.g.
+//   [{"symbol":"ANG.JO","label":"AngloGold Ashanti","track":"core","costPerUnit":1879.7}]
+// costPerUnit = total cost / quantity from your private easyequities-holdings.json. Update it on a
+// top-up; remove the entry once fully sold.
 //
 // Track rules (per the Buy/Sell/Bank plan agreed 2026-10-11):
 //   core        -- bank a slice at every +30% from cost, repeating at +60%, +90%, ...
@@ -241,18 +245,34 @@ export interface Position {
   costPerUnit: number;
 }
 
-export const POSITIONS: Position[] = [
-  // Costs recomputed 2026-10-12 from the full EasyEquities transaction history (previously from a
-  // partial statement), so these are now the true weighted-average cost across every buy to date.
-  { symbol: "ANG.JO", label: "AngloGold Ashanti", track: "core", costPerUnit: 99.06 / 0.0527 },
-  { symbol: "STXMMT.JO", label: "Satrix Momentum ETF", track: "core", costPerUnit: 300.0 / 15.7895 },
-  { symbol: "MRNA", label: "Moderna", track: "core", costPerUnit: 38.0 / 0.2576 },
-  { symbol: "SPCX", label: "SpaceX", track: "core", costPerUnit: 89.99 / 0.6555 },
-  // Track B: first buy-in, 2026-10-12.
-  { symbol: "ASML", label: "ASML", track: "speculative", costPerUnit: 29.92 / 0.0177 },
-  // SMIC has no position yet -- add one here once you actually buy in, e.g.:
-  // { symbol: "688981.SS", label: "SMIC A-share", track: "speculative", costPerUnit: <total cost> / <quantity> },
-];
+/** Validates the POSITIONS_JSON value. Unset/blank means no positions; a malformed value throws so a broken secret is loud, not silent. */
+export function parsePositions(raw: string | undefined): Position[] {
+  if (!raw || !raw.trim()) return [];
+  let data: unknown;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    throw new Error("POSITIONS_JSON is not valid JSON");
+  }
+  if (!Array.isArray(data)) throw new Error("POSITIONS_JSON must be a JSON array");
+  return data.map((p, i) => {
+    const o = p as Partial<Position> | null;
+    const ok =
+      typeof o === "object" &&
+      o !== null &&
+      typeof o.symbol === "string" &&
+      o.symbol !== "" &&
+      typeof o.label === "string" &&
+      (o.track === "core" || o.track === "speculative") &&
+      typeof o.costPerUnit === "number" &&
+      Number.isFinite(o.costPerUnit) &&
+      o.costPerUnit > 0;
+    if (!ok) throw new Error(`POSITIONS_JSON entry ${i} needs symbol, label, track (core|speculative) and a positive costPerUnit`);
+    return { symbol: o.symbol!, label: o.label!, track: o.track!, costPerUnit: o.costPerUnit! };
+  });
+}
+
+export const POSITIONS: Position[] = parsePositions(process.env.POSITIONS_JSON);
 
 /** Core track: bank a slice at every multiple of this (30, 60, 90, ...). */
 export const CORE_BANK_RUNG_PCT = 30;

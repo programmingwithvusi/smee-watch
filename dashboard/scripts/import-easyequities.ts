@@ -14,7 +14,7 @@
  *   they're not a trade and have no instrument to attach to a holding.
  *
  * Safe to re-run on the same file, or an export that overlaps a previous one: each row gets a
- * stable id from its own contents, so a row already in public/portfolio/trades.json is skipped,
+ * stable id from its own contents, so a row already in trades.json (in your private data repo) is skipped,
  * not duplicated. Nothing is deleted -- only new rows are added.
  */
 import { readFile, writeFile } from "node:fs/promises";
@@ -24,7 +24,13 @@ import { mergeTrades, type Trade, type TradeSide } from "../shared/portfolio";
 import { tradeId } from "../shared/tradeId";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_PATH = path.join(__dirname, "..", "public", "portfolio", "trades.json");
+// Private data never goes in this public repo: point PORTFOLIO_DATA_PATH at the portfolio/ folder of
+// your private data checkout (see the README). Without it, this writes to the gitignored
+// public/portfolio/ folder, which only `npm run dev:netlify` reads.
+const OUT_PATH = path.join(
+  process.env.PORTFOLIO_DATA_PATH ?? path.join(__dirname, "..", "public", "portfolio"),
+  "trades.json",
+);
 
 /** Logical field -> acceptable header spellings (case-insensitive, trimmed). Extend this if your
  *  export uses different column names -- the error message shows you exactly what was found. */
@@ -273,7 +279,7 @@ async function main(): Promise<void> {
   if (added > 0) {
     await writeFile(OUT_PATH, JSON.stringify({ trades: merged }, null, 2) + "\n", "utf8");
     console.log(`Wrote ${OUT_PATH}`);
-    console.log("Now: git add public/portfolio/trades.json && git commit && git push");
+    console.log("Now: commit and push trades.json in your PRIVATE data repo (not this public one).");
   } else {
     console.log("Nothing new to write.");
   }

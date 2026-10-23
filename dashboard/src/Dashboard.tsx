@@ -1,9 +1,7 @@
-import type { PortfolioResponse } from "../shared/portfolio";
 import { WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "../shared/watchlist";
 import type { ExchangeId, QuotesResponse } from "../shared/types";
 import { FxStrip } from "./components/FxStrip";
 import { ListingRow } from "./components/ListingRow";
-import { PortfolioPanel } from "./components/PortfolioPanel";
 import { PremiumPanel } from "./components/PremiumPanel";
 import { MarketBadge, MarketCountdown } from "./components/MarketStatus";
 import { formatClock } from "./lib/format";
@@ -15,9 +13,6 @@ interface Props {
   loading: boolean;
   now: Date;
   onRefresh: () => void;
-  portfolio?: PortfolioResponse | null;
-  portfolioError?: string | null;
-  portfolioLoading?: boolean;
 }
 
 const ASML_ITEMS = WATCHLIST.filter((w) => w.company === "ASML");
@@ -31,9 +26,6 @@ export function Dashboard({
   loading,
   now,
   onRefresh,
-  portfolio = null,
-  portfolioError = null,
-  portfolioLoading = false,
 }: Props) {
   const quoteFor = (symbol: string) => data?.quotes.find((q) => q.symbol === symbol);
   const failedCount = data ? Object.keys(data.errors).length : 0;
@@ -46,6 +38,7 @@ export function Dashboard({
           <p className="bar__updated" aria-live="polite">
             {data ? `Updated ${formatClock(data.generatedAt)}` : loading ? "Loading prices" : "No prices yet"}
           </p>
+          <a className="btn" href="#/portfolio">Portfolio</a>
           <button type="button" className="btn" onClick={onRefresh} disabled={loading}>
             {loading ? "Refreshing" : "Refresh"}
           </button>
@@ -134,8 +127,6 @@ export function Dashboard({
           ))}
         </div>
       </section>
-
-      <PortfolioPanel data={portfolio} error={portfolioError} loading={portfolioLoading} />
     </div>
   );
 }

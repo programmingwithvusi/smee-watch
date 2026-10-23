@@ -10,6 +10,9 @@ async function main(): Promise<void> {
   const { state, save } = await openState("profitBanking");
   let sent = 0;
   let deliveryFailed = false;
+  if (POSITIONS.length === 0) {
+    log.warn("no positions to check: set the POSITIONS_JSON secret (see src/config.ts)");
+  }
 
   for (const position of POSITIONS) {
     try {

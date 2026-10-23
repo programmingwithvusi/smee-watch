@@ -2,7 +2,7 @@
 /**
  * Run this yourself, locally: `npm run luno:snapshot`.
  *
- * Fetches your Luno balances with a read-only API key and writes public/portfolio/luno-balance.json
+ * Fetches your Luno balances with a read-only API key and writes luno-balance.json (to PORTFOLIO_DATA_PATH)
  * — the file the dashboard (via the /api/portfolio function) reads to show your crypto holdings.
  * The API key never leaves your machine and is never committed: it's read from environment
  * variables in the project's .env or dashboard/.env (both gitignored), and only the resulting balance NUMBERS are written
@@ -29,7 +29,13 @@ import {
 } from "../shared/luno";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_PATH = path.join(__dirname, "..", "public", "portfolio", "luno-balance.json");
+// Private data never goes in this public repo: point PORTFOLIO_DATA_PATH at the portfolio/ folder of
+// your private data checkout (see the README). Without it, this writes to the gitignored
+// public/portfolio/ folder, which only `npm run dev:netlify` reads.
+const OUT_PATH = path.join(
+  process.env.PORTFOLIO_DATA_PATH ?? path.join(__dirname, "..", "public", "portfolio"),
+  "luno-balance.json",
+);
 
 interface LunoBalanceApi {
   balance: Array<{ account_id: string; asset: string; balance: string; reserved: string; unconfirmed: string }>;
@@ -152,7 +158,7 @@ async function main(): Promise<void> {
     ].filter(Boolean);
     console.log(`  ${b.asset}: ${qty}${notes.length ? ` (${notes.join(", ")})` : ""}`);
   }
-  console.log("\nNow: git add public/portfolio/luno-balance.json && git commit && git push");
+  console.log("\nNow: commit and push luno-balance.json in your PRIVATE data repo (not this public one).");
 }
 
 main().catch((e: unknown) => {

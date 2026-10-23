@@ -28,6 +28,13 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+// The private portfolio endpoint is never stored by the service worker: it is gated by an access
+// code, and a cached copy would outlive a "Lock" or a changed code. The page's own fetch also sends
+// the code, so a network failure simply shows the page's error instead of stale holdings.
+function isPrivate(url) {
+  return url.pathname === "/api/portfolio";
+}
+
 function isLiveData(url) {
   return url.pathname.startsWith("/api/") || url.pathname.startsWith("/portfolio/");
 }
@@ -37,6 +44,8 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return; // never cache a POST/etc.
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return; // leave fonts.googleapis.com etc. alone
+
+  if (isPrivate(url)) return; // straight to the network, no caching
 
   if (isLiveData(url)) {
     event.respondWith(

@@ -62,7 +62,7 @@ Full details, exact commands, and what the dashboard shows for each: **`dashboar
 
 ## Cost and limits
 
-- Public repo: Actions minutes are free. Nothing sensitive is stored (secrets stay in Actions secrets; `state/` holds hashes and timestamps). GitHub pauses scheduled workflows on public repos after 60 days without repo activity, so re-enable them in the Actions tab if alerts stop.
+- Public repo: Actions minutes are free. No personal financial data is stored here: holdings and cost basis live in a private data repo and an Actions secret (see `dashboard/README.md`), other secrets stay in Actions secrets, and `state/` holds hashes, timestamps and public market headlines. GitHub pauses scheduled workflows on public repos after 60 days without repo activity, so re-enable them in the Actions tab if alerts stop.
 - Private repo: the free tier is 2,000 minutes/month and this schedule (~3,000) exceeds it. Loosen the crons: news hourly, pages every 4-6 hours, markets hourly.
 - Scheduled runs can start several minutes late. This is "minutes-level", not tick-level.
 
