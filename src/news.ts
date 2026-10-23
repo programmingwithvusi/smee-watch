@@ -8,6 +8,7 @@ interface RawItem {
   title?: string;
   link?: string;
   guid?: string;
+  pubDate?: string;
 }
 
 const UA = "Mozilla/5.0 (compatible; smee-watch/1.0)";
@@ -16,7 +17,7 @@ const parser = new XMLParser({ ignoreAttributes: true, parseTagValue: false });
 const sha1 = (s: string): string => createHash("sha1").update(s).digest("hex");
 
 export function buildUrl(q: NewsQuery): string {
-  const query = encodeURIComponent(`${q.q} when:14d`);
+  const query = encodeURIComponent(`${q.q} when:${q.when ?? "14d"}`);
   return `https://news.google.com/rss/search?q=${query}&hl=${q.hl}&gl=${q.gl}&ceid=${encodeURIComponent(q.ceid)}`;
 }
 
@@ -31,7 +32,14 @@ export function parseRss(xml: string, source: string): Hit[] {
     const title = it.title?.trim();
     const url = it.link?.trim();
     if (!title || !url) continue;
-    hits.push({ id: sha1(it.guid?.trim() || url), title, url, source });
+    const published = it.pubDate ? Date.parse(it.pubDate) : NaN;
+    hits.push({
+      id: sha1(it.guid?.trim() || url),
+      title,
+      url,
+      source,
+      ...(Number.isFinite(published) ? { published } : {}),
+    });
   }
   return hits;
 }

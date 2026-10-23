@@ -9,6 +9,8 @@ export interface NewsQuery {
   hl: string;
   gl: string;
   ceid: string;
+  /** Google News recency window, e.g. "1d". Defaults to 14d. */
+  when?: string;
 }
 
 export interface PageSource {
@@ -75,6 +77,27 @@ export const CATALYST_QUERIES: NewsQuery[] = [
  * partners/investors (Amazon, Alphabet, AMD -- see WATCH_IDEAS) are the closest indirect proxy
  * available in the meantime.
  */
+/**
+ * Broad market headlines, tagged by theme (see themes.ts) and kept for 72h so a price alert can say
+ * what the news was about. Nothing here pushes an alert by itself.
+ */
+export const MACRO_QUERIES: NewsQuery[] = [
+  { label: "macro: stock market selloff", q: "stock market selloff OR rally Nasdaq S&P 500", when: "1d", ...EN },
+  { label: "macro: AI spending", q: '"AI spending" OR capex OR "AI bubble" OR hyperscaler stocks', when: "1d", ...EN },
+  { label: "macro: oil and geopolitics", q: "oil prices Iran OR Saudi OR OPEC OR Houthi markets", when: "1d", ...EN },
+  { label: "macro: Fed and yields", q: "Fed rate hike OR cut Treasury yields inflation stocks", when: "1d", ...EN },
+  { label: "macro: China markets", q: "China stocks stimulus OR tariffs OR export controls Hang Seng", when: "1d", ...EN },
+  { label: "macro: chip stocks", q: "semiconductor stocks chipmakers Nvidia ASML TSMC", when: "1d", ...EN },
+];
+
+/** Cross-asset readings appended to price alerts: oil, the US 10-year yield, volatility and Bitcoin. */
+export const CONTEXT_SYMBOLS: ReadonlyArray<{ symbol: string; label: string; kind: "price" | "yield" | "index" }> = [
+  { symbol: "CL=F", label: "WTI", kind: "price" },
+  { symbol: "^TNX", label: "US 10y", kind: "yield" },
+  { symbol: "^VIX", label: "VIX", kind: "index" },
+  { symbol: "BTC-USD", label: "BTC", kind: "price" },
+];
+
 export const AI_LEVERAGE_QUERIES: NewsQuery[] = [
   { label: "en: Anthropic IPO", q: '"Anthropic" ("IPO" OR "initial public offering" OR "public listing" OR "going public")', ...EN },
   { label: "en: OpenAI IPO", q: '"OpenAI" ("IPO" OR "initial public offering" OR "public listing" OR "going public")', ...EN },

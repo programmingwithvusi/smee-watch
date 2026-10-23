@@ -5,6 +5,8 @@ export interface Hit {
   url: string;
   /** Which query/page produced it */
   source: string;
+  /** Publication time (epoch ms) when the feed provided one */
+  published?: number;
 }
 
 export interface FetchResult {

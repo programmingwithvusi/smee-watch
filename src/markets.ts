@@ -1,4 +1,6 @@
 import { FX_SYMBOL, SMIC_A, SMIC_H, WATCH_ETFS, WATCH_IDEAS, WATCHLIST } from "./config";
+import { contextLine } from "./context";
+import { describeThemes, loadHeadlines, recentHeadlines } from "./headlines";
 import { checkVolatility } from "./volatility";
 import { errMsg, log } from "./log";
 import { notify } from "./notify";
@@ -11,6 +13,25 @@ async function main(): Promise<void> {
   const { state, save } = await openState("markets");
   const now = Date.now();
   let deliveryFailed = false;
+
+  // "Why might this be moving?" lines, built once and only if an alert actually needs them: the
+  // themes of the last 36h of tagged headlines, and oil / 10y yield / VIX / Bitcoin. Best effort:
+  // a failure here must never stop the price alert itself from going out.
+  let extrasPromise: Promise<string> | undefined;
+  const extras = (): Promise<string> =>
+    (extrasPromise ??= (async () => {
+      try {
+        const [headlines, context] = await Promise.all([loadHeadlines(), contextLine()]);
+        return [describeThemes(recentHeadlines(headlines, Date.now(), 36)), context].filter(Boolean).join("\n");
+      } catch (e) {
+        log.warn("alert context unavailable", { error: errMsg(e) });
+        return "";
+      }
+    })());
+  const withExtras = async (text: string): Promise<string> => {
+    const more = await extras();
+    return more ? `${text}\n${more}` : text;
+  };
 
   const all = [...WATCHLIST, ...WATCH_IDEAS, ...WATCH_ETFS];
   const settled = await Promise.allSettled(all.map((w) => fetchQuote(w.symbol)));
@@ -46,7 +67,7 @@ async function main(): Promise<void> {
     if (WATCH_IDEAS.length > 0) lines.push("", "👀 Watchlist", ...WATCH_IDEAS.map(line));
     if (WATCH_ETFS.length > 0) lines.push("", "🇿🇦 Rand ETFs", ...WATCH_ETFS.map(line));
     try {
-      await notify(["📊 Chip digest", ...lines].join("\n"));
+      await notify(await withExtras(["📊 Chip digest", ...lines].join("\n")));
     } catch (e) {
       deliveryFailed = true;
       log.error("digest not delivered", { error: errMsg(e) });
@@ -62,7 +83,9 @@ async function main(): Promise<void> {
         if (state.alerted[key] === undefined) {
           const arrow = q.changePct > 0 ? "📈" : "📉";
           try {
-            await notify(`${arrow} ${w.label} ${fmtPct(q.changePct)} vs previous close\nNow ${fmtPrice(q.price)} ${q.currency} (prev ${fmtPrice(q.prevClose)})`);
+            await notify(
+              await withExtras(`${arrow} ${w.label} ${fmtPct(q.changePct)} vs previous close\nNow ${fmtPrice(q.price)} ${q.currency} (prev ${fmtPrice(q.prevClose)})`),
+            );
             state.alerted[key] = now;
           } catch (e) {
             deliveryFailed = true;
@@ -79,7 +102,9 @@ async function main(): Promise<void> {
         if (state.alerted[volKey] === undefined) {
           try {
             await notify(
-              `⚡ Unusual move: ${w.label} ${fmtPct(q.changePct)} today, vs its own recent average of ~${vol.avgAbsMovePct.toFixed(2)}%/day.\nNow ${fmtPrice(q.price)} ${q.currency}. Not a fixed threshold — this is relative to the symbol's own recent behaviour.`,
+              await withExtras(
+                `⚡ Unusual move: ${w.label} ${fmtPct(q.changePct)} today, vs its own recent average of ~${vol.avgAbsMovePct.toFixed(2)}%/day.\nNow ${fmtPrice(q.price)} ${q.currency}. Not a fixed threshold — this is relative to the symbol's own recent behaviour.`,
+              ),
             );
             state.alerted[volKey] = now;
           } catch (e) {

@@ -17,6 +17,7 @@
     "test": "vitest run",
     "watch:catalysts": "tsx src/watch.ts --catalysts",
     "watch:leverage": "tsx src/watch.ts --leverage",
+    "watch:macro": "tsx src/macroWatch.ts",
     "earnings:check": "tsx src/earningsCheck.ts",
     "bank:check": "tsx src/profitBankingCheck.ts"
   },
