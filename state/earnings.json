@@ -53,7 +53,9 @@
     "oklo-q3-2026:0": 1793973227721,
     "reaction:mrna-q3-2026:MRNA": 1793973228040,
     "reaction:rok-q4-fy2026:ROK": 1793973228317,
-    "reaction:ionq-q3-2026:IONQ": 1793973228619
+    "reaction:ionq-q3-2026:IONQ": 1793973228619,
+    "reaction:vst-q3-2026:VST": 1794055101562,
+    "reaction:oklo-q3-2026:OKLO": 1794055101798
   },
   "failures": {},
   "seeded": {}
