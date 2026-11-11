@@ -12,14 +12,7 @@
     "257054adfc4840b17e67b02824e0ea79a00aa7e8": 1794349658283
   },
   "alerted": {},
-  "failures": {
-    "zh: 上海微电子 上市": 1,
-    "zh: 上海微电子 借壳": 1,
-    "zh: 上海微电子 IPO 辅导": 1,
-    "zh: 中旗新材 光刻机 借壳 (unconfirmed rumor)": 1,
-    "en: SMEE IPO": 1,
-    "en: SMEE reverse merger": 1
-  },
+  "failures": {},
   "seeded": {
     "zh: 上海微电子 上市": 1790332845496,
     "zh: 上海微电子 借壳": 1790332845496,
