@@ -116,7 +116,11 @@
     "a224533118f9fa8fa6e4622b0ba0203f801ea1fb": 1794314400812
   },
   "alerted": {},
-  "failures": {},
+  "failures": {
+    "en: ASML export controls": 1,
+    "en: chip export controls China": 1,
+    "zh: 阿斯麦 出口管制": 1
+  },
   "seeded": {
     "en: ASML export controls": 1790378328290,
     "en: ASML Dutch government": 1790378328290,
