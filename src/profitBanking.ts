@@ -1,5 +1,11 @@
 import type { Position } from "./config";
-import { BANK_INCOME_SLEEVE, BANK_SPLIT_INCOME_PCT, CORE_BANK_RUNG_PCT, SPECULATIVE_BANK_RUNGS_PCT } from "./config";
+import {
+  BANK_INCOME_SLEEVE,
+  BANK_SLICE_PCT,
+  BANK_SPLIT_INCOME_PCT,
+  CORE_BANK_RUNG_PCT,
+  SPECULATIVE_BANK_RUNGS_PCT,
+} from "./config";
 
 /** Unrealised profit/loss, in percent, vs. a position's average cost. */
 export function pnlPct(price: number, costPerUnit: number): number {
@@ -32,6 +38,6 @@ export function formatBankAlert(position: Position, pnl: number, rung: number, p
   return [
     `💰 Bank some profit? ${position.label} is ${sign}${pnl.toFixed(1)}% from cost -- crossed the +${rung}% ${track}-track rung.`,
     `Now ${price.toFixed(2)} ${currency} (cost basis ${position.costPerUnit.toFixed(2)} ${currency}/unit).`,
-    `Per the plan: sell a slice on its own platform. Withdraw ${BANK_SPLIT_INCOME_PCT}% as cash income, reinvest the other ${reinvestPct}% into your income sleeve (${BANK_INCOME_SLEEVE}). Not financial advice, just the rule you set.`,
+    `Per the plan: sell a slice (about ${BANK_SLICE_PCT}% of what you hold) on its own platform. Withdraw ${BANK_SPLIT_INCOME_PCT}% as cash income, reinvest the other ${reinvestPct}% into your income sleeve (${BANK_INCOME_SLEEVE}). Not financial advice, just the rule you set.`,
   ].join("\n");
 }

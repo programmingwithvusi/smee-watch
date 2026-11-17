@@ -10,17 +10,38 @@ async function postOk(url: string, init: RequestInit, what: string): Promise<voi
   }
 }
 
-async function telegram(token: string, chatId: string, text: string): Promise<void> {
+/** One tappable button under a Telegram message; `data` comes back to us as the callback payload (max 64 bytes). */
+export interface NotifyButton {
+  text: string;
+  data: string;
+}
+
+export interface NotifyOptions {
+  /** Rows of buttons. Telegram only: ntfy messages go out as plain text. */
+  buttons?: NotifyButton[][];
+}
+
+export function buildTelegramBody(chatId: string, text: string, options: NotifyOptions = {}): Record<string, unknown> {
+  const body: Record<string, unknown> = {
+    chat_id: chatId,
+    text: text.slice(0, TELEGRAM_LIMIT),
+    disable_web_page_preview: true,
+  };
+  if (options.buttons?.length) {
+    body.reply_markup = {
+      inline_keyboard: options.buttons.map((row) => row.map((b) => ({ text: b.text, callback_data: b.data }))),
+    };
+  }
+  return body;
+}
+
+async function telegram(token: string, chatId: string, text: string, options: NotifyOptions): Promise<void> {
   await postOk(
     `https://api.telegram.org/bot${token}/sendMessage`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: text.slice(0, TELEGRAM_LIMIT),
-        disable_web_page_preview: true,
-      }),
+      body: JSON.stringify(buildTelegramBody(chatId, text, options)),
     },
     "Telegram",
   );
@@ -40,10 +61,10 @@ async function ntfy(topic: string, text: string): Promise<void> {
  * so callers can leave the item unseen and retry next run instead of silently losing an alert.
  * With no channel configured it throws, unless DRY_RUN=1 (then it only logs the message).
  */
-export async function notify(text: string): Promise<void> {
+export async function notify(text: string, options: NotifyOptions = {}): Promise<void> {
   const { TELEGRAM_BOT_TOKEN: token, TELEGRAM_CHAT_ID: chatId, NTFY_TOPIC: topic } = process.env;
   const sends: Array<{ channel: string; run: Promise<void> }> = [];
-  if (token && chatId) sends.push({ channel: "telegram", run: telegram(token, chatId, text) });
+  if (token && chatId) sends.push({ channel: "telegram", run: telegram(token, chatId, text, options) });
   if (topic) sends.push({ channel: "ntfy", run: ntfy(topic, text) });
 
   if (sends.length === 0) {

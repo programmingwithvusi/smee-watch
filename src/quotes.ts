@@ -65,6 +65,27 @@ export async function fetchQuote(symbol: string): Promise<Quote> {
   }
 }
 
+/** Pure parser for a long daily history: closes oldest first, in the quote currency's main unit (rand, not cents). */
+export function parseCloses(json: unknown): number[] {
+  const result = (json as YahooChart).chart?.result?.[0];
+  if (!result) throw new Error((json as YahooChart).chart?.error?.description ?? "no chart result");
+  const unit = result.meta?.currency === "ZAc" ? 0.01 : 1;
+  return (result.indicators?.quote?.[0]?.close ?? [])
+    .filter((c): c is number => typeof c === "number" && Number.isFinite(c) && c > 0)
+    .map((c) => c * unit);
+}
+
+export async function fetchCloses(symbol: string, range = "5y"): Promise<number[]> {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=${encodeURIComponent(range)}&interval=1d`;
+  try {
+    const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(20_000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return parseCloses(await res.json());
+  } catch (e) {
+    throw new Error(`${symbol}: ${errMsg(e)}`);
+  }
+}
+
 /** A-share premium over the H-share, in percent. Positive = A-share trades richer. */
 export function premiumPct(aPriceCny: number, hPriceHkd: number, hkdPerCny: number): number {
   if (hPriceHkd <= 0) throw new Error("H-share price must be positive");

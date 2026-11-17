@@ -18,6 +18,9 @@
     "watch:catalysts": "tsx src/watch.ts --catalysts",
     "watch:leverage": "tsx src/watch.ts --leverage",
     "watch:macro": "tsx src/macroWatch.ts",
+    "bank:decisions": "tsx src/decisions.ts",
+    "backtest": "tsx src/backtestRun.ts",
+    "paper:report": "tsx src/paperReport.ts",
     "earnings:check": "tsx src/earningsCheck.ts",
     "bank:check": "tsx src/profitBankingCheck.ts"
   },

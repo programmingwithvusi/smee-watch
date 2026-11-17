@@ -33,6 +33,8 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           # Cost basis is private: it lives in this secret, not in the public repo
           POSITIONS_JSON: ${{ secrets.POSITIONS_JSON }}
+          # Set the repository variable TELEGRAM_BUTTONS to 1 to add Approve/Skip buttons to alerts
+          TELEGRAM_BUTTONS: ${{ vars.TELEGRAM_BUTTONS }}
           LOG_LEVEL: ${{ vars.LOG_LEVEL || 'info' }}
       - name: Persist state
         if: always()

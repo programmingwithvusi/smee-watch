@@ -60,6 +60,14 @@ Short version: your portfolio data lives as JSON **committed to this repo**, wri
 
 Full details, exact commands, and what the dashboard shows for each: **`dashboard/README.md` → "Your holdings"**.
 
+## Paper trading, the banking backtest and Approve/Skip buttons
+
+Nothing in this repo places a trade. These three pieces help you judge the profit-banking rules before relying on them:
+
+- **Paper log (`state/paper-trades.json`).** Every profit-banking alert that fires is also logged: symbol, rung, the market price at that moment, and the assumed slice size (`BANK_SLICE_PCT` in `src/config.ts`, currently 25% of what you hold, a starting assumption you can change). It never stores your quantity, cost basis or gain, because this repo is public. `npm run paper:report` shows what the price did after each suggestion and what you answered.
+- **Backtest.** `npm run backtest -- NVDA ANG.JO` (or run the **backtest** workflow from the Actions tab and open the run's Summary) replays the banking rule over 5 years of daily prices, starting a hypothetical position every 20 trading days and holding for a year, and compares it with just holding. It ignores fees, tax, dividends and exchange rates, counts proceeds at face value and uses overlapping windows, so treat it as a rough picture, not proof. If banking loses to holding on most symbols, that is worth knowing before anything is automated.
+- **Approve/Skip buttons.** Set the repository variable `TELEGRAM_BUTTONS` to `1` (Settings → Secrets and variables → Actions → Variables) and each profit-banking alert gets "✅ I did it" and "⏭ Skip" buttons. The **decisions** workflow reads your taps from Telegram every 15 minutes (so there can be a short delay), records them in the paper log and removes the buttons. A tap only records what you did yourself on your own platform; it does not trade. Only taps from your own chat (`TELEGRAM_CHAT_ID`) count. This polls Telegram, so it does not work if a webhook is set on the bot.
+
 ## Cost and limits
 
 - Public repo: Actions minutes are free. No personal financial data is stored here: holdings and cost basis live in a private data repo and an Actions secret (see `dashboard/README.md`), other secrets stay in Actions secrets, and `state/` holds hashes, timestamps and public market headlines. GitHub pauses scheduled workflows on public repos after 60 days without repo activity, so re-enable them in the Actions tab if alerts stop.

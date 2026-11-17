@@ -1,0 +1,33 @@
+name: backtest
+
+# Manual only. Replays the profit-banking rule over 5 years of daily prices and shows the paper-trade
+# log, on the run's Summary page. Uses public market data and no secrets.
+on:
+  workflow_dispatch:
+    inputs:
+      symbols:
+        description: "Space- or comma-separated Yahoo symbols (blank = the defaults in src/config.ts)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  backtest:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Banking rule vs buy-and-hold
+        run: npm run backtest -- $SYMBOLS
+        env:
+          # via env, never spliced into the script text
+          SYMBOLS: ${{ inputs.symbols }}
+      - name: Paper-trade log
+        run: npm run paper:report

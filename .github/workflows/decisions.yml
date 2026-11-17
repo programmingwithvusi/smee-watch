@@ -1,0 +1,47 @@
+name: decisions
+
+# Picks up taps on the Approve/Skip buttons under profit-banking alerts and records them in the paper
+# log. We poll Telegram (no public web address needed). It does nothing until the repository
+# variable TELEGRAM_BUTTONS is set to 1, and it shares a lock with the profit-banking job so the
+# two never write the same state file at once. Nothing here trades: a tap only records what you did.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: state-profit-banking
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  decisions:
+    if: vars.TELEGRAM_BUTTONS == '1'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Apply button presses
+        run: npm run bank:decisions
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LOG_LEVEL: ${{ vars.LOG_LEVEL || 'info' }}
+      - name: Persist state
+        if: always()
+        run: |
+          git config user.name "smee-watch[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add state
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(state): paper log decisions"
+            git pull --rebase --autostash
+            git push
+          fi

@@ -280,6 +280,15 @@ export const CORE_BANK_RUNG_PCT = 30;
 export const SPECULATIVE_BANK_RUNGS_PCT = [20, 40];
 
 /**
+ * How much of the position still held to sell at each rung. The original rule only said "a slice";
+ * this is the assumption the paper log and the backtest use, and it is yours to change.
+ */
+export const BANK_SLICE_PCT = 25;
+
+/** Symbols the backtest runs on when none are given: public, liquid names across the lists. */
+export const DEFAULT_BACKTEST_SYMBOLS = ["NVDA", "ASML", "SMH", "SCHD", "O", "ANG.JO", "STX500.JO", "STXDIV.JO"];
+
+/**
  * What to do with proceeds once a bank rung fires, agreed 2026-10-16 (see the money-and-wealth
  * discussion): the growth sleeve (POSITIONS) is where these rungs happen, and it's irregular by
  * nature. Splitting the proceeds routes half toward real, spendable income and half toward
