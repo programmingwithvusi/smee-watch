@@ -65,3 +65,47 @@ describe("formatBacktestTable", () => {
     expect(out).toContain("overlap");
   });
 });
+
+import { compareRules, currentRule, formatComparison, rungsForRule, simulateRule } from "../src/backtest";
+
+describe("rule variants", () => {
+  test("rungsForRule: every-N and listed rungs", () => {
+    expect(rungsForRule({ kind: "every", stepPct: 50 }, 120)).toEqual([50, 100]);
+    expect(rungsForRule({ kind: "every", stepPct: 50 }, 49)).toEqual([]);
+    expect(rungsForRule({ kind: "list", rungsPct: [20, 40] }, 25)).toEqual([20]);
+  });
+
+  test("simulateRule with no yield matches the plain current rule", () => {
+    const path = [100, 140, 100];
+    expect(simulateRule(path, currentRule("core")).ruleValue).toBeCloseTo(110, 6);
+  });
+
+  test("cash earning a yield ends higher than cash earning nothing", () => {
+    const path = Array.from({ length: 251 }, (_, i) => (i < 20 ? 100 : 140));
+    const plain = simulateRule(path, currentRule("core"));
+    const yielding = simulateRule(path, { ...currentRule("core"), proceedsYieldPct: 6.5 });
+    expect(yielding.ruleValue).toBeGreaterThan(plain.ruleValue);
+  });
+
+  test("drawdowns: selling into a spike makes the later fall smaller", () => {
+    const r = simulateRule([100, 140, 70], currentRule("core"));
+    expect(r.holdMaxDdPct).toBeCloseTo(50, 6); // 140 -> 70
+    expect(r.ruleMaxDdPct).toBeCloseTo(37.5, 6); // total 140 -> 87.5
+  });
+
+  test("compareRules averages over all windows and formats matrices", () => {
+    const flat = Array.from({ length: 300 }, () => 100);
+    const spike = Array.from({ length: 300 }, (_, i) => (i < 100 ? 100 : i < 150 ? 140 : 100));
+    const rows = compareRules({ FLAT: flat, SPIKE: spike });
+    const flatRow = rows.find((r) => r.symbol === "FLAT" && r.rule === "Current core")!;
+    expect(flatRow.avgDiffPctAll).toBeCloseTo(0, 10);
+    expect(flatRow.aheadPct).toBe(0);
+    const spikeRow = rows.find((r) => r.symbol === "SPIKE" && r.rule === "Current core")!;
+    expect(spikeRow.avgDiffPctAll).toBeGreaterThan(0);
+    expect(spikeRow.drawdownCutPp).toBeGreaterThan(0);
+    const out = formatComparison(rows);
+    expect(out).toContain("Smaller slice (10%)");
+    expect(out).toContain("Worst-fall protection");
+    expect(out).toContain("Not financial advice");
+  });
+});
