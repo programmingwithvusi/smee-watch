@@ -274,6 +274,15 @@ export function parsePositions(raw: string | undefined): Position[] {
 
 export const POSITIONS: Position[] = parsePositions(process.env.POSITIONS_JSON);
 
+/*
+ * Decision, 2026-11-18: keep these rungs and the 25% slice as they are. The backtest (npm run
+ * backtest, 5 years of daily prices) showed banking costs return versus holding on growth names
+ * (about -2.7% on average for the current core rule) and shields little (worst fall only ~2.5
+ * points smaller). The rule is kept on purpose for cash flow and discipline, not for performance
+ * or protection. Wider rungs (+50% / +100%) were cheaper but produce much less cash. Revisit only
+ * if the goal changes from steady income to growth.
+ */
+
 /** Core track: bank a slice at every multiple of this (30, 60, 90, ...). */
 export const CORE_BANK_RUNG_PCT = 30;
 /** Speculative track: bank a slice at each of these, in order; does not repeat beyond the last one. */
