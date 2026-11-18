@@ -238,7 +238,7 @@ describe("private data source", () => {
     }));
     const res = await portfolio(req());
     expect(res.status).toBe(200);
-    expect(calls.length).toBe(3);
+    expect(calls.length).toBe(4); // trades, luno-balance, easyequities-holdings, income
     expect(calls.every((c) => c.auth === "Bearer ghp_test")).toBe(true);
   });
 });

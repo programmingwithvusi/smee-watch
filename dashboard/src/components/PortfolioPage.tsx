@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import type { PortfolioState } from "../hooks/usePortfolio";
 import { PortfolioPanel } from "./PortfolioPanel";
+import { IncomePanel } from "./IncomePanel";
 
 interface Props {
   portfolio: PortfolioState;
@@ -56,7 +57,10 @@ export function PortfolioPage({ portfolio, code, onUnlock, onLock }: Props) {
           <button type="submit" className="btn">Unlock</button>
         </form>
       ) : (
-        <PortfolioPanel data={portfolio.data} error={portfolio.error} loading={portfolio.loading} />
+        <>
+          <PortfolioPanel data={portfolio.data} error={portfolio.error} loading={portfolio.loading} />
+          {portfolio.data && <IncomePanel income={portfolio.data.income} />}
+        </>
       )}
     </div>
   );

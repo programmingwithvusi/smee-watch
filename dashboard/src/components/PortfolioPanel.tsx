@@ -254,7 +254,7 @@ export const PortfolioPanel = memo(function PortfolioPanel({ data, error, loadin
     <section className="portfolio" aria-labelledby="portfolio-title">
       <h2 id="portfolio-title" className="portfolio__title">Your holdings</h2>
       <p className="portfolio__sub">
-        From Luno and EasyEquities, as last committed to the repo. Not investment advice.
+        From Luno and EasyEquities, from your private data repo. Not investment advice.
       </p>
 
       {error && (

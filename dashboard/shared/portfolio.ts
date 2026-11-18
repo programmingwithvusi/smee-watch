@@ -153,7 +153,58 @@ export function holdingsFromFile(file: EasyEquitiesHoldingsFile): Holding[] {
     }));
 }
 
+/** One dividend/interest payment received. Private: lives only in the private data repo (income.json). */
+export interface IncomeEntry {
+  /** YYYY-MM-DD */
+  date: string;
+  symbol: string;
+  amount: number;
+  currency: string;
+  note?: string;
+}
+export interface IncomeFile {
+  entries: IncomeEntry[];
+}
+
+export interface IncomeSummary {
+  entries: IncomeEntry[];
+  /** Per currency, no FX conversion */
+  thisMonth: Record<string, number>;
+  last12Months: Record<string, number>;
+  avgPerMonth: Record<string, number>;
+}
+
+export function isIncomeEntry(v: unknown): v is IncomeEntry {
+  return (
+    isObj(v) &&
+    isStr(v.date) &&
+    /^\d{4}-\d{2}-\d{2}$/.test(v.date) &&
+    isStr(v.symbol) &&
+    isNum(v.amount) &&
+    isStr(v.currency)
+  );
+}
+
+/** Totals per currency (never mixed). `now` is injectable for tests. Average = last 12 months / 12. */
+export function summariseIncome(entries: IncomeEntry[], now = new Date()): IncomeSummary {
+  const sorted = [...entries].sort((a, b) => b.date.localeCompare(a.date));
+  const ym = now.toISOString().slice(0, 7);
+  const cutoff = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 11, 1)).toISOString().slice(0, 10);
+  const thisMonth: Record<string, number> = {};
+  const last12Months: Record<string, number> = {};
+  for (const e of sorted) {
+    if (e.date.startsWith(ym)) thisMonth[e.currency] = (thisMonth[e.currency] ?? 0) + e.amount;
+    if (e.date >= cutoff && e.date <= now.toISOString().slice(0, 10)) {
+      last12Months[e.currency] = (last12Months[e.currency] ?? 0) + e.amount;
+    }
+  }
+  const avgPerMonth = Object.fromEntries(Object.entries(last12Months).map(([c, v]) => [c, v / 12]));
+  return { entries: sorted, thisMonth, last12Months, avgPerMonth };
+}
+
 export interface PortfolioResponse {
+  /** Absent from older responses */
+  income?: IncomeSummary;
   generatedAt: number;
   luno: { asOf: string | null; holdings: HoldingDto[] };
   /** `asOf` is the holdings file's date, when positions come from it rather than from imported trades */
@@ -191,5 +242,6 @@ export function isPortfolioResponse(v: unknown): v is PortfolioResponse {
   }
   if (!isNum(v.easyequities.tradeCount)) return false;
   if (!isObj(v.errors)) return false;
+  if (v.income !== undefined && !(isObj(v.income) && Array.isArray(v.income.entries) && v.income.entries.every(isIncomeEntry))) return false;
   return true;
 }

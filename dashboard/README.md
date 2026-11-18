@@ -148,3 +148,11 @@ src/components/    ListingRow, Sparkline, OverlayTarget, PremiumPanel, MarketSta
 src/lib/           sessions (exchange hours), format, spark geometry
 test/              vitest, describe/test/expect
 ```
+
+## Income received log (private)
+
+Shows dividends/interest you actually received, on the Portfolio page. Data lives in `portfolio/income.json` in the **private** `smee-watch-data` repo (never the public one).
+
+- Add a payment: `PORTFOLIO_DATA_PATH=<path to smee-watch-data/portfolio> npm run income:add -- STXDIV.JO 245.10 ZAR 2026-11-15 "Q3 payout"` (date and note optional).
+- Or edit the file by hand: `{ "entries": [ { "date": "2026-11-15", "symbol": "STXDIV.JO", "amount": 245.10, "currency": "ZAR" } ] }`
+- Commit and push in the private repo; the page picks it up on refresh. Totals are per currency, not converted.

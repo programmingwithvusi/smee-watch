@@ -8,7 +8,10 @@ import {
   computeHoldings,
   holdingsFromFile,
   type EasyEquitiesHoldingsFile,
+  isIncomeEntry,
+  summariseIncome,
   type HoldingDto,
+  type IncomeFile,
   type PortfolioResponse,
   type Trade,
 } from "../../shared/portfolio";
@@ -108,13 +111,22 @@ export default async (req: Request): Promise<Response> => {
   const origin = new URL(req.url).origin;
   const errors: Record<string, string> = {};
 
-  const [tradesResult, lunoSnapResult, tickersResult, quotesResult, eeFileResult] = await Promise.allSettled([
+  const [tradesResult, lunoSnapResult, tickersResult, quotesResult, eeFileResult, incomeResult] = await Promise.allSettled([
     loadDataFile<TradesFile>("trades.json", { trades: [] }, origin, process.env),
     loadDataFile<LunoBalanceSnapshot>("luno-balance.json", { asOf: null, balances: [] }, origin, process.env),
     fetchLunoTickers(),
     fetchJsonOrEmpty<unknown>(`${origin}/api/quotes`, null),
     loadDataFile<EasyEquitiesHoldingsFile>("easyequities-holdings.json", { asOf: null, holdings: [] }, origin, process.env),
+    loadDataFile<IncomeFile>("income.json", { entries: [] }, origin, process.env),
   ]);
+
+  const incomeEntries =
+    incomeResult.status === "fulfilled" && Array.isArray(incomeResult.value?.entries)
+      ? incomeResult.value.entries.filter(isIncomeEntry)
+      : [];
+  if (incomeResult.status === "rejected") {
+    errors.income = incomeResult.reason instanceof Error ? incomeResult.reason.message : String(incomeResult.reason);
+  }
 
   const tradesFile = tradesResult.status === "fulfilled" ? tradesResult.value : { trades: [] };
   if (tradesResult.status === "rejected") errors.trades = tradesResult.reason instanceof Error ? tradesResult.reason.message : String(tradesResult.reason);
@@ -202,6 +214,7 @@ export default async (req: Request): Promise<Response> => {
     generatedAt: Math.floor(Date.now() / 1000),
     luno: { asOf: lunoSnap.asOf, holdings: lunoHoldings },
     easyequities: { holdings: eeHoldings, tradeCount: tradesFile.trades.length, asOf: fromFile.length > 0 ? eeFile.asOf : null },
+    income: summariseIncome(incomeEntries),
     errors,
   };
 
