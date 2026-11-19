@@ -120,9 +120,7 @@
     "f8da288b6ad4504001a2718c0f983ffd38ff5aae": 1795022169027
   },
   "alerted": {},
-  "failures": {
-    "zh: 阿斯麦 出口管制": 1
-  },
+  "failures": {},
   "seeded": {
     "en: ASML export controls": 1790378328290,
     "en: ASML Dutch government": 1790378328290,
