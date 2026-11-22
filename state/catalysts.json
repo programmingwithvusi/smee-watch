@@ -123,18 +123,11 @@
     "93dca715c67ce964b6a939e5d9851f000a3e1d53": 1795179254594,
     "157c168fc0f304c27ecdfe4b3368794ec10835a0": 1795179254594,
     "5b3de9d428f62edefec41c44b609a5e64b01e284": 1795211393275,
-    "63ddfb07b32f16f5d4c4d8f9aeb40a5a490e1b9f": 1795211393275
+    "63ddfb07b32f16f5d4c4d8f9aeb40a5a490e1b9f": 1795211393275,
+    "2f261600adf8a19dd5fb40624705e2455b2ff60b": 1795390626401
   },
   "alerted": {},
-  "failures": {
-    "en: ASML export controls": 1,
-    "en: ASML Dutch government": 1,
-    "en: chip export controls China": 1,
-    "en: SMIC entity list OR sanctions": 1,
-    "en: SMIC capacity OR breakthrough": 1,
-    "zh: 中芯国际 制裁 实体清单": 1,
-    "zh: 阿斯麦 出口管制": 1
-  },
+  "failures": {},
   "seeded": {
     "en: ASML export controls": 1790378328290,
     "en: ASML Dutch government": 1790378328290,
