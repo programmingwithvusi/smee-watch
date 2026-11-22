@@ -126,7 +126,15 @@
     "63ddfb07b32f16f5d4c4d8f9aeb40a5a490e1b9f": 1795211393275
   },
   "alerted": {},
-  "failures": {},
+  "failures": {
+    "en: ASML export controls": 1,
+    "en: ASML Dutch government": 1,
+    "en: chip export controls China": 1,
+    "en: SMIC entity list OR sanctions": 1,
+    "en: SMIC capacity OR breakthrough": 1,
+    "zh: 中芯国际 制裁 实体清单": 1,
+    "zh: 阿斯麦 出口管制": 1
+  },
   "seeded": {
     "en: ASML export controls": 1790378328290,
     "en: ASML Dutch government": 1790378328290,
