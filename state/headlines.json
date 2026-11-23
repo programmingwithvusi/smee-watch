@@ -1,6 +1,576 @@
 {
   "items": [
     {
+      "id": "252b9ad36d56708dddb42c25d39596703707bfe8",
+      "title": "Middle East latest: Eisenkot says no immediate Iran threat requiring Israeli military action - The National",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZDlXbXpiU2cwRGZTckR6TUc1RXMyUlBoS1hGd0NBdmEzYTZOQ3hLdElPbkVlU1lfX2g3RGJ4UnZVOFRCY3drMURtdGRBU1FCcDdRVm1RVkNZRS1GRlVUOHhqYmxPRXlvM1FIUzk2ejU4N0xrRW5VOWVZVUVmVFUwTEp3?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795444140000
+    },
+    {
+      "id": "c363da9ba129fc1ea4274f50e6330fa45ca84649",
+      "title": "Stocks are tumbling. Has the AI bubble finally burst? - USA Today",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZklrV0VpTVZhVlN2bWFING1HakdRdHNPaHBMNFA0Z29MSWI3N3lhRnVGeGVlUWZScGQzMm1GeVE5cnZPQ3RvUjI1MUVQbE5kWDctNFVFdWRYamJEdXlQRDBnSi1EblUzc3gxMDZCcklOcFNVby1mWFRweXFNWmh1WEdEcmxFUV9UM3RMSC13bkZ2dG1LbDQ0SFJOV05QV0JKM1VaZzdDTnVQR0NM?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795443900000
+    },
+    {
+      "id": "2e607fa0aa47cd627df42900dad83e4d0268e43e",
+      "title": "Oil markets weigh Middle East conflict against rising global supplies - AzerNews",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9PcG9IMThVS1BQQ3dhemlvdGZqRnhpXzE1X0xJNHZMVUo4ZDBTTG1oZU5rWkcwN0FCekxqNmE3cGxaX0pwbkpSMXc2MW51R0hKVW03QTRPOU9UUnc?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795441440000
+    },
+    {
+      "id": "ed562ce11f5984e8b577a5b4158d8a000cef5de3",
+      "title": "Applied Digital stock jumps on $5.4 billion hyperscaler lease deal - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPR0xldUE5d3NsZDBRSGlWZnVQWEFFQ0c4MC10MmMxd2p2ZUgxOTJBS1o5cGNqOEtwSmlXRF9fempVWkJPbkZCU1d2Qzc1ZHFDbzh5RDl4UDhHYUZqRnNXemY3cDRCa0otYUFTa2MyQmZ3dmVhcTFBbEpScUR1X3JseGdWb3B1dHVDX2FuY3NsLUVQc2dtMG15LU5uSXFwZE56UG92UUwwZzdmeFdZTGRMWk11akE2SVhmekdiN1ZB?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795440438000
+    },
+    {
+      "id": "72876b6be57d922d83831c78a97c5d58417e9269",
+      "title": "Gold Rebounds as Traders Ease Fed Rate Hike Expectations - Peradaban.id",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9ZZzM3YlQ1c1hHNlJ5Vkk2TXJZaDdqU0NTRHpKNHJYS2hUWU5abS1DSGR4SVpDOGI3d0hKSURMRUl4ZjMxQTV1ZlRySmR6aHFrVzlnNVFVUHJhcVFoeFc0NFlxWS1odUpfZm9z?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795439788000
+    },
+    {
+      "id": "0403e8a03142184a090ac83961acb0a87f5a8221",
+      "title": "Bill Ackman Fed Rate Hike Warning Raises US Recession Concerns - TronWeekly",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBSc1pHQW1GZWFnUHA3cklKOVZDNjNhblBIZzFZUUVxd1NoNV8zRlJmWkJhWjRRMFNCY1FDbGhCQ3BkaklKcHNmdS1hY1BITW9zWVFJbGl2Z2c3Vmttay1jR1I0WVU1dXM5LVhSVjFEWUZmWEF4empHcUpETQ?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795438800000
+    },
+    {
+      "id": "8109243c27c3760ebd7a3bc9955333bf67715f72",
+      "title": "Will the Fed Raise Rates on 9 December? Why Bill Ackman Warns of Recession - BBN Times",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPd1ZTbjZtaTVnZmQ1Y0gxTVIyeC1CRmFqZzNoRFUtczZneVE1ekdFdWhHU0JiU19BY25iYUJDUncxSmhrYklXajJDMk9JN2xLM0U2SWc0NXFzMEIzUlJHNHJDcVVPclk3bTRVRkFtc2haOGxua0ZONFFBb1JaMDExLU5BR0libi1D?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795438515000
+    },
+    {
+      "id": "51533d491429603502347495ead8d8d2ff2949b4",
+      "title": "Asian stocks tumble as AI bubble fears mount, Wall Street futures point to rebound - Free Press Kashmir",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQjZla0NBeVFBMUhlbTQ0N0Z0b2JQY2h3Q2JoZmhrMGQteWgtTGJOQUdOb3JUR1lhb011c3ZxSUZjV0VzVURwQW1sUUlUenFoSnNtTnFVY25NcUluYWUwQVFOTk41MDZwQmljZnpaaVVSNU9tV001c2FvbWUtRGRwOHRJd2Fwb25lQXhTVVJpVEx0aC1GSXBwcXMzS0R4UG4yX0M0Wk5QekZHUVlqNVJpV3ljQ3pybmtvTGcyRnVac3huWXlyTFHSAcYBQVVfeXFMUEI2ZWtDQXlRQTFIZW00NDdGdG9iUGNod0NiaGZoazBkLXloLUxiTkFHTm9yVEdZYW9NdXN2cUlGY1dFc1VEcEFtbFFJVHpxaEpzbU5xVWNuTXFJbmFlMEFRTk5ONTA2cEJpY2Z6WmlVUjVPbVdNNXNhb21lLURkcDh0SXdhcG9uZUF4U1VSaVRMdGgtRklwcHFzM0tEeFBuMl9DNFpOUHpGR1FZajVSaVd5Y0N6cm5rb0xnMkZ1WnN4bll5ckxR?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795437641000
+    },
+    {
+      "id": "301ad901c155f85870aafa77514b21e91e803d27",
+      "title": "Houthis Say They Targeted Saudi East-West Oil Transport - EnergyNow",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTlNWYVdPbkV5MnI2M1B5X2JxZjFOajdneTh1S2pEem5zT0RHa3lRNjl1aHVzV2JlZVBnVk1WR2RjOGUyM0YyWVhzOGhBdU1lR3dpaFY1NFQxc1gtRnQyeG5rSFJfRE5MU3dvWGFHWG9Ka0RrTGNuZVc1dU1zMGFDVUdWeFE1RWdvXzZFTFhR?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795437387000
+    },
+    {
+      "id": "f706ba543b4a3b8295e2f8b7ab2a42cb37137011",
+      "title": "Is the AI Bubble Bursting? Why the Nasdaq Just Had Its Worst Week Since 2020 - BBN Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdEZwQmJrRkVMdS1Rd2hLbl9GRTdWak9ZMU5qSlZnY2dmd1RxVjZGZmpGeEE5Y0dxT1F4ZVZkR09peFZ2OGNKSGVST0V1X0dQOEVQYUZ4Sk1nQWdtWWJMNXJSS0lnYXJWeUhFRmxwLUY1OEM1XzZCUFNMMUNJVkxOLUpxQ1g?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795437066000
+    },
+    {
+      "id": "2240d37eb0a1779eb7408ce64343434f001b3e83",
+      "title": "Meta Shares Drop 5.9% as AI Spending Weighs on Tech Stocks - Demokratis.co.id",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmVXl5TklZRHdSRU8zSU9lQ3VSeUdQOE5ibzZnQmN1VXJyZDdYUzNpRkRXeVU2SXVEMDNqVHJDZ2pGQVdNMXdpSmQxOWNrRGZ5Y2k1S0RqLXQ2bHZnb1pwc01TTWhyeXJ0WHpB?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795436166000
+    },
+    {
+      "id": "9c04148bc72092fb37c056957bd0fd2e55207584",
+      "title": "Meta Shares Fall 5.9% as AI Spending Concerns Hit Tech Stocks - Limapagi",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GZVUxUk96eVlqc0dVNDF0YTd4V080dmlzQmcza2VVSzN5XzlxZjhwN3ZPSmtacUFDb19wclBfS1ByaWNDbUx0djM3d2ZRdkd2aFBTUFhNbWhjTWY4XzVBaHhUcUExQQ?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795436089000
+    },
+    {
+      "id": "7e9d1583bbe49143269173286f71dc9cabd78235",
+      "title": "What fund managers are doing to protect against the AI bubble bursting - This is Money",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdkhPUHNQU2JTcVVtZk9qSVFSSElhanh6QnBpQ1BieDRhbVMyU0toVk9WMTJ1a0VweHV3QU45OEpfQzNUMHhjNWhTTzBBMHR2SzlITFQ0bmhyaGkyc0RwVUEzdTJZVkgyWE4zZHpCU0V1bmU1b1lQcTRTT1ZMcV83eGZkQlFuR0tGbXdkUGtla3pOOUNJbnZfVEk5Q2pyZEhpQndWRURDSjllQXdhWnZZc2xaWTQ1NkdRX1NvRjJR?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795435720000
+    },
+    {
+      "id": "c7999ef65ce38c68f9c857d4b65a7f3328ce6b84",
+      "title": "Oil prices steady near $93 as Middle East attacks offset fears of supply disruptions - The New Voice of Ukraine",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVjVNV0ZFb3V6eXBrSFg1NXZ2cDJZajN4RThLemh4OGpSZkh6a2VKTXNQTEhucmp0c05kdGlsY2lFaUt4NnAzRlJtUzh3emg4TVpPWmp0MS1GTE5QTDhxbFZVWHY2SWVGMnNZUTFzM2Z0MWxmRzFKa0YzN2V4WDNianJ6QkJYZHhER2FuMlpaRUtOczFqcFNheDY2VmlsbjBF0gGaAUFVX3lxTE45aUtiZDh6bk9STHJNdnNkM096Tl9uRkQxQ183c1IyV05DRGxjSGxKZnlCaF9ZbWQzSDJjS29qc2RnMVRob2lhZm56OVlTdVpVeDZvM1UwVTlmVmhqYUdGQXdwZHg2SWgzUVVlYWdmRkdGRG5IZkFjT1Z4SDZiVldFYV8xZXQ5M19XdkRNcjBFbDNPZ0NZLU4wNnc?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795434600000
+    },
+    {
+      "id": "cd7a409630308f54eace2e8350852b773a737c5a",
+      "title": "Donald Trump's surprise scapegoat for Iran war and economy chaos after midterms disaster - The Mirror US",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdG9qelN2cndLVlR0YVhRQVVJa0NHZk82OWRfdUd0bWlKbW1uQ2lLT0ZmejRtQ0FvMlI2V25kbEQxYU5Ra2o3YnJuN0NQN0Z6QVZ5ZTRpTGxNdC1YazNnSWludVNCQ3dIblhpakROel9oOTJpS3JJX3dETF9IeUZrdUx0eVBWR1diY3I2ddIBkgFBVV95cUxOdE5iRGw1N1QwUEtqSElhV0FuWVlsaDhRcDVxWUNoYUwyRGp0d05ETHU2WmJ3WkpsVVBnTnpJU2k4c3pUSkRHemJkSDU2RVV3QWR6R3g4TlFIQVJsYzF0aXExZ2lxMkVLQTg4djJjNmp3bDZ6eG9pNXVURjM5TG02V1I5TkdTTWZOOEdYaGNiZGozdw?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795434600000
+    },
+    {
+      "id": "d5ccb6feb58d9688a1abe1d653400f31455fbbd0",
+      "title": "Stock Market Today: Dow, S&P 500 Futures Surge After Tech Rout as Oil Slides - JournalArta",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOYWVoNmRfWXR3VUJVRmNkSDMwY0s4ODFaRGdYSmozR21PcnFKRndFdDI1OVk2amJuTHZhazZIcGNKVW5tLUZXTFA3MDA4UExjREdHTDJMdTRYS1NKdGVLcHc3LW1XSG5scDBlRWlobE8tNDVSQmRUdkpObnlUNEQyU21yc1d1R2FXX3psVUxndU92YW53VWdRYUlpSnpEaTBLME9rZVRWY2tWeTljeThZeE1n?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795434479000
+    },
+    {
+      "id": "894f94a17138298d36a0714053bedb5cad518b72",
+      "title": "Hang Seng Opens Down 1.3% While Mainland Shares Hold Flat - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNXZ2NG1MUUV6angyR3g3WDZpellESzJqWkZNbWoyZ0VJZWsxdkJHRWw4RVQtekRwRnpIM1RQMEwxd2M3QVh0bldEUUs2d29INDFPVWpublEtZm5RclFxeDhELXVhbUtCYnFFU1NPeGJTVUpkZUdBalhvSHVOWFI0M1BVcjk5cXNjck9BTU1ENjlsNW9SNGRuZnhmbm9nU0FEM0dsdWZaNmtlTzE5TmQ5QVkwOUU4RzF3d3lfUjYtRkM4eXBjbGhMUg?oc=5",
+      "themes": [
+        "china-trade"
+      ],
+      "ts": 1795434266000
+    },
+    {
+      "id": "fd07b52f410a7801f7702adf5352d9228c4759a1",
+      "title": "Gold Rate Today Rebounds to About $3,580 as Fed Hike Bets Ease - Artvoice",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeEV0dl9tY092RG5iak03a1UyT0huemhXWldwbWIwRlo1Z2NmVWhQNkZDVWtTMm1RNkcxSGNnc0JHU3VEbWFDVEQwMHF6ZGVnYUlRdkdNa0NQdTZwSnoxQzRhYmt3a0RVSklLVU5IZDJRd2lWOTB4Y0xIX1lHSWFUS1VUVlFkcmVFM0E?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795433454000
+    },
+    {
+      "id": "90b2b868413ee0cdd3a11231faa169abd666e06b",
+      "title": "Meta Faces Stock Decline as AI Spending Reaches 145 Billion - cwibc.co.id",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9UUE1aWlVIUHZYaVY4OUluQ0hZLTlmcHp6bk9HYVRwMWxoaWtRYkVLenQ4aTM2UXhkYUpWUHZ2LXFSVjlHY055RHBJdjNQYktYMkkzUjJ4OFZZSHBJMXFpaExxQQ?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795433334000
+    },
+    {
+      "id": "64a0182e7cee8dcd823631077fd287d46026b5e8",
+      "title": "Asian Stocks Tumble As AI Bubble Fears Weigh on Technology Shares - تسنیم",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYjBYaHI3N092VnpuU3hYc1dPRTkxMUhzeTJoRVJ0cjhlYkZtQ3JQemlZb2pHbllDbkRXUzVLSUFBUXlnWXM0UEY5Slh1cGRsOUZsVWRjVXhnSjhRX3kzWGk5ZF9SWXczendJWGphbW1ZS2dFbHJrcWZmWHEtTlJrNTVZckN5MVRmd25vWElHNVNTWHNGWnU1OVhkb3pxcjlid1gtbXlCRmtGWHhVby1rN3J4eWFNbGJMRVHSAb8BQVVfeXFMUE9BdENhdU5Rbkw5UUtNWUF6OHNpVGM0UFNDeEY1aGliY2VDZWpxbUZqeDY1MlZoS2ZuYWMyandjYldIaGs5WENHX2tBb0NMY21Ld09rbXNXeHBjSzJtVDlDY0NtTVlRNEFJdkpvRUhOYTNRWG04RWhiU2ZDY2kxX3V3OE5oUFE0Qi1tNlFzdW1QNEliN1JZTmV0RTZjRzVLWEo5RWVRa1NHZEt2dnNTNWVybFZubHVzeW01RlBVa3M?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795433266000
+    },
+    {
+      "id": "d614dcd7a57d16b42a902b821812a237f53c298e",
+      "title": "Oil prices slip as Iran war, Middle East shipping attacks support Brent crude and WTI despite weekly losses | Hindustan Times - Hindustan Times",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNT05ZMk9tcFU3SndwTWs5SG54cHYweURESm9DUUpzOVpVcUFoaThfUW16QUJwc2l3ZUVJbmVjc0NNdlEtN3M5bkRScE1acXp5RmpCQTEtZFdCRzhuVkNtUDhuU0FBYktYazc1dnQ4MVM1QUstXzV4Z3l5a3E3dmJRYmxXUlNGY3VuN0Z1WlZqNGp6OFhVRl9weDVmQnBkcGNYTFhuOHJZcU42VjE1UVYwYWpwV0dHM2Y1QzJJQmJ3S0lzX0VfMjlKLUdUUXZscU5LQlZ0UUhwempZV25naUF2aEVwOUJjLVpVWXNUSTdpS3BtVTF6bmtqZUExdGlkcUszTlpheTFRU2nSAY4CQVVfeXFMT3hFZ29SZDhLdjFSRl9yeWljYWJNZVZhZU9Kck8wWFh2VWxxWHhuRWcyZUFTS2JoNjZDX09OTWIyQkMtdko1TmVCMFhkQnNXS3RpclpBblBDcnk2SDVtNU1ldEIwMUpBMmxBZ2E0NHFzdldtTE5SZnNiZzZ5Y2sxdEhwQ2xRR3hSdEFKR2J2ZWxwbkxTNUk0U01HaUY5eEhIV2hWbF9ZLUpIVGc2VnltRzRoR1JCTFdlUzRnTWJpT05rOUhQanR4bUszZGVHN0tJSW1aWTEtNjJGZEtwZkJKaW9NYm9sbm85UzZTWkFqMmh5cnFRVGQweThraENsZnNtUkF4LWVyMXVzcnhvYVlB?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795433076000
+    },
+    {
+      "id": "8c422eb562e7984c0aaff8f576cdacc5e18f7615",
+      "title": "‘Giant hoax’: Trump links his 3 predictions to Midterm results as oil prices tumble | Hindustan Times - Hindustan Times",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxObkZnSE9WQWxXY3M1MFdtWDMySDFjWTYwXzBaQUk5aHhEc2JiWm9fY0Y3S2FqRXhFdGNGX2VtZVA1RHRySl9TMlZjNlMweFhLX2xYTTZhaDBsQ21pSDRWOE1mQlNpZFFaQ1RCdWZ5SkhteGlUREpRQmNCMjgtc2ZtLUttaFpCcWxKMF9idkF2akVTZlQzck5FeEd6elNQRGppOVZRVlFQbGxNeEZZV0xpSDB4RjFJRzAtYXo1MmFQckF0Y2Z6dEVVOGVOeFF6S2tjZUVhcWJJRVNOVGJlX1VnYUNkcjdNQdIB6wFBVV95cUxPN0JxUGlVUktZSnBzeDJ2Y0syNUFFMnZyVzR1YmRkbmdDT3VmSUkxQWpodHlTVEpYV1FUb01LSUJIUkhjeTA2MVdlTWhzSVpHcUJYRThVOWpIVWk4MDE1VURVcVNHUDFNMFpHakJpY0oxX0JRTVBxQjMtRlVFUzFTT21fclg4b3lkV3dXQTU1STlBcDQ0bEZScmwzQ2w1aURVdGpHczZYdzd4RnhDNE1FNHoyaGl2SG5GaXBZcHgzcHZ2UENfTGFIRElsZGZpdFhfcWNjRXo2UmxlSkszTUc2MDkxOE5XMmYwRUw0?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795432728000
+    },
+    {
+      "id": "cdcd663158393c9eb7f2267f3bc1e382b8e61f34",
+      "title": "Yardeni Research Expects AI Investment Boom To Continue Despite Constraints – Says Recession Remains Unlikely - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNN2l4S2VSQ3RaUWd4ZEFtak9BRFd0cVJyUGNnc2lOSUtaTGZfZnRzS05paXFjckpHMnMxX1YwMVBoeC1XQ0EwN083eGhOQlg5LWtydEkyMGpqb0k0cGFwRXlUVzdzQ1RGb2JLMVRiLWJRUk1KNjNFYl9EeW90U2RnM1oxQzMxUTVUYjRLLU1LbjUyOWFHNXpqODN5dFJKWGZVMi1wd2tYWDB1UGhHRUIyVjlDRHhEVm9waHB0NHBDUW9Kcks5cnNoNDAwOGlQYncxUzgtZUtLMjJwUnVnUmxBalVSTGQ5X3ZSYW9YUVNOdVdLcHI5M195WHNCZTY?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795432016000
+    },
+    {
+      "id": "5119ee1be6620b6355628b1898ead354b716554a",
+      "title": "How to think about the ‘AI bubble’ that supposedly threatens the stock market - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYWEtVFlBaTBsaGpkdGZ0YnlCZGppN3d3NkhlWngwX3E1SWFGd3dvallzRDI1NVRJV0Vha2ZzYl9QVkVfZzBuc01GS3ptSkI3cGlISGlWdnBXUXloLV9rc0pLanF5dzd6dnEwdG5acnBDdXpIQ28wRlBRY3lKV3Rrc3VaOE9JektRcUtwOWFqRzRqX1FnamVsTlJndHp4SmxhUFpSM2tkcUxxYTRoNXVqN1N3ZUdRZw?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795431600000
+    },
+    {
+      "id": "dd10285da16dec3b4ff9cd5db261481791164063",
+      "title": "Air India extends Saudi flight suspensions: New dates, refund details revealed - Gulf Business",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUTgtMzRNbVp1dkh3eDFXY3VRVkZTTDUtSUNkQ0dRMVVOZDVsRF85QlRLTnhNc0V5enBwa2NuVWdXcEN5QmtSdWlQR3lnbWpFWTNXb09aUjBsSUxrQTQtNDBXR0ppMkJ2MV9ranZOYjB1S1ptaEQxLWZxNmktdVk5SmV6T2w2NVVmMjIydnBkTDFpQzhNYlJIYk1SQ2hudDl2M2VpWUdBUEx1MTRKZDcxcmp4QTV2dEM4eVBz?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795431362000
+    },
+    {
+      "id": "470f5d4653f41f0186452001896d0758c222e11d",
+      "title": "Saudi Arabia’s influence leads to failed COP31 deal over fossil fuel language - Crypto Briefing",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOa2p4Rm5TZWdqbkxxQTk3MzBBanBLcFlaSHdUdnF1UVMzekxfRjNTaV9YSWM1bU1INmNQZFoxYXFTWVVQLUFlVDY5eGlGZ3k2eVZ2a0kwekxVUUdxUXBReS1kaERGV09QNTRvRTN3ckJnc0JYNS02R3VxZjZ5Y2xjeGw2Z0RXd0xDUHpOUUtoZTRTVnFaSEQyX2FmVzFsaW1HMkJISVlrTQ?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795430494000
+    },
+    {
+      "id": "917001b6552d88d400a5f1dabbdc828f07fda241",
+      "title": "US Treasury yields rise as investors eye Fed ra... - Pluang",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPekh5Nmx3ZWdyd29EZjRkNGRxcC04bWdiMjFzSUpfODVLSTVHdXphelV5a0dlX3k4SDh5MDRrS0Zldk5FQlg1WlNfSENNNTNaZXlvTXJ5Y3N1ZzBvbWN4ZlNNbEx1cW1ndUxZV3Q1YXpJaEJDTXdtenRqMlUwblk0aXQzOUZBV0dYbllpNVZxQmF2LUFoMkYyUHM5STk0N0RMTUdyV01ELUhFQQ?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795430216000
+    },
+    {
+      "id": "43807dad581aa3e3a9aac367d08b017f7edafd0f",
+      "title": "THE OIL MARKET: Crude Oil Futures are Pricing Market Adaptability, Not Hopeful Iran Peace: Russell - EnergyNow",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOVDRSbE5zeG1mUjc2OUNjMHZKd2N4b2hHd011bWZMTWU1aTZGUkZVQmw2cU5LWko3aWplSEhxU3pCWUpuejN2RWw1NDExSHZIN1FQcms1TGo4YjNqZHhVb20zSVljNm5PR2M0cnNMckNIMmtXdVc4ZkF6VS0td1V0b3AyMGY0YkhZYXlEZ0phYVNwVzBlX3Y1bTF5NEtRYkpMX1duZWd0a013LUZDU0YtNC1oZndlamppREpzR2VzbldzUjg?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795427286000
+    },
+    {
+      "id": "dffa89ce75a61b6c1d9fb64a204280fb738c0e99",
+      "title": "Week Ahead: Inflation data and Fed expectations set to drive markets amid AI sell-off - www.tmgm.com",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQ21CSjBfa3dxeGk5WWsxTmEycl9ZWXp3akJ3VU56RHFBYVprWmNwMmh4QmsxMUk4bnFndld6LTF1N0FjaUJWT3lpVnpZNlo5VnBaOFhxR1lQQkYyamdFRGdKRmlYclhhODlzV1JFMjhQenh1QW5ESGg0STRDUnlfYUVrSEo0NlhUeWFZck1DUDQtbXVudWVUWHREZGFoM1pSeFE2bmN5ekJVdHFmWkhLeTRGYzJtZnd5eTlSZ1g2Z1NFSHhPNnc?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795427209000
+    },
+    {
+      "id": "15e8e59ceb8ee920df28a75f232521978638f8da",
+      "title": "Oil Prices Edge Lower as Middle East Supply Risks Offset Expectations of Rising Production - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPX2hPQkxnMkpra244dUJhSUVWbmhjdHloVUZiaHNkcHB1aS1sdGZDN2Vub3p0MEFxUURNNE53U2N1ZFlDVDJYaHV4bUphS0NiemNVYkttWDR3WEtwM2V0LXdreUdUZ3JCSmJySzhKcWVZa0NDdjdHSUNWVlBYZHVWVFBiTkRnajdFRk5RR0dn?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795427011000
+    },
+    {
+      "id": "0d720c882ab56ab8cccf98aa636c864bea762c01",
+      "title": "SpaceX stock: why analysts see nearly 110% upside and AI hyperscaler potential - Invezz",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU3NBNHR5WUE3WFlzRHhjTHFWekJFaFRVaGF3alVXc0ZxQ2t2UV9KRmEyX2xQbkMtYzRSNzdtME9IcWRHanV0RzNCYXVmdTNDMXg0WXlRXy03MHBxbmdzN2IyNk9NWW55V2l3NHo0WnFvQ1p4NTh3Y2ZlNFMzRnVlZ01jMkpIclppcDhJRXZIUjJxcWQ0SnRhejNzdjZDOXN4STJGT1pYQWF1STNfMUZvQVZB?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795426896000
+    },
+    {
+      "id": "fa2a3678de481a940164829320d84391c7f7480b",
+      "title": "Core PCE Inflation vs. Softer Data in the Debate Over Fed Rate Hikes - StoneX",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZkhKYkQ3Qm9BV19CcVkxZWpSOUttSkJSbTVtZ0FSdEVOU0ZBNlZKbTA2OVhQcS1jN0o3a0F5N2NCaDV6LWxLMl9NTmxZeDN5UXRocUwwZ2ZGaVJhVDlmTlBiN3FYeGQ4c2JBcWREY24tTk9LcE9lMmdReTZic2lqTExTN0VRMjdEeWJwc3l2N0VnVmk2b1NqWEtZZlZoV01ELTE3S29icDR4UQ?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795426751000
+    },
+    {
+      "id": "ff06b50d1fc33ea0448843820befeae9e717e43c",
+      "title": "Hong Kong's Hang Seng Index Briefly Falls Below 22,000 on AI Investment Concerns, Marking Fifth Straight Decline - BigGo Finance",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE15c3JSR29GX056SmNiS256NmtLWWpTcDlXZHFWZTFma25weEdtREFJT1U4OExqeGx3R2NuMldwRlROemtkNUphTEZKYU95UC1kUVBLbnZ2d0NVejhjQi1ET1M0RTI1N1d2elgwZkU4NmYxNFluNFE?oc=5",
+      "themes": [
+        "ai-spending",
+        "china-trade"
+      ],
+      "ts": 1795424700000
+    },
+    {
+      "id": "c3f087448c7a75b8ca7e5d0d5f2f287e3718810c",
+      "title": "Global Oil Output to Return to Pre-Iran War Level by Year’s End, US EIA Says - EnergyNow.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNFA1a0JOZkNidjVKMUdMeFhSZ2dCTFpYbzlER0pmZGRWZUtjMkEtLVVTOUZHSkFwbFQ3cUV5WDNsSldBVVdBdlVqYXpzWllJSTJqNmNVTlpsRVZsU3lOdlNFaE9ZcDVDUHdvdkpjSTl1OFZhTEpmT2hZUGg5cVZ3blpSUFRsODROR3p0TmlnM0habkI3dHZsRm82VVoxY2NOQ20xYjNLTDY?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795424174000
+    },
+    {
+      "id": "91f2a11e6d248e486a69a52c3c2c5e3fa83ee80b",
+      "title": "World Absorbs Historic Iran War Oil Supply Loss, But Depleted Stocks Bring Risks - EnergyNow.com",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbW5RLWt6Unk4SkNYOXIySEZqOF8tTUs3NWNZWTRWaUEzVW5MVmNqSTJqTnY5UTZZc09EY0RlLTc3UWcyTWlFcnlLdFdQSG9WSm1RcUFwNENpcGIxQkxmZU53VkFRM3o3aWtQZDRsQ0NHR0ZsejFVdHhyR09Jb1gweU1BLVFCSE1yVnBYQmV3VDRxcEJHVGMzNXh4QTlQbmQzaUJRaVBxM2FRQ3dCX0Rz?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795421295000
+    },
+    {
+      "id": "a1f4279538aec4d9480826f23cb9b4672f6d19e1",
+      "title": "WTI Price Forecast: Seems vulnerable below $83.00 despite Mideast jitters - www.tmgm.com",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQWHZjRGJaMHlYX1U0YVJrVE40S21yYUJpWjdfQlZMMGxDNElsZGtUOUtUelJjQ09kWXA4QU5pWWUycDhPa3VaMzV4c2VEbkxUd0lmS3JhOVBrSjhHLW9EQ1I0VmkxUVZ2UE5zZTBKZmFTcGFHazhNd3daUXJzY25TVzR6amZBV3RtRUItWVdoekI2R3hFYjZwWndUQjBWeW5qME1RTkhaYmNSX3ZCbThJa1pIVDh4aVFNemhmVGllZzVLczhoMFktVjRySHgxdVh6SE5yQl9B?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795421025000
+    },
+    {
+      "id": "4ca65346d4ed9358da856aa9b8dce08a237bb23b",
+      "title": "Neocloud Stocks CoreWeave, Nebius, IREN Oversold Amid AI Bubble Fears - KuCoin",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOS0dfTGUtaU9iNkVRTXRTc2Zhb2tnRXhxNFgwZnpwZ0lZMVp6OFFBZ1BfMEUtTWdQc09Za2xvZWxHZDItV2hlRlRINUs1YjdCUkZ4MG5obmQ5WUdWSjdZbGR4VzZEY0k2QVFlLVZ0Zm1mZEpJeUlLWEFVbjRrNkJTMDhKMUVTZ2VNakNrcmZCWXBFa1VvSFRUNFFBU21QbE1nMnYw?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795420059000
+    },
+    {
+      "id": "bb1ddd4d4e7db945e3db89e4c9a68ec203d94b94",
+      "title": "Oil holds in tight range as Gulf attacks sustain risk premium - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQkZ6X3VSZlAyQ2ppSkp0STBBVk1NMzkwXy1Ec1Z6ZEM3M284VjUtMExKU0xiM1ZxNjVMSHlseS1uRHY1NDhYd0xyaHlDYlFacmFaR2pQQkZtM2JLeTM3UFo4UjVjazZNRF9OQXY0aFBRWWFWNTduMlZTS1BBUDJvdHNLOEtNTWFaUkF2eA?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795420020000
+    },
+    {
+      "id": "ced47539b6b1fe3d4b09c428ad519a6214b523b4",
+      "title": "Diesel Price Trend Q3 2026: USA and Saudi Arabia Price Report - openPR.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWTZLcmswUThzcmRtR1VBOVVPZmlQV21TRVVrU19mbEQ2V3ZqM3FUYmxJMzFzMlk0TzJySGRFWjAxbzhFek9QLUQ0dm5oMjQ4cWRpbHNtekwzZ2x2eGc5VDRpTmNxNWMzcWpldVFTd1ZLWXdnT3RIMGpvR1VrOVN5MWQtbHBRWUFRbVZBNDhqYWxyWXFzLVpVTFBBbEw?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795419766000
+    },
+    {
+      "id": "6c79c9957ff25eaa536ae2779a44de53c7130685",
+      "title": "Why Is Crude Oil Getting Cheaper Despite The US-Israel-Iran Conflict? Brent Falls To $92 As AI Bubble Fears, Weak Stock Markets And Shipping Risks Collide - The Sunday Guardian",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPV05rWDEzamkxOWgyQkZkSzhtRG1DRm4xTVZoYloyYWcxMGJJTkEzSDNFUTU3RVJHODZNdGRZREV5SmN2QmIyYTQ2SlpTYm96SmhXUW9YQ0wxaXNPTlRfMm9ZVFlpZ1c1d0lXQkMzMjRUS0FPQTZjRnVITExKcDAtUmlkR2RCbFltX19WaldjaXZkTk9McWpRRmtyZzExOWJKSzNKY0h2MjE4NjFsNHk1aUlBV01DWkUwYjdSc2lZR0JWMkxnd1B5czlaeGlBd3BQSzVGWVdidktBOXB4ZGJjb25KNVc5MnB3WDNoSVRkZE56TGx6VWhHVUptdGpwaXZ3Ry1XNWlWLVh2el9wVTJuR2FCZGVtTnBfVTJZUjZRMzU3QdIBpwJBVV95cUxPZkd5cUhTRDBUWGZTaEhhSm41TDBZSXg0cHlGeTVjdENjeTZEeTRHUU5sYXBxTDF1ckVmTFRpZFV5MWlVSlpacDBZc1otZTNsc2NaUHQ3TVZmSG9BYXR3RXU0Mlp5UlFXUlVad3RmMnJ6UFF3N0RjbzZQb1JFdHM2cmRkSWxiRHhRVnQ4XzlRMWVPWDVVcmgzVDJrcXBKVDJMNmdyYUlaZU8zTTlQZVF3ZS1VYU16UzFLazhNM2M5Y0NMSUlPRmRnSHpudE9mMlVuNS1nWk9hODJ1UXdnUWozcEEwVWFQSmNxTlhhYVhZajJMUHRUd2lUbWxXeUtjcDJHQlFzX1R3NUlxM1B1TER2UTFOOGpMQS1aU211QTNsTGNwcm5ic3Vv?oc=5",
+      "themes": [
+        "ai-spending",
+        "oil-geopolitics"
+      ],
+      "ts": 1795419175000
+    },
+    {
+      "id": "5eb665271afbb6e0e38e7905710d020403852b8b",
+      "title": "Amazon (AMZN) Stock Price Prediction: Pullback Holds Above Key Support as AI Spending Keeps the Tape Heavy - Blockchain News",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMXppc3IxNkFwNi1kc3pkQUZpLUYyQ1haUVJJbkRmTEJRY0VtNUtZd0ZmTnljRkUyWTU0dlF0MWd4UUJ6Q2x0TW5LeXpnWmJRVkpqeVdVekdGVHBTcFdzd09UWDEzRlF0RUM3VFk1N3BzaXhuZUlYQVZzeVQxcUdScVVJTnJmbEYtYkh6Qk5YcndrSTRMUGRoR2FVaw?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795419120000
+    },
+    {
+      "id": "4c9ad66eb94fd3e7fc60e3e036d4e97eccec0bc9",
+      "title": "Why Is Diesel Still Expensive Despite Falling Oil Prices? - Modern Diplomacy",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa1dUYlNoQTVfc2JGXzJES3RTUDlhbmV1YjNHaFBSLXIzTzJZZHRKZ0pVWG5jbTNKa2tib1Z3a3V4WjAzOFpXY21CdjZQRm9sMVRvTTJKRGRXZG9vMU1YLXFxWTdfWXhkV3ZzMnhHanhMWm45Z3psbG9HSFloSmRVM3FLMGNPNjhYS3Z2bmtya2FIR2ZleDk2OXc3dw?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795417841000
+    },
+    {
+      "id": "197b2196b32160b2b9df48f04b15e24cf74e8ad8",
+      "title": "COMMENTARY: Oil's Iran war recovery masks a stubborn diesel shortage - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPTm1ualZQSkpWSE81dmJhNTVlenN6clBtbnAyczRuVDdPZUFkZDRDX0pPc1pacExyelpWSFp1VmpUWm5WUHFabTV6UmR2V2ZzaldKcjJlMEFiOWx6S0pHTE9tUGRoT1AxVm04SVR6U0d3X2JtZTcxOFpMWWFWS0FJaTlIYTBGTDc1cnB6SXQtQWhxN2xmQ0hnRldZSjI1a2R5aEhzNF9Vai1SX1VJemdyUU4yLW40c05yMGk1eElqMA?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795417200000
+    },
+    {
+      "id": "cc95511ebe55cc5c38165958819561f6ae93c363",
+      "title": "Brent Crude Price $92.32: Houthi Refinery Claim Before OPEC+ - FinanceFeeds",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQN0c4QkdsUWltSDV0dGJDdF9TdGo0N3dTb0g1MzdPY3hlU1BUVmMwY19TQTB2ZDNUckp6dWpUeExyZzl5WnVoSjAzWEdrQ2RzLVJWelIxRFZiT0NTTzFIeDNpUGtuTUQ4STBwWFhNY3Zkb1dicGdjQ2I5amNDQ0g3eHVyR0RkeHdpMnJhX1l5Q1ppU005YXhNNVBGLTFDMzdEZnVsSVNmQ0tYQVBQSzZEb2NvV2VIM2huQURwZw?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795416824000
+    },
+    {
+      "id": "2e6ca31e6e7e29d4e16029f04d2330c1b09ec000",
+      "title": "Middle East - MUFG Research",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE12SEdvTEZGZ2ZjQkhVbFFhNXFWR0ZhTHFWUkNXRXdmSUNuSHEzdVRRX2JsbWk0dGw0RFJQLWFwQ3JQOUt6VF9EQXN5dzZWeGVjRWxmVGVGWnNvVWlvOGpOUllwOFdrVEx3T2ZKQXhHNkhRU1FDV0x1eU1n?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795416814000
+    },
+    {
+      "id": "e61a721b376aa373ef099f66d5ea3fc657c50997",
+      "title": "Oil prices fall as Middle East supply recovers, surplus concerns mount - Anadolu Ajansı",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQTC1CNjZIVnRKSVhBUFlteUZwdU9sSm9XS094aDlrVzdKWFd6bWkzSm1LUThmOVpLbXF6eFY2WTVfc1ZnMmxQMGFhWk9oc1FIUzJtQ3ZUOGdDX0VLUmxuam5ud3VMeFM2UE9PYURLZkVwRW91UWVLeFhaVUR3WEh1R1YxbTZWNFRtai1OTVU3N09sTGdwSGhja01NQ3ltQk8zYmpWWWV3TkF4ZHJGX0hnc9IBuAFBVV95cUxQUVhacHZyYUlMNkVjVjc2My03RVJXNjNNdENNclFkdXBzaWNaMFgzZUZTcHIwdXZOYVh2UU1XUi04TzJJQzZ1clhqa2g3bVRia2tEWTlCSk90UXlXb0VDYk9ackpuZTNwNFpBUXhHaGxzNl9zT2xZdFhsM3ZNZmJtUzRQaTlNdjU3a1ZRbnpOVXJIeDZZX1dVNDVxWlROQ2dMVF9mbGZXUnFqQ3d0ckw4cGtON3dGLUh1?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795416364000
+    },
+    {
+      "id": "f1db0ca566bd9b74702d5b38c73c8cb46bfe664d",
+      "title": "Oil Prices Slip as Market Anxiety Grows Over Iran War, Threats to Gulf Shipping - Arise News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONE5kMHFDbnRoVGtsRTIwWG9LSl9FWGNyOEg5V254ck5BeERtakJkaTVOOWowMnR4SERxMUpsRkl2dmlMZERkMFVMLUd6dXlvUlVWbU9TOVdJQVkyQzYxQ0lkakxWWmdMamhocW1OSWdlMjdNSGtVYUdkYm5UWW81Q1ZRX3QtWlZHdFgtYWR0eW54NUF1UmVnQmQ5dXhCSTRSQVE?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795416185000
+    },
+    {
+      "id": "ee478f6448e6beb3eb5a7372ea0b32059b46800e",
+      "title": "Oil Prices Slide as AI Bubble Fears Rattle Global Markets - Crude Oil Prices Today | OilPrice.com",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWHFpaDhkd0NXUHA1MWpDSzVZZzUtN3A5Xy1sMXZBNEZ3TGdSUklBTlgxR1o3YVgzM2pRbjRKcmdqSmlyX2pvYVJzUHhqRVczN29oUGo3Y0hCRkl3ZTFHSXNPVDNjNkZIVXJpcUNTTDBNYl9oTzV6em1QT0FaVFpDZG1UTlJsTUpEcHlPNFZxRVY5NndyT3dKMDJLa3lBUnZqQUxzc3IzMGZ1ck1mUHc1bGFEUdIBuAFBVV95cUxNU29rRW1Nakh1b3FCXzViX1JYTXFlcGVpekFsVXdvQTVhejRDcklGMElENHFDYVFXeHBlS2czdzJhWmpKZU5fVlE3MVZZOHFYcGt5aTlINlpEdlY5bVQ4Si10Rm1ZT1ViZmNCQ0luQkFvT3pvOE92eUU1NUZEWVd0Smd5M01SWmZFTTBTdE94ajl0NU9aQ1pyY3ZyVmFRUnItUlpHOGJzR1o5dm16b3AzRzNSYm5VZ09S?oc=5",
+      "themes": [
+        "ai-spending",
+        "oil-geopolitics"
+      ],
+      "ts": 1795413000000
+    },
+    {
+      "id": "2220407e6d82eb02301036bb861ff03b1ea3c36a",
+      "title": "Oil prices fall amid equity sell-off though Iran war attacks limit losses - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdUJ0eW55S2ZIU1FTSEJldlNUTExmeF9zTnBCUl9Ycno3bGZ3b2xDcE5CQ21WUEE3OXROeEhxcG9TcF84Nm5DVUFXaUxEYS10eXJIQmJWOU5kc2szcmtwVWlMOXp0Q3F2bFFYellDRlo1c0tQTnd2OElrZFFEaEp3U3QzR3plWE9lei1QTktnVWxiRVM3Tk9aaEEtWGhQdE4tdWRsWVBVNGpHdmozS01yR3lBSk_SAbQBQVVfeXFMTnVCdHlueUtmSFNRU0hCZXZTVExMZnhfc05wQlJfWHJ6N2xmd29sQ3BOQkNtVlBBNzl0TnhIcXBvU3BfODZuQ1VBV2lMRGEtdHlySEJiVjlOZHNrM3JrcFVpTDl6dENxdmxRWHpZQ0ZaNXNLUE53djhJa2RRRGhKd1N0M0d6ZVhPZXotUE5LZ1VsYkVTN05PWmhBLVhoUHROLXVkbFlQVTRqR3ZqM0tNckd5QUpP?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795412838000
+    },
+    {
+      "id": "af1b9cb68b1a0df634498a6ada7d087c7e89d672",
+      "title": "Emerging-Market Stocks Slump on AI Bubble Fears, Risking Wipeout of 2026 Gains - bloomingbit",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9qTkdfeWZqT3hyMFlESldPeVZYY3U5YkRYSmhXZ19oc292aHhBa1pJbEpEazk3VjlwaWd2SFFScXVCM3BGSmFscjd6MTZTODJHTFlmdA?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795412286000
+    },
+    {
+      "id": "2eca603b194c215f4614a0adc9086ddfb7afadf8",
+      "title": "Oil prices fall amid equity selloff though Iran war attacks limit losses - cfo.economictimes.indiatimes.com",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQzVKNV9XWDF3Q3VwaWhwUElKODlhS1ljU1RKQi0wR2tZLThLZ3pUOXJQRlplR0FUZXNDODVQSmRPdFhzMDlVdHFrbFRIbFA3YUFQeF9hN2pMVzNySFRjUE5hWUYyQzB5WGxybDlxMDVOQkdpV1o0a1RKc2JTVXlYOHhxeVpvd3dWa3hEbXR0Z3MwOGFWTjdCaVg2NzNPdmFlOWotZ3B0WDFMaUlNU0Z5aml0ZGFSbVRuLWVyRTRNWVFTb3dBbDVHdjdSRkzSAcwBQVVfeXFMTUM1SjVfV1gxd0N1cGlocFBJSjg5YUtZY1NUSkItMEdrWS04S2d6VDlyUEZaZUdBVGVzQzg1UEpkT3RYczA5VXRxa2xUSGxQN2FBUHhfYTdqTFczckhUY1BOYVlGMkMweVhscmw5cTA1TkJHaVdaNGtUSnNiU1V5WDh4cXlab3d3Vmt4RG10dGdzMDhhVk43QmlYNjczT3ZhZTlqLWdwdFgxTGlJTVNGeWppdGRhUm1Ubi1lckU0TVlRU293QWw1R3Y3UkZM?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795412195000
+    },
+    {
+      "id": "60f9842a3c6503ea0ff60e150fc98eec456828bd",
+      "title": "Trump claims he predicted drops in oil prices, stock market and hits from Iran after Democratic win in midterm elections - Middle East Eye",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQU0NBSXl5cGNseV9Sd0RKd3J5eTJVbURqVFVXZlBpeDlwcUhXVHNJa0VVelM4WU5Ma21HbllRSXVCNmxhRF9TVDBsZWQzRHN2V0xXY2hxX0pLajBFY2ktNjBpWjV2aHc4ckFZQ1hfS0dTRFo0NW81aHI5dXhsWUhZdGpfckxfQ1ByX09PUVIxd002aDRibFJYb1haVFJ0YkliMEFXLVR0NXVMenlpOE8wU0xtQTFuYTVKaDNiVnJ2MENER19Z?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795411680000
+    },
+    {
+      "id": "eac266f7a8abeac1e2bd0d86722cda0cb29cccd7",
+      "title": "Asian Stocks Slide as AI Bubble Fears Hit Markets - www.suaralandak.co.id",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5mQ3VBLW0xcnF6cHF6Ymwtdm9fNHV1VVh0WXJ3WE9NR1FLUjdnWFhFVG9oT0NTR0RCa1RRT3dZaXd0MFVpQnBCU25OdUhHR1p6T1V3SWFFa1lSVTIyNVZmeW5zQ1dNWkJ5Q2dBQzRn?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795411544000
+    },
+    {
+      "id": "47d036ec3a9ec10781f42b38cc4395044783f9f9",
+      "title": "Asian Stocks Extend Losses as AI Bubble Fears Hit Tech Shares - Peradaban.id",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBMYTJJZVE3Qnc3RTdKU1ptVUhiVWl4Zl9NZWI5X05aZWlXN2h4MlpXUk5XZldhYUVON2hxWHA2YkdfQkZGVEJ5Q09NaXpjT0RWdkIxNERna2hoMmc?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795411439000
+    },
+    {
+      "id": "be53d34e0554ee04bce97e61e3dafe902a733c13",
+      "title": "Asian Stocks Extend Selloff as AI Bubble Fears Hit Tech Shares - cwibc.co.id",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBNWW9fZUVvZmVnSTBFeXUzWGtrS1cydkZ0U0Z4dTBaTWY3QW5jd1FEY3diNDJTZTVZM2xCX0VBX1JkVDZ4TDZ1TkdTRlZUQzhWVkJCanBubGJWZw?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795411251000
+    },
+    {
+      "id": "1eea5e7b8668b70d1da843fdad81b15dd6557366",
+      "title": "Fed’s December 50-Basis-Point Rate-Hike Odds Drop to Zero as U.S. Stocks Plunge - bloomingbit",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBsU2tURGlIYlQ1eGtRajJJRzU3RmNPdGkxTmt4di1KM1ZtUFZ3TnpwSkVjSmJxODJkckFLTTNaclV2ODFNMHpMTERtbjJ4c3FhcmdFMQ?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795410786000
+    },
+    {
+      "id": "ffe2788838706c643d275dc836f9cd3e180f05b5",
+      "title": "Houthis claim strikes on Saudi oil facility and port - Arabian Gulf Business Insight | AGBI",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaDR2MzViNjdfaFloMTJsZnJVLXhvRnlRRVE4Z1l0X2tKTS11Z0t4TWsyZC1nT3NJQU5nYVlkM3pNODE2VXRFaFRJNWxQOXFxYnNOcWl2WmhLbFc5YjV3eWw4T0sxOGd1dGpWNk1EMGFRSENBaGZ2LWlGNklwOFdaTFFjSXBCckpHRE1vcUQzM3l3Mm03R0RyRlB3?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795409687000
+    },
+    {
+      "id": "326f895e3762151402598ca9c3ffaa2e25c9db30",
+      "title": "Korea's Stock Market 'Mini Bubble' Has Already Burst: Wall Street Warns of 'Larger AI Bubble' - SBS 뉴스",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB5Yy1USkFVUUpRTHM0UkV6LTJIY2lBRDdlZ00yelJOaWtDdEgwdGhBb2tfQ2xGV2Q4WDR0WlBwaEFpSEpyLW5zNGhkbXRlQWZzQmk5S3NMSjJVMk5SUHZGdXpGd01LU0RQaVJreGF30gFmQVVfeXFMTVZkaFF2em1TYnRZUy1VTlpmN1JuMnl6MzZ0RXFFeWUxQkRHMDVyNFNyUl9JM1FFa0g2Yy1BZWJnSTMtLTBLcDZYRy1nWUpGYWc5YjFRbFpRWk5nNHFSRnBlekdhZWRR?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795409356000
+    },
+    {
+      "id": "318fd7d52bc4831490debba3c82c1814c1237f93",
+      "title": "Asian Stocks Plunge as AI Bubble Fears Mount Across the Wider Region - Asia Business Outlook",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNOHdNRWk4ZTNsejFoNlFtUzhzOENMM3NNYkVvaGRhT1pkUGFRYnA1WW4zVmN0bk1fVktzZ050LVdtdTVRWmNaTkdGYmE4Q1lsWFcxV2Q0U21pZ1BwUDBhNzdpZVU3SkRwRWxzNHExeVFvTkFuVVhnUHZTMGhWVWF3TVRqNWJvaWVNUmRfOGljX3A2YWFDcnJXT3pBUUtRaEM1NmMyQm1Zck9jOHhlSmVBZUExU1RjUW0xcHAwZVdFVUV0Uzg?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795408041000
+    },
+    {
+      "id": "57e9735249690cd5adc1f8ae676c53663c8aea7f",
+      "title": "Crude oil rises marginally as AI selloff weighs on markets, Gulf attacks support prices; Brent at $90, WTI... - Moneycontrol.com",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQd0RkVURydEg1S01oeGlRYTJMWVZFVEJxTVB3YzRPSlpxY3V6SmtmYmlveXhLTy1ZaGtMNTBQRUxqYWlsNU1QOUNIUmREcVBPVXFHNl9rc1otZXgxUkE2X0RFYm1HM3VWeU5oeVFoTG92WFJXNllhTGI1bjhVLW5wdE1zSmN2Q0JjU0htMERYU292R1R0NU5paUxHdnlFTzdCWFQxV1N3OEJROTdoajdsSlRNbGNaR00zOXNOMFU5eTRFd2dqM0pLdzhJWUstSjY0VmU4SUZTbUh2eE9pS3M4Y29tVHFhY1hxcmliU0ZTQVJFNHdvQ18wT3dhZFFMQVZJdm4w0gGIAkFVX3lxTE9ZcnNnNmo1d245UHFraUQzek5ZaHdoTHZvQjc0Zk43RFowYVhZZjZJdGdXSkFKTXh4MmNIR00waTR0U0pvV3E4aVU2bmhfOWcwMU9sNkcxYVhiTHlrTW1FQ1duX1hXaHpadkoyb3QxdHpuUmhtLTBLYUpBZS01emxaMTJjbE0zVGF3Y0w3bldNeW1Tcll5SUFTc3lUR05hOVNneGUwTnNTVTl5eHJvZ1lFY1I0UXlwSm05eGtMakFkZWZpQmctbGU5QnlsQVZET0xGbXVTN0RMT0dpTm8zNFpFZ1p2ZTU0aGdwaUYzaFdKRFlhTXlJT051QTJNVnVhdGt1YU1kdFpsUg?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795407860000
+    },
+    {
+      "id": "dd25a0d33694dfe6e89b5d8547e0abbf1936353f",
+      "title": "Goldman Sachs: Oil Prices to Ease in 2027 as Gulf Suppliers Adapt - News and Statistics - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNeVFDeEkzb3YzaWdVY0NpRVozWVV6bHlaVVJ5c2FhdjR0SEhyWmJENUMxOElBZ3JSOVVrd09uNmdoRmJPOTlDNzdHRlFfN1JlaERmOHJFRUI3NC1nWHotcDVQZXFlQ0JsY3lBcTFnRWg5M2tBZ3BWbXhTd1lFSEU0WVRiMmZyd004Uk5GSUZmMHpXT1hYNDJGRmhTeVl6Y0RfdXE3ZlFJTGhRY1E?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795407637000
+    },
+    {
+      "id": "e756810377e8b465a5ca0afe1a07ac98de7fe59d",
+      "title": "Oil Prices Extend Losses as Global Market Sell-Off Clashes with Rising Gulf Security Risks - Sri Lanka Guardian",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdF91NXNrZk5jSkNwVFRsQU5OQ0ZyWHRkb2lFNTlVRUg2R01qWU1tNkFwUTJ3clRLT2llTnZsZzNsd3I1MXh6VklMYk8xWWhPTlRndEktUGY5amFXMGNGV2hKeXoyVjB5OHctU3plZGktVU44b1hUYTdkR2pJOEM0NVpINVRKVWI2UmhQcFQ4WkFseUs2anJUMFlEcFpEMDJfTFRwSDZCREp4TzRhN3ItUmk3SkY?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795407438000
+    },
+    {
+      "id": "0d3190cbd634ce638f3fd762cffbd19e3e48bded",
+      "title": "Fed December Rate-Hike Odds Surge Past 90% as Ackman, Bessent Warn of Policy Error - BigGo Finance",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE80MWVKYmxmeXdHR3RSUnN2eXVGNEVEWHFPMjFRWWJnV0t2Q0NqeFl5bGQzaUNsZTQxY1FrS3kzamhOc01vVXh3X2JmZHJkRWFXYXE5V2FvV2IwN2ZsMzVxenAxRmJpTWg3VnBHMkl3RGhWUlpyemc?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795406100000
+    },
+    {
       "id": "30e621eda1734b4c491ebc13ceb61c5ebe347ab3",
       "title": "Trump Links Midterm Results To Iran Escalation, Oil Slump And Market Turmoil - News Mobile",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTFdWVklhNUtJVS1OMEFrREtYS3JwdEp1d0ZNSjg1NXI3QUJfYnhwN2ozWUN1TzdaNDhBeHB1UEdOZlUwZzE5V3pVenBCMnlMTTRIdGdBSDY1SWFNZEdNdHZrcnlJWmJFSDV5cXRuMXlXNDBBRy11dTZNN0dnRUQtM0dMTzl6UmYwci1idEFxSFB2ai1tSE5wSjF5bmhxZFFmUWllVTdUQlZYTUpLemVpZzV3?oc=5",
@@ -31,6 +601,15 @@
       "id": "aea430eb4407d85eaa8346fdc64af8bd8e8a8f72",
       "title": "Oil Prices Extend Losses As Equity Sell-Off Offsets Gulf Supply Risks - BusinessToday Malaysia",
       "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxQZFg3Y2ljNXk2aXJrVVBIVGJZb3Vjdm9hSU9ZblhaeUJNVDY1SDZ2OElaU091Z0JQSlBMNC1IaHoyajFYQ3dWaU1sMlk4RDh4b05CMi1ORHVFWTV6Q0dRWHpuQ0l0MkNwNkVPOWYyMEh4Sng1VUJsOFdJRlYxZHR6NWgyMTJlVllHdUdyVE5DeUJ6Vk95NkhZYUEtSEI5OGtqSU1RbGc1Qm53RE9uN0JDb3VtRHJSdXA5WFgxeTlKWmZFOTNNbDlkUXc5TnByc3Z6OGFNdmJ4Q2xldkZwdE9UVHRBZWg4c2xTcGdidDdxQ0xqaGZScTF1MU1wOGs0V0tFWG1MUWVjNzI2bnpiMXlEQ3ViMklwc09YdnlrazdvcFI1YWE3a2llZVh2eEY0OFZhSTUyMUVHeHdiNWxBNlM4ajJocHo0cTZSVm9Z?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795404372000
+    },
+    {
+      "id": "b8ae7c53962bc6f19970ba2bb73cfeabe08d4475",
+      "title": "Oil Prices Extend Losses As Equity Sell-Off Offsets Gulf Supply Risks - BusinessToday Malaysia",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRUVJNkgzRUY5ZUJkRUhZaU44Tl9aUDRBQmlyaHBHZVJlTERVRHEwdi0yTHczVzBwNENsbUZYVHY3cXN4UVFKZElfcklPQVcxT3JHTHhZc2pENktlVFp0NU4wbGdpUGhrY24xbFVzcjZ5Y1JIamtjUUNGRHJuQlFuOS1JeTVBYXhEd25RT2FiSjdmOUI5VEpaVlhWVldhRlQ5UThQdUpIQS0tRzR4TkdxNWh1SVg?oc=5",
       "themes": [
         "oil-geopolitics"
       ],
@@ -98,6 +677,15 @@
         "oil-geopolitics"
       ],
       "ts": 1795402749000
+    },
+    {
+      "id": "e085689c1286dd7dcaa9cf81e8cbd17fb284f1ea",
+      "title": "Oil prices fall amid equity selloff though Iran war attacks limit losses - Business Standard",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQZUNmXzZaV0RKSEQxZ1R6Q2RORGJ1blA0ZDc0aWdsU3Q3aVV5TjRVR0FOZy1NOUVaWmNKUWdXT29BbzhvWWZuaXltUklpWTFOd2c1YS1uN2g0R2dDbGR4bmZHNGFkaXhqcUdsa0dULV9xeF9raDhsX2s1VGVNNFlyU2FjeC1adVU0MDl5blN1dThTaFJSdWdzc0lVOVlLaWVhQ0RzYVVzNnphT1pqeTFXRWpIOVhPOVJDU2hMZlhBXzc1eVpoRmh2RzhpQzJkeThwWmF5cTE0TDFnU09tUVJ0Uy1reUTSAeQBQVVfeXFMUGVDZl82WldESkhEMWdUekNkTkRidW5QNGQ3NGlnbFN0N2lVeU40VUdBTmctTTlFWlpjSlFnV09vQW84b1lmbml5bVJJaVkxTndnNWEtbjdoNEdnQ2xkeG5mRzRhZGl4anFHbGtHVC1fcXhfa2g4bF9rNVRlTTRZclNhY3gtWnVVNDA5eW5TdXU4U2hSUnVnc3NJVTlZS2llYUNEc2FVczZ6YU9aankxV0VqSDlYTzlSQ1NoTGZYQV83NXlaaEZodkc4aUMyZHk4cFpheXExNEwxZ1NPbVFSdFMta3lE?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795402256000
     },
     {
       "id": "8ef0f1179900990f666623eb11d6bf5fcf2fc583",
@@ -170,6 +758,15 @@
         "oil-geopolitics"
       ],
       "ts": 1795399961000
+    },
+    {
+      "id": "47169a708d62033b67cbf220daf41cc434159723",
+      "title": "Gold rebounds as traders pare bets on near-term Fed rate hikes - The Business Times",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZVF1QWt3MkhuT2kzS3h4RHl2SnVka2lRQ1VNbFg5RzJ3WUJTdkE0YWJaTDVQRTRVRWs2dTJDeERnTUJhM3hPcXpSb2tXQ2lhQXlCcWhoek1FTmJxa2xZRlVKOC1WSXlzX1ZyV3BZX3VWUzNjNU5YWmR4dFZiZzhXT2Z6MWRMWjBkNzlfQ3ZYb0FscXJUMGVTNXpMWXdkYWMwb0RiNDcyUk5KTXI0WGtHYXdpTW91eHJxNkcxOTRNWk9pcHZB?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795399740000
     },
     {
       "id": "1662a9f2ceaf2bc410ebfeba4c391c83042b08e1",
@@ -253,9 +850,36 @@
       "ts": 1795394689000
     },
     {
+      "id": "830d76bd2d4f9b153422cf4926edbb33a9b49d99",
+      "title": "‘Isn’t It Interesting’: Trump Recalls ‘3 Predictions’ Made On Iran, Markets Before US Midterms - News18",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObVhSOEIwbkNlR1hUb0ZCdXE0ZHhhR0FsN1B2dUwxa3Y4LXNmSlhEdENtSlRkNVppM0NFUUNScll5TFhDZ3E1bVItQnlxVm9udl9JN1RPUnZTbDBvb2hjOGpROE9zOEkyV3BDREYzdUxDT2x4NGh6ZVVIZnM0anBCU19WZGV2UWh4dXlLeVUzdmJxTFVhUVlBN3NaakpiOC1SX0p0SHlMNHFPenVidDNQOXp5SllIaFVxdWZMZzRYZnlvR0M3S2FHVDZzZHNJYjDSAdQBQVVfeXFMTkVENUlLQTN5THM3QVpLbzVyaUx0eEsyWVo1NDlxcl9kMlkybWVFczkzWW55UTNxSFhGeXBPNG1ldWI0OUc2LTgwUjhBN1JSd1ZBR3g1ZDlGTDNXcnZlSUhXdjZOLTE2SjN0eXBsUTI1MFJDT0s5ekcybVd4MmlVaUxBVXk1TW83MG1MdHlWVG5lRDFCQ3FDZ3Q1V01pdFd6MVlGMDlpNFhNNVliWFJGTjViT210R25SLVpyTGxlXzM1S1VjWjJxUEl3NDNkdkNtN3RjQUE?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795394206000
+    },
+    {
+      "id": "7d87c92ec40a11f08963900219747bc66e721e74",
+      "title": "The US stock sell-off prompted a statement from the Treasury Secretary, easing expectations of a December rate hike by the Federal Reserve! When will the US stock market bottom out? - TOP1markets",
+      "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNdG1aVGlZNGNHczZkOTAwam1WNF9vbmpITktTVFNyYjNXOHQxbUdNY0xBemhPeUJ0MjlpYndneUppNm1OamM4Z1RQSmNnZGhsd0JhZDdJcHlVR3BsUlI0cjJYZVJCRlNkbjNZMGNsYzR5eTgtNWFSZksxZ0RqZm5HSlp2TEFaNXBBQ3YzWVlUT3FQZmVOZWZ2Nkx3eVp4eTk0cE9ydDJBOUFpZi1zSzdHdVJNMzctQVFMUW13VWNZYlpfYzVHMm9OaVJPT0FEQ3J4Y1dneHBpWU0wNEZwSnpvWUdzR0NfX3ljamtESzRVRHBRUUxSb2J2NXdWalVRU2dPMmxJRk96eDNWamFiUjUwbG1tOG14S21zdzZGbg?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795393800000
+    },
+    {
       "id": "48fd57ff7759cca4d55001ab95465fa770bc7a4f",
       "title": "Gold Rebounds as Traders Pare Bets on Near-Term Fed Rate Hikes - Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVy1Pa3puQ1RUS0xLT3pTdTBrdUc0Q0J4TkFqMW81cXpOdUpQSU9LV2wtNlJIS19wOG9uMEVEUlZkZUNIQXJBcXdNeWdaV0JiXzF4WGluNWtSaVU4T09reFVtYkc0dXJOZkFLXzFMUGNzOVl1SHRVaG5PR3dvVnpwR3VTbGJibEloRHVzcjQxYWc5UWxZdWR5OWdmdGE5UTh0c1NSRF9vc09YUk1aVHNFNmFVZw?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795393680000
+    },
+    {
+      "id": "d5067ffdc5dd9aa5ad90c9323952d57ae85a0e94",
+      "title": "Gold Rebounds as Traders Pare Bets on Near-Term Fed Rate Hikes - Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNY0lEYWJSeDk1Q3NQT3hfMlNkdkp0cFkyZDNtZ2ZkX3JZNWNrR3I1Xy1QaWxzdmtSd2ZTUURaMEQ4eHZxN0R0UUhQeTMxNXJoNjBoUjY2MWM4N1hYNWhxdG5nbUQ2M2tkVXdBWWktaUpFSHFvdTI3WWJpTzFYSk5feGdBTEVHend3YURLZVVEU2lxaG9YOHR5WFhjdTZoUGJ6WXZBRkRNZjhRSE1TQlU2Q1dwYTU5Vjhwbmp5dXA5QlRoVWE2a1hfR09jUDFCQTNqYUE?oc=5",
       "themes": [
         "rates-inflation"
       ],
@@ -415,6 +1039,15 @@
       "ts": 1795365360000
     },
     {
+      "id": "0b739868eae134a3ae6fea15fbdc7d6c7d25e5e7",
+      "title": "Oil Prices Fall as Market Awaits Possible US-Iran Ceasefire Deal - EnergyNow.com",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNOEVnaUlYUGlwMGMtcWxhRTBKbldraTNsbWVQelRyWm9NcWNEcERZSnpkcHh3ZHJldjlPR25aLUkyejZSQVBPbkZIcW1kTlRnOUVqbTBwSE5WYVRvUHpicjMwdXp6VGt0N3BLOUJNSXU5MGZFR3M5bnNtdDh6U1JZUHdZNjRmVUc0WWZjdzlJYlZsZmdCd0FSUkxjcw?oc=5",
+      "themes": [
+        "oil-geopolitics"
+      ],
+      "ts": 1795364311000
+    },
+    {
       "id": "b88c59a2ac451b67d2f990084d741f197faa65ee",
       "title": "Treasury Yields Fall, German Bunds’ Tick Higher - WSJ",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPT0dsM2ttY3ctRTRCZzZPRzE4aG1RNzBCeUQzUEFRbGk1VzRqZGF4Z2J6NFFXVExyX0xROFU1bWFGc3U5ZXpWR21YQmh6S096RXVFS25wcjY4QmxDTUJhdkh5eG51UjVrRVlfZHBpX0pKZkJMOFI4eVVvV1BvSWxIOWQ3aFZId2xOcXJXeGI2SlZvd0RqUUhzT2NVck1jQ3VKLUNXSEFaYXhuNzVtbm1vaQ?oc=5",
@@ -422,6 +1055,24 @@
         "rates-inflation"
       ],
       "ts": 1795364017000
+    },
+    {
+      "id": "b7a2eeea7f20f83c66b803b22397fc47ae18c0c4",
+      "title": "Gold Price Today, November 23, 2026: XAU/USD Rebounds to $3,576 Ahead of US Inflation Data - Markets.com",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE00T1dLTGdNUUpPb0laNUdieDNFTW9ia09JamZ3T00xdEtRYi0yczdKOTRza1l3d2VBSE5qVHFGeENCWjFxcnk4dnhZalc0M2dlaXhObnYtMGdTWEhJZG1OQ1E0am53SGd3dVFlSzdmQQ?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795363380000
+    },
+    {
+      "id": "80e270977c48ba2f8f1d3a24b3599e9e70dfb242",
+      "title": "Gold Price Forecast This Week: Can XAU/USD Recover From $3,500 Before US PCE? - Markets.com",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIOUJvREZUckdILVhmYktiMWFlWlEycnVUY0NIWXlFTXlqajBDdnM0YTVPMG9kV0c2WUZWbFItd0V3Sl9uU2V2d1U3TWFheG1hZmJsOER4ZlpHbDdBLTAwQTNQLXBIcXdpazdqaGpmZ0dJZDlyR1BGS2Jn?oc=5",
+      "themes": [
+        "rates-inflation"
+      ],
+      "ts": 1795363380000
     },
     {
       "id": "1c1685e331f2d01216231e86119dbaf5d02062cb",
@@ -440,6 +1091,15 @@
         "oil-geopolitics"
       ],
       "ts": 1795363001000
+    },
+    {
+      "id": "0f06136b15a5e75cbac0c0441b9ebfd03d66e522",
+      "title": "SpaceX Q2 2026: Revenue Up 92%, but Capex and an Aug 6 Lockup Push SPCX Below Its IPO Price - TradingKey",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTDFxdE55cGxRaE90emFUQ0h5OHIyajBnZ2dyRDlyR3ZDdnMtT2s4Nkp3NXhsbXNTZFZtQUViekp5N3ZDSkhPRktacXZfWEIydGR4c1JYdVFYeUxXZWhVcmQzRVJJZUo3RUlFOUxWa191SS0xWFEwYTB3ck9zeFpZT2FZcEJYSi1PZnFfNi1lejA5WER3cE10aVhLODQ2LWp6M0laOXpidWw1d2E4X0RjeHd2V1hhUQ?oc=5",
+      "themes": [
+        "ai-spending"
+      ],
+      "ts": 1795362756000
     },
     {
       "id": "8932d80629e62d8276daba1db23985718647ae9c",
@@ -2832,730 +3492,6 @@
         "ai-spending"
       ],
       "ts": 1795187148000
-    },
-    {
-      "id": "0c916402d428140eedcf6ca5e30fd0569c505fb8",
-      "title": "Oil, Iran, midterms: The drivers behind the Casablanca Stock Exchange’s rebound - Telquel.ma",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNUTIzRU1Dd2szZk1vbDhlTUJOQkpZOUU3YVNRbERWTGl6SlZ5SmRsdHFuZGRLbEphZnhCdTZnSkg5NFljcEhKclBQdjh6aGtGLVBwM2VZWFUxeEtSMk15c0FDV3o3TFk2T0tqdlVQd2tSbFBLRUxHdDV1R0NZNGdQS2lUcjZkbjMwemp4YnBpdkYwQ1lqMTB5ZDE1X3hDZlQ4UGY2dHp6ZHc2TUs3TkZOM0NkUQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795185783000
-    },
-    {
-      "id": "3696a14b17932d5f60e6064dfc537466edd7129c",
-      "title": "Oil prices set for third straight weekly decline on strong Middle East export flows - Rock Hill Herald",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUEphUy01ZXUySlRjZjNCUV9yMWtOaWY1U29BMDRRckluRUEtSFptRzJQcEFIUWZwemxZV3BONlZsWmQ3LXFsc3JvVGdCcjFtaVZ5SzdBUFd1QVZwY2RRdGtlYm5wU0QtRzFVdWhPOGVqUnplcElZQ05HX3ZCenRrV2xhNA?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795185726000
-    },
-    {
-      "id": "220d07bb507f023655fee5c9da8b69ab03df38c1",
-      "title": "The Iran war is still going on. So why have gas prices fallen? - BNN Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQUhuZU9jZTRZUjl2c0tDUzgyTGpFVktfSmtJaUE3R1J0VlEyTWVWMG5ZOElBbUJLUHBZaHNYRVNMa2pVNXBxNWdNVTFRYTRWei0zY3Jndjh4SnpoWUZxUHVQX0tXWG85RTFjZzZhWUhnbW9wT2h2UmZDeldqeXc1cWZzOThHSDBrTld4dGVNbE1ZSnZNQmVuSnB2LVBPSERSU3B6MXJub3BjWDFyX0hlcFlB?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795185364000
-    },
-    {
-      "id": "4bd5dd7f5c8841998e107628e675604931326097",
-      "title": "UK stocks are \"best hiding place\" as AI bubble nears burst, says broker - Business Matters",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5adkdNTlRCb1Rjc25FdVJGeFFRODlST2QwLTdTWGhLSUhwRXlHUVBkQl9VZHJDT1B0MVBiZFZacFJpNnhFOU9DMGV5SDNFamdDRlRDcjFFZ1dZYTVUSFZ4dzJPSWM0dHJ5cndQWnpCRFNidzA?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795184449000
-    },
-    {
-      "id": "b239ab7e1aab59cd15dd919b67d9a552f0956140",
-      "title": "Chinese Tech Stocks Slide As New US Chip Curbs Threaten Cloud Growth - Forbes Middle East",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPZVRZaDJqbnpNZl8xbTVHd3c3Vk51U3ROc2tEUnF6Qy1iTlJkcWJZNXh4dmdRSkh5MGNjYmN4UXhMbnowNnR5T2duYXlwNVBOcVpEcENVak5nMF9xMEJLbTVVNDFFZDV2R0JXOWxzN1J1Y2thSmR4NHJFRkRHMDF0ajFBYzc4aUJ1V0VBSUYwa25JX09odmFkS2dXRU00ZVRmV3Z1RVduYVRXY2dSeHc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795183973000
-    },
-    {
-      "id": "554b4af6b2ba1e3815c9e5826b5d93adff3031fe",
-      "title": "STI falls below 5,000, plunges 2.05% as AI and semiconductor sell-off spreads - 联合早报",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWDlKTC1mQzhlRUJDNFdqcFJpV0hmamNiQV85WFBiRHFET2VSSUZyX2hWZjBoaG14MVdnNWt4RWZzMjRfcDNZZzZEVGJXQkVNcWFuR2pvVDVFNU5mX1pyMnVUVFBGZXE2OGd3eFZkRHF0bHZ5aWFNdWxFMUFjMU9Iby14OTdLSDQ3T1ZaM3lOYXZ3Y0h6TXV4WXg3VGgtS1lDc01XOGhTbjlkeGNtT2dyajhhWTk?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795182142000
-    },
-    {
-      "id": "b100e0bef04aa478f9b75eaaaa98971c4d07dcc2",
-      "title": "Bitcoin slides toward $61,000 as ETF outflows and Fed hike bets extend a six-week losing run - CEO경제신문",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNMXM0bHJTZ1hjVU15RTNMT1gyVzFWQXh3NVpRZlNyZXh6bE95ZUlCZGFBRTk1NWh4bHZ5VXIzQnMteEF1clVPekZvUmdrakhKamJweklzenFSUWVrSFV6aHlCS096TjBvTkV6ZzRLQkZ5WTJaZUJBVTZMOVdEbG5WbHZ3?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795182000000
-    },
-    {
-      "id": "0b219014b5b711aa274d4f9b4c0332cb0b945671",
-      "title": "Tencent Holdings (TENCENT) Stock Price Prediction: AI spending and softer gaming are still pressuring the setup - Blockchain News",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZzA4aGwzNmF5QUd1c2kzUWpPbV9yQTVKTGJaNmxCTVdPcnpiRU00T3R4ZnhQMkxPV29qMllveERTMVltaXJpQVlrQlFNOGdMamVLR2p1MENzS1ZvWFR0Y19pZ3Y4WnpZcGYxRFNOcmtWVS1hQUhhaGlCS1BQWmJ1Y3JlUl8xVWdtdHZFdVRFcTY2UWI1d09VT0xSUVk?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795181100000
-    },
-    {
-      "id": "39545ae722e5a00119f58509a08b9b30f8759d7f",
-      "title": "Anthropic's IPO: Will the record listing stop the AI bubble from bursting - The Times of India",
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPazRPUmMwNk9rTDdoMl94M2ViRXVobnN2a05HTlE2QXVTNC1HbWo1d2puVFEtTUxaNmhyLTJrMzVLdkl1ZUpoSS1HcktNVjFYRy1jeVcxbC13aEthU0tFUVpXcjFRck9PcFI0OWFvczlxOXh2ZFBwNnRKN3JpZXYtZ0M1UXVPVTlkR1NVQnRCV0tzak1zeUVSQ2ozYlNjTC1jeUV4Ym56ZXp3Q1huWHdwNURfQ3BEQ2o2NlNDOFB3dWlmYkZzZXk2ZFRSY0hyYzlFYUFPZUhJUFNpSS04TGNPRjdBZnVJcDFiRHQ1WlJTdjNVQzlhSk5XNdIB_gFBVV95cUxPUV9xN2w4RjMyWWZoMDctUWR3Szk4bWNnYTczTWNjVHZZd0p1WHNEUXNUWXU1Uy1mWUVra1Z1NkxsSnJJc0N2UkxoWUx3MmNfWEUtOXFTSnIxakloRVhtd2NQS0ttRlNkcjZUZ1Y5eUxVVUtuRUpYMGFZTnNaREp2aUFhano0MXo3dkczNy1iR0I4S3JwRGlkVXlaWEVOYUx0b2VOSDMyU0g3a2dqZ292blZXWV9OejBGSktzQ1lKMmNJcmhtQk1uVHJtYTZnU3BTdi1Oeld6b2R5N0ZiNGdIb1l1cFNvanpxU0c1MFZuSHZBeEVlR3dfOVIzVFJMZw?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795180680000
-    },
-    {
-      "id": "1de4de00479b3c52936c030c99f5ea51f071f1e6",
-      "title": "Oil Prices Rise as Houthi Strikes Revive Supply Disruption Fears - Marine News Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQQktIcU9CVEVzUkIxSWhsejB5VXRjckdTc09PSG1LX09sZHh5TEdLZnRiYVUtbWZ2VklhVVJpQUFRQi1STEFHc1lTQjROVlBSMlhWOVd0MHA0ZWVNWDlnNGRDSHl3VG5sRlYwV1ZCa2x3b01RSnRnZ2lVMnhLdEJwakpn?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795180309000
-    },
-    {
-      "id": "38739fc318c1874187bc7f7b780a04e32f810bd4",
-      "title": "Oil prices set for third straight weekly decline on strong Middle East export flows - شبكة تواصل الإخبارية",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8tT25QY3hTb3ZOa0EzV2dTaVFvR3VyQlYtOWdsdWtyQWFETDhNdmNXcDRUeDUxczUzd0o1U05NSXZGUXpXU1VMMk02SXpzU2czRVVj?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795179115000
-    },
-    {
-      "id": "c60db5996f765c3e0423a68dcf2a693330ecf351",
-      "title": "Tech takes a beating as AI trade comes unstuck despite Anthropic surge - Digital Journal",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYTJ4WlJLTG5WR1V0OWtHalBsM0hMeUpCeGJRaW5rb2JEazVxTGtSa1hRSExQdHNMX3VfTFh2M2M4eFR3YU53NWtfNTJCemV2QndLaV9TQXJ3TGlmdlBTLUlZZjJ3c0N5RDlzYWdOaVYzcUxFOExhMnRZTUJOTXRwZ21SdnMtbExDVTJDQ01kWTAzR2VJVmFUR0Exa0gycDdqYUpJM3hCUDdQRWR4Tk9r?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795178488000
-    },
-    {
-      "id": "6bb5001a67f4e76f2adaf7c201c2fb7efd6bd8da",
-      "title": "The Week Ahead (23 – 27 Nov): Sell-off!, PMIs, US Core PCE & GDP, BoE Financial Stability, US AI Hardware, US Software, CMC Markets - Stockopedia",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQbFhiM2RwWjJpRUtXNFNMTmYtN1lUeW41Q1BINF9sREZ4MlEwMURkUHhLM285dk81MFA1Sldnd1ZFcnMtNWtNcW4yVWZ4N0ZGdFhsenAyVlhNdlVjY084RDdRX0VQQVQ2eGswM0JfLTAyM1gyYnBtaGpHR2RiX2ZvZ29SZEE5anlMLXNuUVA5dEcxV0lwMDF0eF80NWNqd2EySy1XVEVKOGVVVERZTXFWeGNFQXJ5M2JGVDFFMmZHcjRUYUxVZlFtc2RuV3pNbTN3d0Yxd0E0S1pZd2ZibndHT1I4ZzNVV2I0akFHa3h6aXFMMV9W?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795178281000
-    },
-    {
-      "id": "9e8730010418c0ae46612467d2c2a95bae0e8fc9",
-      "title": "Oil Prices Retreat as Traders Assess Supply Outlook, Middle East Risks - WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUVE3WWhmSEFMaFZmRkVRTHN5R1N0V3lLbmdYYWsyZ0QxSnRqaFdkcktIS1JqTk5RRTI0ODREZV9jcldqb3BpMzhmN3BUOWhRaDI1bGdnMG45VDRxNFU1YXN4X2hEd1Y4RTRLMkdabDU1T2p1cnRpT2R1VUY1UElIS1h3Q3NtdlpEMFpoaHB6bXh5LUNFakwyLUYwWF9KVG9YRmRKT2xwcVp4WkQtYnBucFV5WWFfbDY1dDRlWW9halQwclNac2tubV9vQQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795178220000
-    },
-    {
-      "id": "7342665ccf059d5d58f1c2b9afd451404cf75f24",
-      "title": "US 10-year Treasury yield slips below 5% as global equity rout deepens - FXStreet",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaXNDdWNvWnJlZDZnRTBFeE9nLWZYZHFsRmJPRzNmUDFNbkp3VW1LQWhWS3l3SlRJWk5RNTlpM2VqU2xZWDNpR2RSV2p1WDJPNy1IUmNjck5pOHNXbDZyTG9ySzNFb3FzaFlWaGo1NWZMRWgxakdRazNBU0p1eUJ6Xy04ZldtbDhwdFpUb2xjd3o1TllnMFEwaVhwWmhRNExXbnBBZTVVTW8xWmRZVXl2SkZ3?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795178013000
-    },
-    {
-      "id": "a172cadb04d1db8952c4dedf34d4b468260b046f",
-      "title": "Iran Steps Up Hormuz Tanker Attacks as Oil Prices Slide - Crude Oil Prices Today | OilPrice.com",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYWxOSGVhc01femVDaXk1TmxpZU1vOG91Ym02U3o2RWVjZTFWZXFOZ01xdHJfZDQ1TXJzRXROSXBNOTB6U0ZFeW84eUVGYWtydUdxTUU2c1V5aFF0UDZXdV96d2ZfV0dYcWdkMm10QzNuRThJY0hXVHRaOXVBNHJwamplUndGenRFdVNXY2g5WEdmWXJOSmJxNU9lSS1hSFc2TDdoNHk5TFVUVk83b2w3etIBtgFBVV95cUxNNGpxUHFWcjgxeTV4dU9waElnQVRVRlFtQkViajJ5aGp6bVg5N3Z5YmtKWGJqRnhRLTU0OFV6cWhJemNjMzN6VU9hVENzZ2JVYXpNa05kMnozWkx6SjFDR1lZSVRnSlFEXzBqblZrU294SU9DZXRqTzZhNmZaTlp6NUhpaVJMaG9ocG1YZ2VJR0pyYVhlNlI2SnM5N3c5elJJS0wzYnhCVEdXY0ZhWG9ZY0lad0U0QQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795177800000
-    },
-    {
-      "id": "6f8195bb56f4b817543f609d6ec745f821a46d4e",
-      "title": "Chinese Tech Stocks Slide As New US Chip Curbs Threaten Cloud Growth - Forbes Middle East",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOR1dYVVExZjd3VmF4ZXJxZnpVTFdta2hVYzNoR2hWQUMtWVRUOVZfa2xrWXhlZWd6aFZ6NWxJVG1aUmZ5cE80WkszWkk3VUFBLWZ2SzJFVjRSUDZVR1lVYm1rdXlCZXJvZ0ItdVkyNmJkZl94T3FMM01DaG1KWGRvOTJHZnRiNHpiRjB4eU9RZ1VvU0Jab0tZSzBYaUZTd1g3UnE4R3lrdVFWSlJtMGJSeXBIRQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795177509000
-    },
-    {
-      "id": "80c84fab68497fe84339bc98e6c8fcb0c47f027c",
-      "title": "China’s oil imports from Saudi Arabia tripled in October on a monthly basis - صحيفة مال",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBhcklPaTVmb3hwMHNlRWI3d0h4bU53RFh6cDhyUFRxOEZtNEhtekdxbllGZFM1X3J5d3ZTLXVMbDJxLTRwR2dLQTdOVjZsVERNRnpYRHpIUDhoa3Q2dkFwNFdyLVJHUElqMVhKbQ?oc=5",
-      "themes": [
-        "oil-geopolitics",
-        "china-trade"
-      ],
-      "ts": 1795177437000
-    },
-    {
-      "id": "c3d48d956ca335078394da0c5aaabfbeb0c5fee6",
-      "title": "10x Research Issues Fed Warning: Gold Signaled Risks Months Earlier as Bitcoin Faces Growing Pressure - Kriptofoni",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVHFvYWp0Nklwdm1jZ0VFRTZXc05aMmNvUUpIb0wxOHVhZFZpejFlenV2QWk3NUZkTGRUVWVzNDhwZEVZdHN6Q0ZLTE9QWlREZzVaTEphTGdJT3ZUbndNampCYVhNbFJ1N1JsS3Z6dzNaakZUbWFqWnpaLUM0LVpTeU4tSEQ?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795177200000
-    },
-    {
-      "id": "6bec225b94730e8df2ffbd924dbc52d21a8ff319",
-      "title": "How to read a Fed decision: the statement, the dot plot and what moves borrowing costs - CEO경제신문",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9ZVG1TeVRfNGJBS2stWjRkS1JFSGpOWUZVcGpsM1lHVFJ0WTNQc1VXcUtBNzZFRFdBdFdRREVBRjRYNmFwUVA4WTZSOUFUX1N6a3ZmSTkzTWlGVW8yY2RBdmZTa0ZNS0ZpUzZuYURaLVhxQQ?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795177200000
-    },
-    {
-      "id": "27d2e22ab660b670594f0967ef9867e7dfd36e87",
-      "title": "Saudi Arabia Replenishes Japan's Crude Stockpiles - Wisevoter",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxON1hJSnRQa1BOTUV6WlF2M1BybWo1aEs0TGQwN1VkSG4xR3oyYTlldEhOWEpTMmhTdmhmdXJXa1pkVUdJakp5WHVwa19GTVdwQVFvWVQ5S2Y3NFRQbTg4cGVmMF85UXhCYl9EeURSUzM1S1RWWHRYT211eTVucllVdnVfeHNxVE1SRnBONA?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795176792000
-    },
-    {
-      "id": "df9a2a1ec229e2a9404efdd78e93a2ca5af8ffe6",
-      "title": "AMD Stock Drops Another 7.0% Before the Bell and Taiwan Semiconductor Slides 4.2% as Nasdaq Futures Fall 1.6% After Asia's Chip Selloff - 24/7 Wall St.",
-      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPWHNvMF9Dd0hVZ19jbHZ3T1NBcjFXYVBNMlYtWlNWRDZGQ0ZEcVd0UmduSU01UHY2V0s4V2tfMWZRVlNPUFJrbl9hM0FyMHFJaXpiQm9yb3NiLU9GbnAtdG84M3FZblYyMWFUNVBtSk45Vnc4UzR4YmRiRHRxVG1JNnhONFhKa2xDQVRIeDBBaTFJeURhRzRSZFZKdXF4N1lnbGZHTHhWek94UXgzVjVqMDdKNXlpbkdNZ1pBajQ1UTJpUWNTVVFrdHVRczRmdFJ1cWNkVm9iZ0owNnk4SjBqajRxa0FSY3djOTlYVVZ5NGxGNUpYYjhtNEtzZy03RUpzZF9PdTB3?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795176780000
-    },
-    {
-      "id": "c7e8d8d51e69ed00ebf7375a47da36290698c10e",
-      "title": "Oil Set for Third Weekly Drop as Ample Supply Outweighs War Risk - Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWExXN0U0WEVhYzdZZ0ZoN0tISFJnbW5vLVVOMTJ1R0JFNW13cWI4ZVlRZTlnanpMTmNCVVB6S1I4TU10NVgzVzBqaHBfeFE2anBWdm1obTVHR19aMTlHb0dqTDZtVUVZNXF2b2tCbE5fZURyQ1F2bXZXVmFBY3Y3dXFZOHp4dHBnUHRqMjZLNjMzUjdoZjJ4ZHBQcDBvdw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795176065000
-    },
-    {
-      "id": "16e771862196da966c318e148b2a935074a90f45",
-      "title": "Japan plans to provide an additional 16 million barrels of storage capacity for Saudi oil and to purchase 8 million barrels from the Kingdom for its national reserves - صحيفة مال",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBpZEN2cEh0VmRERVVWbk1jUFp2WlUzUFVUS3poZndJRHZLS0E0LXB2ajkxNUtMYmdTc0RDV2VZUG4zTnZjcVdJQWZhWmh3SUYxMDg1R1RfbmFhWU5LSVJtbnNqMmZQTmp4OFFSQQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795174850000
-    },
-    {
-      "id": "4c8a2d74f1e2ff90a3393dfa3cd9a0ae5822b849",
-      "title": "Oil Prices Rise as US Iran Tensions Threaten Middle East Supply - Peradaban.id",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBOUXJDZ2VYaTRINV9rRXB1ZXdGVjh0cGwzcDlfTzhVbGFpc3pFbzRJNXZwT2t3TlF4czVkMmNpZ2EyWmtieUJmNlJ6ODd5WUpnOU5EQkoyWnJjRDF0WHF5Q1RjOA?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795174602000
-    },
-    {
-      "id": "8a038f0d534661b0f65d1909445b86564968355f",
-      "title": "US stock futures fall over 2% as Anthropic IPO fails to ease AI spending worries; Nasdaq heads for worst... - Moneycontrol.com",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxObVdYdUVqRHpaT29vMEg0SXBxdUtZRWNOQUd5UVZiSmI4QjV5SGxFekZFR1FLUGIyU1RhUkFxNmdJN1Nsc2VRU3RDRFY4YmVFOTZoSFN1S2lqQVdIWWR3U2Z0Y1lFVWhjNlJmSC15RVVxQjdfOVpYVVJ5MmgzYjd4bDdtTk1XUjZ5Nlp1bVJSTkJ1NGhNQzVxTWp0VXFRSXBVbzRQbERVODlXVTJHaE03ZWxJd1pDei1NWUhkamFTcGpZaUw2YllvNW91Zjg0T1RLbWZnc0czMDJ1eEEwQ1pkN2Y5Ym1xMTktLVltY3hiR203M1dNZm9sTW1QcjBvZFBRdWhJTDM4U0xvSHNEc2hSbEZrODYwUdIBmwJBVV95cUxPanRVRXFvRFNFcGJIYWtCdEJGNFBIS0U1bTdnaUU3RjE0ZkpsQ054emI3UTVadkJtNllXcjBhWjZmOThZQjZsdU5kVzZwUVlLNWs5MEx4eUdUSEdNY1M5SWRWMHJKclFYc1RBckZucHEtSFhIZDZVZkJXMV9Rb1locm9KdnlQc1kzYm1KN204Um5TajBKNGwxMVdlU0xyY2xYS3VYTlh4eXdvYndyU2MzRGJEWVU2UmhzOG5RTEVvTWFBN3pvbDZ4b1g0ZHhEQzN3U3d2SGVKUUd1Y280Y3lLT2ZMTldyZzJVM0JVaXh2N1JSSlVrcUhGeHQ5RHhMdEZIekJ1bTFnNGYyV2R2a2cwM19yWkxnWFBxdFYw?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795174500000
-    },
-    {
-      "id": "287c7b9898b0dd2d78f57f2671322ecef93b3504",
-      "title": "OIL PRICES SLIDE as Recovering Middle East Exports Push WTI Toward $81 and Brent Near $90 - EnergyNow.com",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPclgtbDhMY3REc0hKQUxRMHc3ZTFFWG5KX2wtU0c0LUlaa0YwZDF6Q19qWHFKdnczeVhTczZNSkgzSkhSOXFHN2k3RHVFUjFQR2NtVVZOZWgxQ0cybnhHR2ZsZzNpUWRFNy1wNGVZaHliUDhhdWgyMDRuVHhYdXpRLTJuczhYbVBKRmxJcTRGcnlQNEx5bE9FdkR3Z3dySlhqNWtqZlIxdi1JTnJxMFlHSnVPdWc1RUJDY1E?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795174200000
-    },
-    {
-      "id": "2d7acd7f0d8625c36ff84e84ca59a8ce0b3687d5",
-      "title": "Iran Refuses Nuclear Inspections as U.S. Military Threats Mount - Crude Oil Prices Today | OilPrice.com",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQXlDUi0xc1ZfTEdoLWxKX0NsVlh5R2xvcWM0QS1CN3A1Nllqc09ZUzZxTGtld2FXaVRrUUpVbDVmd0NrUjUzWTQ1SXNSSGNVRDQtVEg3Sk5tR29sd21FSmlaUzNLQ0xzSVI5bW9mRU43dy1pSTlaNW5PZEgtMzZJWTdRc3pLbU9ybGNsdmtubFY3eVZPX0NNN2xTQ1JoTTdQdm5JdXBLb3AyZ29nTl9DMTc0UHlmYV9R0gG-AUFVX3lxTE9aczJ3TW9ObTc2UGlVLVhqaHA0X0EwMWxoTFRRd0UxaklBTGItT25LbS1WUHVJOGZHYnlhbjktZkxPWWRQWXllbzJHcnFIamZ3UkJKSVkxekIwWkFzNEZfNlUyNy10ZHNKSi02bFB5TkJMcjNPSElVeDZxcUZicG0yZmQ1Zk9tN2drT3NWSlo3RWYtS0d4NVZYWHkyZEZ6SkFna2lMVFhNdlBuZ2RVczVDeEJabG12RkZPcnJNT1E?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795174200000
-    },
-    {
-      "id": "e4c21384b781625f796887c6b8f9caa6bb4b5c51",
-      "title": "Oil Prices Rise as Hormuz Disruptions Offset Supply Concerns - bsinews.id",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwZEdiczREUEphajN4XzNxQl91SjBaYzNYNENlSWdBbmZzSFE2ektrejNzYWVjeXNLNU9NTERLX1o0bnJ6ZTE4c29TYlVGblVadGZ3bF9aWnV5dGhROHNfSHl3ckR6VGJwMkE?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795174136000
-    },
-    {
-      "id": "56d9d91ba44d95bf5dbe2faacbd325b258d890fe",
-      "title": "Japan plans to offer Saudi Arabia 16 million barrels of additional oil storage, buy up to 8 million barrels - Saudi Gazette",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSHJBXzVGN2twM0lsNTJIM2pQd0VScUt4OW9DV0l5MHQwcHFiN09jNHZxVV9hajdudTBYZGRQWEY3Ymp1SEhCcHhLcEZheEVSSXlva1M3dV9OMVhrYWhqU05RWk96LXA0R2x0TXVoTlZsVFJfN3AzYmxacWNVVWYtOXNkd3o0SnQ0d0tXWjNReVc3bzV4OE1Ud0ZZREwyUi1QY0VQVDNOdXBrOHF5MktLYTlfT3RpQ1dqR0M3Zw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795173660000
-    },
-    {
-      "id": "2a6cee3a9f850f9f0e190b83ac48112b65503139",
-      "title": "The Odds of a Fed Rate Hike Are 100%. Why That Would Be 100% Bad. - Barron's",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNZVVTTzc5d2l6WUZONEdsbXBod1RldnRDc3FzcnljZHRyQmpsQVh5eGdoeEsyRmRBU0xYeVV4VkRnUF9BbXhFQ3RTU05wMUwtLUo4WENKNjhyNy1kVGN3NnU1MEx4LTV6TWd5SmxXNFFUOXhiV2dfVFJkeEZVM0xqbzdB?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795172400000
-    },
-    {
-      "id": "87b964f453fec086a86bf4aecec1c5c56e38f7c5",
-      "title": "Asian stocks slide as AI spending concerns overshadow Anthropic’s record IPO - www.tmgm.com",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOUWRLclN5enBuMHpaQ0RDRW91UV9LY2NNT3ltQjJaQk1vUTVOcWxfY19rY1JFRzJHanZMM204amZjQmZTaFhfSEZVRHBrMXI2UVpCWTVGVXQwbURIS01MclNNQmxqcXZQSG45bGhEaWpaaGJrckpKYUVSZDRLWTR1R3pxVzJobWozdkl2MlpDZTN2bVdfamJmUTB1MmFHSE81SUl1azM1aUlMVFp5ZlNKMWxkWjZKSWQ5ZUZEOEpidmtTcndxUHRlRFF4RU5wMnFxVDNKVVBn?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795172330000
-    },
-    {
-      "id": "390497f1959b88aff69173dc0597f429d74293df",
-      "title": "Hong Kong Stock Exchange Today: Hang Seng Index Drops 1.55% to 23,637.60 as Tech Index Sinks 3% on Nvidia Fallout - BBN Times",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZW9mUGVJZlB3djNoNmZ4a1FIdmdMWlR1TnhTMFZsazI4dV9ySGtjYmFLbENOSXNTN1VSdjAtWEo1b2FHdUN2TXV0X1ZudVFQVFBLa1JOQ2syUmtmV3UzblNRZFQxbFVUbi1QWUVEQUhqeGVhTWJaZ0hZRlJxeEJYcW1fM2ZpYXp3c2hCVU01VXh5TWtSdVBvNWJVeUxoUDdpdVZfWVBJTmZmeVVYYXd1RGtxNk9WWkkzclo2RzRtcWtjV3REd3c2Q2I3eERUejNPRjloX2o0MU5RaW0xX0E?oc=5",
-      "themes": [
-        "china-trade"
-      ],
-      "ts": 1795172042000
-    },
-    {
-      "id": "35d50f677353e7cea7d1ee7062f865caaf3dcca6",
-      "title": "Ed Yardeni Says Anthropic Earnings Will Offer Clearer Picture Of AI Adoption, Sees Market Selloff As Buying Opportunity - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPOXMwX3UwR1RVOXpaOVZjOHZOWkZuSkZXWTk1bEJZcnltMzhYSVEwbTU3SjY5LTM4ZlBxcmJmNnVSLTF5MWtKa3FPNjJiMnh5WXNSaUtFQkJ6d0FIOWtwNkZ5emp4Q1FEQXAzTTUxd1ZNT0pUSmdLM2t3cXRxY3lIb2FDX0pUb0hQN3dCUkVGNTUzNTRNVWJ1cVNWNm1WdVFveWUwYV9ic2o4QkJoYmwzbkNFS2laTnBHQjFXOENPR05IMFBiVkcxWGpsLWRLeXNDM2Q2R2Mxa0lQVlJKSjhCaGRLVzgzZTcxOTlpNU5adHlLcGNvR2dyaG9oWTZLUEpZY2N6X1Q1b0RKZFU?oc=5",
-      "themes": [
-        "earnings"
-      ],
-      "ts": 1795171930000
-    },
-    {
-      "id": "f9b1bdc1093e5c6e92e0b168bd3d8e03716ec864",
-      "title": "Oil prices set for third straight weekly decline on Middle East export flows - شبكة تواصل الإخبارية",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE85OFJQQlZZcVJ4WEVBc1JGSVl5WktrdTVvSjR5bjNscEJlcHhPTW9ZbEV3QWkzUzhOV2huOUQ3THluWllxTDk0THc0dkZSakExNzRB?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795171852000
-    },
-    {
-      "id": "79df98a1afb7b78d8f1ee855ab90aab48fdda00c",
-      "title": "Hong Kong Stocks Plunge on \"Black Friday\": Hang Seng Index Sinks 430 Points for Fourth Straight Loss as NetEase Craters 17% After Earnings - BigGo Finance",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9yb3poRGdXTHFzamVEdFNuTXBEMXliQWFZdkdGOVF3Qm5UbEFTbTRjVGRNT2pwMmdOcjBRSHB6b2dpYWRfRGo2Q3UyZmhfRXBVaG5kaVBNTGh5b1VZNnFVcmp5T1p3YWY2MDR6LVpORkhZRFc5MGc?oc=5",
-      "themes": [
-        "china-trade",
-        "earnings"
-      ],
-      "ts": 1795170900000
-    },
-    {
-      "id": "4e5b98f585076349c2ba1f0607fbab64d8d909f3",
-      "title": "Oil prices rise amid fresh Middle East tensions - Daily Times",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOdXFtSFZ6LWF1MnFTUk9hdk52aTgwNlEtUkZaaXQwaGVnNlEwUGRHVDdpVzAxYm5ITVQySUQ0LTdYMUJxQVlZSUZqNGlhRjhHVTRkRzhnWjJrSzNmaHBKLW9ZOHFPZkp0UnJxbUs1aVkxRG1nRURTdnd1WnNERUNuZjhyeVpheGQtcFE?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795170709000
-    },
-    {
-      "id": "30c3b59d876d580024b7fc16e42942a94ace614d",
-      "title": "AI spending fears overshadow record Anthropic IPO as Asian stocks plunge - www.tmgm.com",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOM2t0WFFmQlh4RmV0SWUwb3ZVejRlNnhnMUdCYTVub2VhaUE2MTQ4bUhYMlFNc0FSSi11bUVBeU5yQXplc3AtN3lUX3dfcGpXQWdMZlZNTW5BNExsdXFpSktpTjZyVlVqbklVajZYX2ZVTklBMzQzZVBTQ0VRclJkRW1wUHRyTUJzRkVTM1FoeWE4WDVwc0dzYnhoSm9TUDhMQURMOFBsSG94QTZ6LWYyRnJfQ2ZEcUpac1Fqbks5UnNTMHE2ZEhKX0FXRWRIWW5WNk44?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795170490000
-    },
-    {
-      "id": "4368bbb7ae786c986a8a066757012a2a48e8d02f",
-      "title": "Saudi Arabia Overtakes UAE as India's Second-Largest Oil Supplier; Russia Retains Top Position - Sanskriti IAS",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQODhuajI4d2ZEdDJuZk1sUFRTRC14Qi1vc1pfWjl1S3laNFNTQkFWVDRHa05DYVRob2VSRFY3SVozMy1VUkVabzA4VmFLdUxYYW44bE9nTTVCbDhPeXVfQklHaVpIb28teWF0TWdqRWlsTTlqZnVmZmpEdVg3ZUdLMWQwRmtKajg4X09zbUxQUzROOGlCXzAwMTBUMVItdVg4blRPUTEwMW53YlFpT2JFOThZZDVhWUVtX1l3cWtlR1ZUazA3X1RqU2xHRksyeFJlOVZB?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795170275000
-    },
-    {
-      "id": "e0345eb4b19067f816d80667bbb72ef9b27dbfab",
-      "title": "Treasury yields are sharply lower as investors flee to safe havens - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE56cmNjcGpHN0dNOXd4NmdpWVJ2Z1R6NUhmRDlXUExPNnVTcU12MnNlSUF4c2FFWmcyRkh3a0k1b0lsZWpIbTM0NzhfOHhpMkhNaWVnSGJ3eTlpVElJNWxzei15VFAycmFfdjVtTTROSDNsUi1aNGtZ0gF8QVVfeXFMTVB4bFI5cDFDUEJCM1RXQnU0UUpxZmh3cHN2ZVY5Rkx6X3dwTjltTy1tR1puQm5kOGF0bzdxMUNqUXd2ZVRQc1VJbkNsVURINk1LXzY4VGQyZmJFSjZuVldEVDlWZlpkZ2RpZGJ5ZE5QUzY5Sm0yeXRBNWNMOQ?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795170063000
-    },
-    {
-      "id": "90d7a488a1be945116276e982b60dc5c61c88370",
-      "title": "Gold price crashes 36% from record high as Fed rate hike fears intensify - Beinsure",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1JTTAtMmdoZmhoemR3dll6THFLRjgzYnhHYU5wOVRnVFJ2VF9hYUtoTUEtWGJUaWdGWWczVWg1NTVHOHl2cU9DNlJBekdadU9xdmpIeTd1TFh3WmhRSU11bTNoaXpWa3AySXZsV3dobw?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795168700000
-    },
-    {
-      "id": "5f00789df19764271bc1b9f768ec00b81666fc8f",
-      "title": "Japan to buy 8M barrels of Saudi crude for strategic reserves - Crypto Briefing",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdVNwRmFyMzB3c28xTVlJZUdYVUxLZldiWmJxMDRudTRNQ3JQRjd3bWtwWDJIZ1BPemlyTzhrYlRONkxXNU50V1R4RDlCVWUyZ0lVQjM1XzZvYkdRVDVTdzJvNEhTM190ZHFBeGJtVU9KczdjXzRHekt3a2ZsRnhyU25LYTdpZDU2M2dYcGI5MXhnOWc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795167663000
-    },
-    {
-      "id": "0eb9b14007fd5d26f38794556055ceeb1c710fb7",
-      "title": "Oil prices rise amid Middle East tensions and growing fears of supply disruptions - The New Voice of Ukraine",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOEUybm81MzVBblNsZDdIQzJLeWxFSG45NHAyLVl3YTZMWHlfRGRjdnNkTnVBVXJEaWxSa2tTV1VhQ1hOVEwyZjQ2WEdUbGRYU3N0Ujh5dUdfR25NWHRMckpSM3pNMGtWU3VEMV9pcjFfLUUwR3dEMTI3WlpUSV93S2d0bThPR2FvbjJoQThJd1hqRmQ4T1HSAY8BQVVfeXFMT2lsSmIwUjZMM3BQRUliYXdQbFVBWE5VSDBBcGlhdDNBeFdTTmUyYWo5d1oyV3lVYkFpUVBidS1MUlA0aEpOWDc4bXFJLVdjXzhHNE94c3J1VmxsLUdaWEhMWWUtNWtHMmZmeG44VGNOOTdpZmthajQwYmtxdThhWktaNFJVMUZRZnZ0WGNJQVU?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795166640000
-    },
-    {
-      "id": "d2e03077f98fa47c5e5b91a041f419d697026c70",
-      "title": "Explained: Why new US AI chip rules are hitting China’s tech stocks, and what Jensen Huang scandal has to do with it - The Statesman",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNMU1zblZQTzIwOWYwTjcxNEpJZUZwTGRIX1JEYXhjRjRsNjlvN2xiWU8tTWdrdzRobGdWYlpHcEN3NWY5RWR1MkVuaDFTRTlQVEhnSG1haVlkZ3lsZkppTTM3LXh4MkI3dWtXWV9GZE4tdEtZeW1TcFIwSy14UDA3M3QzUnFtMUtiSklSWnMwVXViZnNuUTlYcUplLW9vbGdRb2ZDaW5DNFM5MDZhc3RaVEt6LUdHZkFWM2JfMEs3V1NxNXVuYWtxckxqMkttQUdQSHd0cFl2Z1hoVkNkckZHX19JNHo3NWVYSXRnenVXbVZuRGFqMXfSAfsBQVVfeXFMUG9vUG1wNGtFOTA3TDBXbWlsakdPUHlOc2xqc0xsUkhPRmU4bmUwWTM0SW9OZ3FaeldhRWZrTWFGLUNVdzVqYjFlV2tiSGlZdlQ4b0U2b1NyRDhCekVSYTNqTjQzYTROc29VV3ZCNDljQlVtMXluR0pfcGxQY1g4eTJXQ2dzRE9udnNJVDd1MFhJOGZncURNLVBEbWp6UFlnaFFWRDRZRncxNGptOW5ZU1k1ZFR2SnJqSHkwZzdzQVNUVkZPb1NoWGxNOFVTZHFiVXpBX3BZNFpRT1NFZ3NXX3J1d2QtRjJHbWltbEFVTm5IYjBoYk1BTWhSMmc?oc=5",
-      "themes": [
-        "china-trade"
-      ],
-      "ts": 1795165680000
-    },
-    {
-      "id": "69c10fcd3ad3127a21aa47fcafbbcaf9fa8b47af",
-      "title": "Gold falls below the $3,700 mark as strong US dollar and Treasury yields weigh - www.equiti.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNOUhBZ3J6M0JoMkV6YjhDTk9MWng2NVVJM2wzVllLYmNZRUtoRkJFQ0lHZk9rYVpDSGcwNWFFQkxYU29kck8tdWxfQUduMmdncjNDY2pYb2hHOEt3SUhySWVXdFl3Zmg3V3h1VE02d21HMjlmQV9WWVNvcVhVNlZQZ0EzUFhjZ1lOZFFvWDVKTnE1enR5aGxQcDE4dXFOaVljekRyT1dVckUyY1puaVYyU1JuQmpHMGhoM08tR3BWVW5LT0N6?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795165595000
-    },
-    {
-      "id": "4d4898bc0832fd271e1813de694a1d032c1af3e0",
-      "title": "Tech Valuations Hit Multiyear Lows on AI Spending Doubts - Wisevoter",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOThjblB2Y1NaT0t5bm5ka1FQUXRqUlM1eFY2endWZ1c2VFdUaUpjZVJQZWNPM0RlX2ZpZy10a1hDT0otYmFxMlJoUkFNRVpEbmdoMVhWWUhnbm10dWJaVDJ3VmJUa0p2SWVnRFd6dUNRNXY3U2NQLVMxWEZya2h5bVVLY1J0bEFh?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795164783000
-    },
-    {
-      "id": "53eb3ce8e319fe4a302b26c81ba31267f3f05a24",
-      "title": "Why are Asian stocks tumbling as AI spending worries overshadow Anthropic’s record IPO? - www.tmgm.com",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQVXJ4Tk5sZjY2MDNMRkZmSTdXYmF3TGlxWTNvMUVpS3NCMURUWTE3Zy1VdnJYbmhsaE0wbHF2TzRWVlo1NXNueW1tTE02bXR5ZkpsRExwTE5TbFZMSTBFRC1oQzA3Y3N6NzRYanZfRzJjajZRR0hOV1Jqc3MtVXdPNU5HYnZXRkxTc0tWbXR3cjhuNmxGaGxDVWg0bEEyTnJ0NUtNeDJQbzBRRUt4blF2a3lSaHptd2tUVHF6Q2kwZ09pTm55MG12Rmt4WWJnYTNhYVZOUnhn?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795164345000
-    },
-    {
-      "id": "a3efaa23fcf16ca8673663b26d847dd18fff4a91",
-      "title": "Oil prices on track to post third weekly decline despite Middle East tension - The National",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMk9JZVdUNTVVUFk3NTNSNEtyTFBCbFJ2cjBRZmdONlVSWFJ1ZWhSUzNCbDZuM1ZMSVNxMVFsQXBXZDI0Z0pYY0ZpSVVwdkd6a3Y5QzE0a25MVjdGTi12dEhIZEp3c1NqWnBNMmhBMnByMXJEQ2lVR3hITzIxcEcyaWtFZEhYckk3YV9ENXVhMDJFbV9OMXB5Z0lWOHhlVktWcEY0a19FdGdOUXdUSy1sNF9WMjdOZlJmNXVRQmsxWnY?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795163750000
-    },
-    {
-      "id": "cb86347d7a0e5d0f1a2537b752a5d4f771ef97d9",
-      "title": "Oil prices set for third straight weekly decline on Middle East export flows - Global Banking & Finance Review",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSFdUakVsdVZScXhVUnU4UUkzdnlZVS11N1BqMXdiSEVPTnpoQ1RBTkQybGJ2TDdGZzBRVkc3UzE5R19WZlVZd2Q0M05hRENSakpDQlMwdnJyWVNlU01XNllGY0l5QW44TmVqMzYzUVdQVzdFaHlTNUJPYWptUnllT3JNMWtSTkEtdlVmTXAxNjVrbXJqREdlR1ktak9WWHM?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795163392000
-    },
-    {
-      "id": "0c8c365f3e2ebca0e16c58b2693e3bdc2adf375b",
-      "title": "Watch Global Tech Stocks Tumble: Has the AI Bubble Burst? - Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQOG9lM1B6X2tGanNDalkxeGdVTFpkX09oYXNaUlNvQXV0WVRLYWUzdXRjbXRfQXhrbEstZ2l2dkFGU3UzeThLSnN4SDRJakthRkJTU0dUeTdrbUJUTGQxWEpoQm1hbm1LTnVlS3FrWVNQTllUR3d1cERERGlqZWduVGFsaTA0UDBB?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795163222000
-    },
-    {
-      "id": "ba95db6f347419aadc69a5100b875f35a76404df",
-      "title": "Oil Prices Edge Higher On Gulf Supply Fears, Face Third Weekly Decline - WE News English",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTW9LTXR2ZTMyV01UMkh1OE1qRUpZQjdMNnNJVDNhWXJaTEdtR0RpZ0hJZHdiZ0ZFeThsN0VDRXMyZWc3RGc1cDluVDVucUlJUkprb0tEVkpJSmdZTXNLZm01ZW1JQXoxSE80NGh1bEo0X1BUYmlhbWVhRnZ5UlFLcw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795163200000
-    },
-    {
-      "id": "c31bc20c543209697a82c32fc3ad76894974d525",
-      "title": "US AI chip curbs hit China tech stocks, spur self-sufficiency push - Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNM3JhZ1hpWlJqYlVISU9pcFFUS0N1Sk9MeEx5aU9jWmt5OVBxY2RkeWNCWDBITU5nYmdNdzFNQm4xTkZVbTM3T214cjhzSDBPWHFsaGt0Uk56c2F0TUFOOWl2ZlZHRGhjdXN5WDNPM3BiS3E1QW9lbHZ0NjZDUVNtaVZBbGUzNmxMR1o4c3REOGE3c3R4ZFk3d1VpR3diM0FmTnphSVdtR0M5MWpHRm9OeFJtaTQ5U1p6bnVRc3VnTW54cVVW?oc=5",
-      "themes": [
-        "china-trade"
-      ],
-      "ts": 1795163023000
-    },
-    {
-      "id": "8abdec60e2399a3bce3be867617b41c489d878cc",
-      "title": "Oil prices gain as Houthi attacks on Riyadh raise supply concerns - Newswav",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPWF9qLUx2TjVTd2NKbVl6R2NqaDloSjMxazNXeERiZDVEYkRUZkhkYl9KcVRRblpkMGtGTlUzdUxvMXhKVHBPcXM4ZS1FcTlQcVQwNllaNmJRRFd4TjJ5aEdwZlFKWEJsOUJ2STl1V0RuRkRFcjg4WkcyV1dGU0hJZ241ZVFNMFI0VkRrcGU4TVVpTkp5cVZjSW84RWdXZmEwdzVlZDluOGZsZw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795162510000
-    },
-    {
-      "id": "4ea7629a70b39a7ece1c82fff0e8c2fe3954a0a6",
-      "title": "Brent Rises 0.9% After Houthi Attack Damages PIF Tower in Riyadh - https://houseofsaud.com/",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ZZjcwMVFfbVBMUy00ZVlTNWZaeUhhdjlHLUVfSHZWYXIxSVo0LVRYbXB5RWtBQUVQc0lBcGhxVlBmVXNtSktYRTdYdlhjTHlBVHA0UTRGREdqdw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795162374000
-    },
-    {
-      "id": "1ac9b286843a01db35b607ef20372228ee7a42a5",
-      "title": "Oil Prices Jump On Middle East Tensions, Brent Rises To $92.50 - MarketForces Africa",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPTzh0YzBMLXl1ODNYUGZCQjFSS3dXN0o1b0xPbXFBWEZWTFNCZDBqWFZ1STRyVXVsNnRkZ25KcFhsUWtSLWFfVmlYVGRINU9nN1JtdGd3VXdpaHhlMGZEYWljaGNfcW5MMWR0VldncTlXbVNBX2ppc2ROemphUi1oWGtRcjE4UXBSQ2hXeURxVzc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795162051000
-    },
-    {
-      "id": "fdd124e6eff6c14b1c1c56fda622cb8b24d90929",
-      "title": "Oil prices gain as Houthi attacks on Riyadh raise supply concerns - شبكة تواصل الإخبارية",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1GTjVyNmlqTXlBQVMtLUJ3VDRwTDlIR1REN2RnNUw2b3kzeVZkaVpOU3VtRnFuZTNaN1dkYVIxbzRCalV4QVM0d1M3Z0NST2wxQkw0?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795161712000
-    },
-    {
-      "id": "42fba8ab514c6929711400a444181f1c6543cebd",
-      "title": "CBOE Interest Rate 10 Year T Note (^TNX) Charts, Data & News - Yahoo Finance - Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBzTVRkM2x1bGZCZDM4bTNQdHB0V1BxS1g4TU1abk5nb0Fya1RTSUlEQm1iRzAyTGRrMmpsR0RJVzh0NHdlc2Q2eGs2QUZfdjJfYnoySQ?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795161412000
-    },
-    {
-      "id": "722c94d0836ad4f745e9cfd041096995169c7311",
-      "title": "Oil Prices Rebound as Houthi Attacks Raise Strait of Hormuz Risks - www.tokenpost.com",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBxbzR0SHBUeGNYb1VOandLMEZWSDNkWHVJUW1rNWZDNDRxbllRNzVpRFVQLUFZQ1B3X2UyazFzcV9FNHJ5R0VkQ3dYVUplRGxhU3NBd2NjaWhFQQ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795161214000
-    },
-    {
-      "id": "2224d37e385d77008bd510ae5cea6b428b055dc0",
-      "title": "Oil prices are rising again following the missile strikes on Saudi Arabia - UkrMedia News",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5qeVQ3QzZ0TktuZnVtVHl2TUQwajF4b0NwUmI0UnBXU2VfbUJGcHJqbGwzeElsQnNkaHNvbklLS1lRcGpweXRucGhKZTZPOHdmdlRWZzVTczFfeC1rQlZIR2lsODZLRmI5QUJHal8wRDRiVlFrZnlrZkp3MDU2ZDA?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795160985000
-    },
-    {
-      "id": "ae25e1e75ba209b92a87cb3d702b641e5405bfe9",
-      "title": "Middle East supply concerns lift Brent crude prices - Anadolu Ajansı",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQLVQyQ0FvOUJCSUtpNW9MYXlFb29NNWRKOXIyNW0wM0t4bGR4RHFMNm1uVUx1VmpDVWlRLVNrcEdHeHI4Y1l5aGkwRWltRGZNYWJDMWUwejNVNENnVDdMdjNPN28tY3dMTGZFRFdYYmgwWERNTV9PUlhCbS0tZHJjMGRMT0xqZXB2cm1BblNvM01vSm5fRjREadIBoAFBVV95cUxNQVdzLUZ5c1dab2xrRjlseHYyamNJYW9fMXdKY2hCT0Job3pWVHlvazdpaUUzbTduTTZmNjlubkkzTEM0c2VxTENzeGsyc0ZmaVk3SDhkV0pHcGlycWg4LVZiQVVYaFF5TzJQNnk3WmVHb1lDNGw0a3V1SGxUTDRIN2YzMGl2OUJTRlplYXdVY29UaU9fX1dpYi1kSmoydmVE?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795160705000
-    },
-    {
-      "id": "28fc15a1d064f5ce4c2ac6cdd98743f857140bf1",
-      "title": "Oil Prices Climb as Attacks on Saudi, Hormuz Disruptions Raise Supply Fears - Business Post Nigeria",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSTl4cVJYLXNtTGhqbU1vX3RqRmUxRWFOZEl3OUppNzRhMTdiMDBRLTc1UUo4Ukd3MHg1Y182NFd3Nmc0ZDFwUjFTandIRjNwU3R5amg5OFBVR0x2NmNEaUNzWVZ4R3ZRUld1NkNPRVlUblhLYkx5NUktSUJaYlEzRncwVklvVFh1MXpPRXJpb2lFR0Etdm5YNXU0c1JBa0ZvQnBTMWluUVFkalU?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795160675000
-    },
-    {
-      "id": "216da88a72425e889bfbf450c62329ee6bb23d2a",
-      "title": "CBOE Interest Rate 10 Year T Note (^TNX) latest stock news and headlines - Yahoo Finance UK",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1BMi1sRVUya3N2YWthSWJEeFhXYnRFMDBacXh6bGJRdDh5SFcwUnlqbDk3aHZnbk0zcnZkNHpBSWZSaTdIZ280ZDN4RUM4OEtWVW91QWM4LTBSblU?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795160338000
-    },
-    {
-      "id": "6fd9666659d06b502d6b2b37d486e33afaecde21",
-      "title": "AI Bubble Warning: Acadian Flags $2.4 Trillion Share Issuance - Univest",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNci1SOVBVRDlMbGwwUTFmbEZmLTlydUtIeHF4TnVFcGpTMURVcE50UjFWcEFRakNfODFfYVpzS2ZqSWxndDdUOE01ZExfNmZpVjBVRmNzQUFxLVJVdkNNbUVoUTAxVXJWNENnWFZjR2ZJYlZiVWpLeXlBTFgxUVNNd1FB?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795159380000
-    },
-    {
-      "id": "b29c1cdf6c1e8ffe33f5d6f70edf80ec33bcaaec",
-      "title": "Gold Heads For Worst Week In 8 Months As Dollar Strengthens, Fed Rate Hike Bets Rise - Forbes Middle East",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQN29PUFlGdmE4YjVTZEQ5eE9qTU5MMHk5Mk1MZUFrSmo1TnZlVG1kcmNDTnJFZ3RUMHRmTFZXYmRqNXhLYkM2MWdNWklLSjh5cGhmY19lRzl2QXFEbGxyZjJWamp6V1ZVSV94YUxaazY3X0FRZUxfazlzX2NkQzNtRUIzRGtISVpTRlVQbFF4YzM3cmE5dzRBQVU4SlRQX1dUVWZsR3RNYjZRajdQR216dVdxZjR1aWFjbndESEJ6TmYwTWRNZTE3aTUyczlLY28?oc=5",
-      "themes": [
-        "oil-geopolitics",
-        "rates-inflation"
-      ],
-      "ts": 1795157775000
-    },
-    {
-      "id": "63a42d6d2ccbcf35f45f0cc784d43a7216a6124d",
-      "title": "Gold Heads For Worst Week In 8 Months As Dollar Strengthens, Fed Rate Hike Bets Rise - Forbes Middle East",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUjVlZklSTU1Xb1M2RUVTVXdPTVZKS09BUlA3SDNRa3I1OGJ3MkdrNVBVX0lzajg4Vkh0VVJBRDRieDRiM3p0OEpCWVpSSmdBd2c0Sk9VdWZZc3dNbnF0SVpzYkd6U1pXV3NRTXc5NWd2N2xYeFRwZU52VER2Q1ByaFFWX2xMeWZ5MzVRZE1QVG11QmVBdElLXzR4ZFZ2SVJVS0Z6eWZjRXhWUGNFOGxGMDVqdXI3cWFjLU5GQXMyMm1iYnRkdEc5dmZR?oc=5",
-      "themes": [
-        "oil-geopolitics",
-        "rates-inflation"
-      ],
-      "ts": 1795157601000
-    },
-    {
-      "id": "1273e312e7a9c67bb42bd4e843f0bf309cdb0acc",
-      "title": "Oil prices gain as Houthi attacks on Riyadh raise supply concerns - Investify",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRDRNQmJyQWpEeEZZU1VEcjVBNUZwc2t2cElzRnZHdDMyT1ZJNHFmQVNsSEkwWHhZbTBrQ3BQQU5ERGo5QnZ0M0g3YndGT2o1d05LODI1VTVLWWRpTzVvZXhPV1RDR1cwRUJ0ZTg2YVc0XzN1U2pJZ1FmSjNJTDc5S0Nlc19GaU9qQXZHc3ZXZEtlU3YyMkFkQWtNSHpva1BvTmtTTUdfUG5MRFNy?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795157040000
-    },
-    {
-      "id": "4f6a96f0f2b56fb992227ad287dce2a9458a23e4",
-      "title": "AI Trade Shows Cracks as Global Stocks Sell Off; US Treasuries Head for Fifth Straight Gain - BigGo Finance",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XaFBaWXdKVTE5WV91YlBHMV9Dd3dqeVJ4bzNudkdoUE9KNUVsR3RXajNWc2tPWjFNZ3JjNlMwWmpyM21PNXE1cFJOM1FKZ2ZRYWlkLXZ5TlJEZjJuQ0hONlQ3OHY4VkRRNVlyYUR3WE1QWnVaQ3c?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795156824000
-    },
-    {
-      "id": "48f407551f0bd5adcd635baea6e509b66b6b6711",
-      "title": "Shafaq News..Oil climbs after Houthi attacks on Saudi Arabia - شفق نيوز",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSDRQODREeTBoNy1UaTNua1ZOWDg1di1mQXZyY1FuZFpHLXlOVTBvNnRJOVNZem1aUFFqZ0dXYW4xeld0VDBpZUYxeHFnR09semx6aU5lRm5PZ1RsOXlsa0t4M2pBS2d1OFJ2SXRDLTN3UEhaaGRVeFgwdHpQbEJkTFUyUlVzclhn?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795156673000
-    },
-    {
-      "id": "3b462d9be62b5a0c4d3ca729e1fdf361f0ae482d",
-      "title": "Crude Oil Volatility To Stay High, Citi Says; Diesel Cracks Key For Refiners - NDTV Profit",
-      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQOVgtNW52dEJlN0k5eXA3dmdmZnNTMGRyb1pKOGg0SDZXX05EcThBYjd6ODM0SjBhbEh0aDl1bDU2RGNfbm40VHdIeGUwbGVwZjBicktwMHh4am9KRWNIenUzYnppUnZ2M2VhVkVQeXdQVEV2eUJwRVNCUWJ3dGhMVTZJQ09Gc3paNmRxRjFrTXNmQUozV0F6cE42azFacGhOLXM5akRWbE9oQ2I4RFRZZ3JqV29ubXRwb0xnMGhqRlhMRmlwLURNcDZJUkxfWmt4ZGJYSlFJUjF1MGU4T1h6YkpMcl9YbVFoQU1VRlRNT3dEXzhocnFqVl9XQTA2MDJBSnYtLURHa1pSUkp2bHpWc21Pam5kaGZTNUZyN2Vrb9IBpwJBVV95cUxNRmpNenc0QzRKbzgtcERValhiY3JYSEFfTE5lc19iaVBQM2xDYjh1NmZ5QW5NalVnWGN5UjhqeUxlbGEweXdVMDc3WVU1eDJRMnFsV0pVb2tWSGlRVTBnZ3d6czRCajljUl9rYlRjSUxEZ1hiOGVQay13WDJnVmVQemxvWU5MemxFclh3WmEyTS16aXdaVnZQZ3FvYlAxamlqWXN0MmNqSVQ5WFM2NjBGOEE5Tl9HRUQydi1HX2lLZHdiMVp6anppdmp1UllHUm9UN244ZWJrZnp0LVdnaGFRZ3hXZktqQW9KdXE1aTVvanBvdFUxekhROVV5SUcwbHBGdUR1aGxaM2dlbGZCbXRkLTljdk9HSGI5dXdmY2UyR3dnWXZDelpr?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795156206000
-    },
-    {
-      "id": "911d4ba389d2086ad480f76d5d5f14097a803f1b",
-      "title": "Oil prices gain as Houthi attacks on Riyadh raise supply concerns - Investify",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUjVwOW1TdjBvQWViZVJSY0NacFNqR3dKYnktVUVqM1RVSXlLclpUNFRteFJEZjNRRGNBdVdQSjA5eUpNLUdPa0w4bHEzdl96dGNKWE56VlgzTTh1TWltSkdEeXJkeWN1bmtVNzV3TXlXRmZEMVMxcDRIYVNwVXN4cGFwRnFGNXI3WDVoTzFKX1c1RXh0VXdQRVNOWE51bEpjRzBQWkRGZjhUdURZ?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795153982000
-    },
-    {
-      "id": "0ff03940741fcf92dd369f05d3013c96a5a0b697",
-      "title": "Oil Prices Rebound as Houthi Attacks Reignite Middle East Supply Fears - Crude Oil Prices Today | OilPrice.com",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMG5TOENVLUY0OGdxVFJTVDBwTEEzWlVrTGhsWVNSeUs0Ym1VWVI1MjE5MVBrWjBKaTRNUmsxZDdYcEhCdmluS2NNaElxdW5oZTBfSXJ3SVhEaVBvZ3lTSTd3S3RKeWVRRVlzcFhzQTdBMHVHUTBlYmlmVHVLUGpnS25EeTFWX2RpOWZ0NDdicFFJRHR4TnBON0dEaE91Y0xoakNHTjRxOVBmbW9oR3pPXzl3V1pMOFJpVUlrYlZ1QzJDdEFqc0RRTURn0gHKAUFVX3lxTE8wblM4Q1UtRjQ4Z3FUUlNUMHBMQTNaVWtMaGxZU1J5SzRibVVZUjUyMTkxUGtaMEppNE1SazFkN1hwSEJ2aW5LY01oSXF1bmhlMF9JcndJWERpUG9neVNJN3dLdEp5ZVFFWXNwWHNBN0EwdUdRMGViaWZUdUtQamdLbkR5MVZfZGk5ZnQ0N2JwUUlEdHhOcE43R0RoT3VjTGhqQ0dONHE5UGZtb2hHek9fOXdXWkw4UmlVSWtiVnVDMkN0QWpzRFFNRGc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795153860000
-    },
-    {
-      "id": "998b35ca0df22538b40c1573ce7d72cd0912ae0f",
-      "title": "Oil Prices Rebound as Houthi Attacks Reignite Middle East Supply Fears - Crude Oil Prices Today | OilPrice.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNN3c3d19RVHF5TTRSYjJabTdKMkJ6dUtYZURXaEtvR0xsX2d1ZndtUVlrLVUwWVFJNDY4bHZtNnU4QTB2OWdJZDZ2Qjk3Y2NpZHA0WFpiT3psNWwzOXpDMEk4cjNTSTI4cGU2VG9QamlSNmxGNC1UWXFub2FKWlVEQ0pqZHhTa3ZjY1JMYWpPOWlBQVVBMTh5M0EtQWx0M3JMWmplUk12MVp5cTR1ZUV0M3FRLUN2THJZWG5kdi1kNjY1VjdS0gHKAUFVX3lxTE8wblM4Q1UtRjQ4Z3FUUlNUMHBMQTNaVWtMaGxZU1J5SzRibVVZUjUyMTkxUGtaMEppNE1SazFkN1hwSEJ2aW5LY01oSXF1bmhlMF9JcndJWERpUG9neVNJN3dLdEp5ZVFFWXNwWHNBN0EwdUdRMGViaWZUdUtQamdLbkR5MVZfZGk5ZnQ0N2JwUUlEdHhOcE43R0RoT3VjTGhqQ0dONHE5UGZtb2hHek9fOXdXWkw4UmlVSWtiVnVDMkN0QWpzRFFNRGc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795153860000
-    },
-    {
-      "id": "c0cc0db9a11079395f7e4fd921a882b3edd4b73d",
-      "title": "Asian stocks tumble as AI spending fears outweigh Anthropic record IPO | FXStreet - شبكة تواصل الإخبارية",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9NNHFRaUx4OTlBbkw5aWFtTlZzSTh3S1JibVZROFVvMTBYWm8wNHlKRWd2YjQ0U3dTaTBhUGUxeWY0OTBXbTJfVWk1a1U3Q0h6eGEw?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795152841000
-    },
-    {
-      "id": "965beb36cf11d5bbf1be344769d4269f329ee296",
-      "title": "Asian stocks tumble as AI spending fears outweigh Anthropic record IPO - FXStreet",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNW00M3NXV2VsX000ZmtRNG0wWmdiNFh0c0xTZkxTaHZaZUdaUTBlRHpGWU9VZkxLX19qNkFRTGdhY3dlNDlpUVNiTU9kQjdEN1VYRm16bWFRWHRxdnoyTm0yZ0tQei1iMHA1a3F0bkhTcEdDaHYtV1hRcnFsUnltYVFRRXJqT09TNFBZMkxRa1Z0cmIxUGxieDJNb2NHbzBDQnBXeGstRW1rTEc4UG9LcTZtbw?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795151216000
-    },
-    {
-      "id": "a3a9d3fd4ec4fb5cf94a94a3d3fdceb5465eb5f8",
-      "title": "Oil prices set for third straight weekly decline on Middle East export flows - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5SV3VLcC1fUXZ3eUN2ckZpSzd3akdsSE55cFRrUEZFNDZtVUFxcDRCWng5dHB3XzBDaUliLUowaGdqdDVkaW5va25nUkx5OVc4UXZoVU9qem1NdWFUNndPWldTeXFhVnVo0gFuQVVfeXFMTXRDbE5XQlFpNEF3ZVBycUpzZXFqQXJOdmVWTWVlX2NWLTNPc2w2TEk5TVdEb3FSZTV3c1JpSEJpUTlaX1g3cVhfY0o1cnFZd2xLZm03ZkJWTjRCelpOU2V5bl9pYlk0RkJsZnQtS1E?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795150909000
-    },
-    {
-      "id": "178e90c8b3de91f30e015aff014ce4dd73ab0c9b",
-      "title": "Oil prices gain as Houthi attacks on Riyadh raise supply concerns - CNBC",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE10Q2xOV0JRaTRBd2VQcnFKc2VxakFyTnZlVk1lZV9jVi0zT3NsNkxJOU1XRG9xUmU1d3NSaUhCaVE5Wl9YN3FYX2NKNXJxWXdsS2ZtN2ZCVk40QnpaTlNleW5faWJZNEZCbGZ0LUtR0gFuQVVfeXFMTXRDbE5XQlFpNEF3ZVBycUpzZXFqQXJOdmVWTWVlX2NWLTNPc2w2TEk5TVdEb3FSZTV3c1JpSEJpUTlaX1g3cVhfY0o1cnFZd2xLZm03ZkJWTjRCelpOU2V5bl9pYlk0RkJsZnQtS1E?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795150909000
-    },
-    {
-      "id": "b832096daad66a9e8f92e251495b764c8eba302e",
-      "title": "Asia’s stock markets dive as Anthropic debut fails to allay AI bubble fears - Al Jazeera",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQOTlLRHZDNTRIaV9TZFlkd3VqNHZUTHZ2OVI1N01jdlM1ZnF2RWdFT25RV2dKN0l5THVNQndQTzhrVlpRUmNrRjh4MloxWHo5OXRwTzBJQy1vLVRDUU5yMFpEblRycUYyZnI3MFJEaHBrU1Awa3JTdDlha2tYd0FlbU5FOVI2SW5Nb3hISDg2R0d5RTVXTHctZmhWcEdjU2ptVzdPMUVtLW8yR1l2YjV3UV9GcXBZdGxaR3FF0gHAAUFVX3lxTE9qaEdWMGtKak9xeE5PSTJIeklFdG11ZmIySmR4UHFMV3pENnRvSnp5LVozRThVaE52SDA2Q1VnXzBrYUFjXzFFZmJmLVBFTkxudDFXQ2MxVTNiRlNHTWxabEw3NXRLMlN0VWY5U3I3YXhRZ0tUU2FRdGR0MGxTSW4tMlY1QXVTX0xoYnFRVERZaUY4U0d5RWQyZW9ITlNDY0xOanllVFhpTEgtSmVQa3JHTDNpQWNidGVQUjVJcWxKVg?oc=5",
-      "themes": [
-        "ai-spending"
-      ],
-      "ts": 1795150511000
-    },
-    {
-      "id": "c0452fe1fe5be170af2fb43e2156185254af18ba",
-      "title": "Why is the price of gold falling? Fed rate-hike bets and a strong dollar push it to a 14-month low - Nacionale",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQkRfeEJDSG12YW82LS11T01PTzkzOWZzZnZycXhkTkdfZnJMcU05LU1ib3dNOTltVFNkdUFYbTZPVVd6LWFza05NM2IxVlhhVkwwWi1ESEZ2aVVCVkYxdFNuQ2lsamVWQ3F2dHRwSl9PQlllaF9xWlQ2ZURieHFxRTc1N1lrLWg0SVFhT2NfZVNoOUliMlJzUWlOMzRmZ21rZ0dMcFNRNWt2RGoyTU0w?oc=5",
-      "themes": [
-        "rates-inflation"
-      ],
-      "ts": 1795150440000
-    },
-    {
-      "id": "07f771ade0ad5a7bb3570351e3469e138321b1bf",
-      "title": "Oil Prices Rise After Houthi Attacks on Saudi Arabia - Bloom Pakistan",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZl91WWRZdVRUNHU1ekMtMHNjODJkeGtRNjI0WmJEdV9xODhPVjdvUzBnQ2c1R2NjSWYyWWt5eWUyOHRQMXRES0w2LXRYaXhxUUU1TzhZVUJ2Ynd1T3FDTnFKb3Rhd2VENzhwekZyNlN3d2xuNkRaR0JsOHV2M1dvZzI0TGZzZw?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795149355000
-    },
-    {
-      "id": "4868727870261b9d76d6fa512fcdf7f1f97e722f",
-      "title": "Oil Prices Today, November 20, 2026: Brent Crude Rises 0.3% to $92.2 But Stays On Course For Weekly Decline - HDFC Sky",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPWUVXd2t6Ri1rNDN1QmZRS1NNODh2WXdSVHFNRlBxUHRSMTRLbVVtOFZiczkwUEhPSGxWZ1lnTGF1WVlRemZRdEsxV3g3cGZkbkhLVGVSdDRBVEhDZ21WUGs2STBNeUM5aU4waTE5Q0tEN2MwNkRjNHF5Wm5IZkk3dGdSSEMxaDhzTDNFY24zUWhfTy01VmtTOFRnNmJoUVFBdTBFWDEzRFVPUnFMWVpnMEZnNHhjN2xQMVBZaXptYm83czdCMk44ZDVqd2NrSGRoSUhtNnV1WDVBR21yYmc?oc=5",
-      "themes": [
-        "oil-geopolitics"
-      ],
-      "ts": 1795147936000
     }
   ]
 }
