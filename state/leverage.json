@@ -2300,10 +2300,13 @@
     "ee54fe4509ae494432018c7cc801875b6f8d98c4": 1795854043787,
     "f41946ddcddd31e2bfe66fab22af337600db79ff": 1795854043787,
     "cd021e83c79619b04bb6f980149f234f42c81f6e": 1795854043787,
-    "bbf62b2bc3bb82f389a90114ec577467d4c1b57e": 1795854043787
+    "bbf62b2bc3bb82f389a90114ec577467d4c1b57e": 1795854043787,
+    "778f5f63c4acbcbc7814f188e7fad92feeb257c3": 1795885685097
   },
   "alerted": {},
-  "failures": {},
+  "failures": {
+    "en: Anthropic secondary market": 1
+  },
   "seeded": {
     "en: Anthropic IPO": 1791857567797,
     "en: OpenAI IPO": 1791857567797,
